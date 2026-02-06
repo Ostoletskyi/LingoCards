@@ -1,0 +1,9 @@
+﻿This is a release snapshot placeholder.
+
+To export the real autosave from the browser:
+1) Open DevTools Console on the running app
+2) Run:
+   copy(localStorage.getItem("LC_NEXT_STATE_V1"))
+3) Paste into a file named:
+   snapshot_autosave_v1.0.7-commercial.json
+4) Put it into this folder: _release\

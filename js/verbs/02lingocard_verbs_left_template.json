@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "kind": "verbs-left",
+  "passport": {
+    "app": "LingoCard-next",
+    "tag": "v0.9.32-editor-stable",
+    "build": "",
+    "exportedAt": "2026-01-14T16:35:54Z",
+    "kind": "verbs-left",
+    "scope": "left",
+    "schema": 1,
+    "viewMode": "verbs"
+  },
+  "data": {
+    "verbs": [
+      {
+        "inf": "",
+        "translations": [],
+        "forms": {
+          "praesens_3": "",
+          "praeteritum": "",
+          "partizip_2": "",
+          "auxiliary": ""
+        },
+        "synonyms": [
+          {
+            "word": "",
+            "translation": ""
+          }
+        ],
+        "examples": {
+          "praesens": "",
+          "modal": "",
+          "praeteritum": "",
+          "perfekt": ""
+        },
+        "examples_ru": {
+          "praesens": "",
+          "modal": "",
+          "praeteritum": "",
+          "perfekt": ""
+        },
+        "prefixes": [
+          {
+            "prefix": "",
+            "meaning": "",
+            "examples": [
+              ""
+            ],
+            "examples_ru": [
+              ""
+            ]
+          }
+        ],
+        "freq": 0,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,1802 @@
+{
+  "version": 1,
+  "kind": "cards-right",
+  "passport": {
+    "app": "LingoCard-next",
+    "tag": "v0.9.32-editor-stable",
+    "build": "",
+    "exportedAt": "2026-01-14T15:50:41Z",
+    "kind": "cards-right",
+    "scope": "right",
+    "schema": 1,
+    "viewMode": "cards"
+  },
+  "card": {
+    "widthMm": 150,
+    "heightMm": 105
+  },
+  "cards": [
+    {
+      "id": "card_01_werden",
+      "title": "Card 1",
+      "cardWmm": 150,
+      "cardHmm": 105,
+      "selectedIndex": 0,
+      "notesByVerb": {},
+      "boxes": [
+        {
+          "id": "freqCorner",
+          "type": "frequencyDots",
+          "xMm": 6,
+          "yMm": 6,
+          "wMm": 26,
+          "hMm": 8,
+          "fontPt": 10,
+          "label": "Freq",
+          "label_i18n": {
+            "de": "Freq",
+            "ru": "Частота",
+            "en": "Frequency"
+          },
+          "textMode": "static",
+          "staticText": "",
+          "text": "",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "inf",
+          "xMm": 10,
+          "yMm": 8,
+          "wMm": 130,
+          "hMm": 16,
+          "fontPt": 28,
+          "label": "Infinitiv",
+          "label_i18n": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "textMode": "static",
+          "staticText": "werden",
+          "text": "werden",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "tr",
+          "xMm": 10,
+          "yMm": 27,
+          "wMm": 130,
+          "hMm": 10,
+          "fontPt": 13,
+          "label": "Übersetzungen",
+          "label_i18n": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "textMode": "static",
+          "staticText": "становиться, делаться, быть (пассив/будущее)",
+          "text": "становиться, делаться, быть (пассив/будущее)",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "forms",
+          "xMm": 10,
+          "yMm": 40,
+          "wMm": 130,
+          "hMm": 10,
+          "fontPt": 16,
+          "label": "Formen",
+          "label_i18n": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "textMode": "static",
+          "staticText": "wird / wurde / sein geworden",
+          "text": "wird / wurde / sein geworden",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "syn",
+          "xMm": 10,
+          "yMm": 53,
+          "wMm": 130,
+          "hMm": 14,
+          "fontPt": 12,
+          "label": "Synonyme",
+          "label_i18n": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "textMode": "static",
+          "staticText": "sich verwandeln — превращаться\nsich entwickeln — развиваться\nbeginnen (kontextuell) — начинаться (по смыслу)",
+          "text": "sich verwandeln — превращаться\nsich entwickeln — развиваться\nbeginnen (kontextuell) — начинаться (по смыслу)",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "examples",
+          "xMm": 10,
+          "yMm": 70,
+          "wMm": 130,
+          "hMm": 22,
+          "fontPt": 12,
+          "label": "Beispiele",
+          "label_i18n": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "textMode": "static",
+          "staticText": "Er wird müde.\nEr muss müde werden.\nEr wurde plötzlich still.\nEr ist schnell müde geworden.\n\nОн становится уставшим.\nЕму приходится становиться уставшим.\nОн вдруг стал тихим.\nОн быстро стал уставшим.",
+          "text": "Er wird müde.\nEr muss müde werden.\nEr wurde plötzlich still.\nEr ist schnell müde geworden.\n\nОн становится уставшим.\nЕму приходится становиться уставшим.\nОн вдруг стал тихим.\nОн быстро стал уставшим.",
+          "geomMode": "manual",
+          "geomPinned": true
+        }
+      ]
+    },
+    {
+      "id": "card_02_gehen",
+      "title": "Card 2",
+      "cardWmm": 150,
+      "cardHmm": 105,
+      "selectedIndex": 0,
+      "notesByVerb": {},
+      "boxes": [
+        {
+          "id": "freqCorner",
+          "type": "frequencyDots",
+          "xMm": 6,
+          "yMm": 6,
+          "wMm": 26,
+          "hMm": 8,
+          "fontPt": 10,
+          "label": "Freq",
+          "label_i18n": {
+            "de": "Freq",
+            "ru": "Частота",
+            "en": "Frequency"
+          },
+          "textMode": "static",
+          "staticText": "",
+          "text": "",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "inf",
+          "xMm": 10,
+          "yMm": 8,
+          "wMm": 130,
+          "hMm": 16,
+          "fontPt": 28,
+          "label": "Infinitiv",
+          "label_i18n": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "textMode": "static",
+          "staticText": "gehen",
+          "text": "gehen",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "tr",
+          "xMm": 10,
+          "yMm": 27,
+          "wMm": 130,
+          "hMm": 10,
+          "fontPt": 13,
+          "label": "Übersetzungen",
+          "label_i18n": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "textMode": "static",
+          "staticText": "идти, ходить, работать (о механизме)",
+          "text": "идти, ходить, работать (о механизме)",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "forms",
+          "xMm": 10,
+          "yMm": 40,
+          "wMm": 130,
+          "hMm": 10,
+          "fontPt": 16,
+          "label": "Formen",
+          "label_i18n": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "textMode": "static",
+          "staticText": "geht / ging / sein gegangen",
+          "text": "geht / ging / sein gegangen",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "syn",
+          "xMm": 10,
+          "yMm": 53,
+          "wMm": 130,
+          "hMm": 14,
+          "fontPt": 12,
+          "label": "Synonyme",
+          "label_i18n": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "textMode": "static",
+          "staticText": "laufen — бежать/ходить\nsich begeben — отправляться\nfunktionieren — функционировать",
+          "text": "laufen — бежать/ходить\nsich begeben — отправляться\nfunktionieren — функционировать",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "examples",
+          "xMm": 10,
+          "yMm": 70,
+          "wMm": 130,
+          "hMm": 22,
+          "fontPt": 12,
+          "label": "Beispiele",
+          "label_i18n": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "textMode": "static",
+          "staticText": "Er geht nach Hause.\nIch muss jetzt gehen.\nGestern ging alles schief.\nWir sind früh gegangen.\n\nОн идёт домой.\nМне нужно сейчас идти.\nВчера всё пошло наперекосяк.\nМы ушли рано.",
+          "text": "Er geht nach Hause.\nIch muss jetzt gehen.\nGestern ging alles schief.\nWir sind früh gegangen.\n\nОн идёт домой.\nМне нужно сейчас идти.\nВчера всё пошло наперекосяк.\nМы ушли рано.",
+          "geomMode": "manual",
+          "geomPinned": true
+        }
+      ]
+    },
+    {
+      "id": "card_03_machen",
+      "title": "Card 3",
+      "cardWmm": 150,
+      "cardHmm": 105,
+      "selectedIndex": 0,
+      "notesByVerb": {},
+      "boxes": [
+        {
+          "id": "freqCorner",
+          "type": "frequencyDots",
+          "xMm": 6,
+          "yMm": 6,
+          "wMm": 26,
+          "hMm": 8,
+          "fontPt": 10,
+          "label": "Freq",
+          "label_i18n": {
+            "de": "Freq",
+            "ru": "Частота",
+            "en": "Frequency"
+          },
+          "textMode": "static",
+          "staticText": "",
+          "text": "",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "inf",
+          "xMm": 10,
+          "yMm": 8,
+          "wMm": 130,
+          "hMm": 16,
+          "fontPt": 28,
+          "label": "Infinitiv",
+          "label_i18n": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "textMode": "static",
+          "staticText": "machen",
+          "text": "machen",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "tr",
+          "xMm": 10,
+          "yMm": 27,
+          "wMm": 130,
+          "hMm": 10,
+          "fontPt": 13,
+          "label": "Übersetzungen",
+          "label_i18n": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "textMode": "static",
+          "staticText": "делать, выполнять, заставлять (в разговорной речи)",
+          "text": "делать, выполнять, заставлять (в разговорной речи)",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "forms",
+          "xMm": 10,
+          "yMm": 40,
+          "wMm": 130,
+          "hMm": 10,
+          "fontPt": 16,
+          "label": "Formen",
+          "label_i18n": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "textMode": "static",
+          "staticText": "macht / machte / haben gemacht",
+          "text": "macht / machte / haben gemacht",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "syn",
+          "xMm": 10,
+          "yMm": 53,
+          "wMm": 130,
+          "hMm": 14,
+          "fontPt": 12,
+          "label": "Synonyme",
+          "label_i18n": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "textMode": "static",
+          "staticText": "tun — делать\nerstellen — создавать\nverursachen — вызывать/причинять",
+          "text": "tun — делать\nerstellen — создавать\nverursachen — вызывать/причинять",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "examples",
+          "xMm": 10,
+          "yMm": 70,
+          "wMm": 130,
+          "hMm": 22,
+          "fontPt": 12,
+          "label": "Beispiele",
+          "label_i18n": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "textMode": "static",
+          "staticText": "Ich mache Kaffee.\nDu musst deine Hausaufgaben machen.\nEr machte einen Fehler.\nWir haben das schon gemacht.\n\nЯ делаю кофе.\nТебе нужно сделать домашку.\nОн сделал ошибку.\nМы уже это сделали.",
+          "text": "Ich mache Kaffee.\nDu musst deine Hausaufgaben machen.\nEr machte einen Fehler.\nWir haben das schon gemacht.\n\nЯ делаю кофе.\nТебе нужно сделать домашку.\nОн сделал ошибку.\nМы уже это сделали.",
+          "geomMode": "manual",
+          "geomPinned": true
+        }
+      ]
+    },
+    {
+      "id": "card_04_kommen",
+      "title": "Card 4",
+      "cardWmm": 150,
+      "cardHmm": 105,
+      "selectedIndex": 0,
+      "notesByVerb": {},
+      "boxes": [
+        {
+          "id": "freqCorner",
+          "type": "frequencyDots",
+          "xMm": 6,
+          "yMm": 6,
+          "wMm": 26,
+          "hMm": 8,
+          "fontPt": 10,
+          "label": "Freq",
+          "label_i18n": {
+            "de": "Freq",
+            "ru": "Частота",
+            "en": "Frequency"
+          },
+          "textMode": "static",
+          "staticText": "",
+          "text": "",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "inf",
+          "xMm": 10,
+          "yMm": 8,
+          "wMm": 130,
+          "hMm": 16,
+          "fontPt": 28,
+          "label": "Infinitiv",
+          "label_i18n": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "textMode": "static",
+          "staticText": "kommen",
+          "text": "kommen",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "tr",
+          "xMm": 10,
+          "yMm": 27,
+          "wMm": 130,
+          "hMm": 10,
+          "fontPt": 13,
+          "label": "Übersetzungen",
+          "label_i18n": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "textMode": "static",
+          "staticText": "приходить, приезжать, подходить (подходить по смыслу)",
+          "text": "приходить, приезжать, подходить (подходить по смыслу)",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "forms",
+          "xMm": 10,
+          "yMm": 40,
+          "wMm": 130,
+          "hMm": 10,
+          "fontPt": 16,
+          "label": "Formen",
+          "label_i18n": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "textMode": "static",
+          "staticText": "kommt / kam / sein gekommen",
+          "text": "kommt / kam / sein gekommen",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "syn",
+          "xMm": 10,
+          "yMm": 53,
+          "wMm": 130,
+          "hMm": 14,
+          "fontPt": 12,
+          "label": "Synonyme",
+          "label_i18n": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "textMode": "static",
+          "staticText": "ankommen — прибывать\nerscheinen — появляться\npassen (kontextuell) — подходить",
+          "text": "ankommen — прибывать\nerscheinen — появляться\npassen (kontextuell) — подходить",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "examples",
+          "xMm": 10,
+          "yMm": 70,
+          "wMm": 130,
+          "hMm": 22,
+          "fontPt": 12,
+          "label": "Beispiele",
+          "label_i18n": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "textMode": "static",
+          "staticText": "Er kommt später.\nKannst du morgen kommen?\nPlötzlich kam eine Idee.\nSie ist gerade gekommen.\n\nОн придёт позже.\nТы можешь прийти завтра?\nВдруг пришла идея.\nОна только что пришла.",
+          "text": "Er kommt später.\nKannst du morgen kommen?\nPlötzlich kam eine Idee.\nSie ist gerade gekommen.\n\nОн придёт позже.\nТы можешь прийти завтра?\nВдруг пришла идея.\nОна только что пришла.",
+          "geomMode": "manual",
+          "geomPinned": true
+        }
+      ]
+    },
+    {
+      "id": "card_05_sehen",
+      "title": "Card 5",
+      "cardWmm": 150,
+      "cardHmm": 105,
+      "selectedIndex": 0,
+      "notesByVerb": {},
+      "boxes": [
+        {
+          "id": "freqCorner",
+          "type": "frequencyDots",
+          "xMm": 6,
+          "yMm": 6,
+          "wMm": 26,
+          "hMm": 8,
+          "fontPt": 10,
+          "label": "Freq",
+          "label_i18n": {
+            "de": "Freq",
+            "ru": "Частота",
+            "en": "Frequency"
+          },
+          "textMode": "static",
+          "staticText": "",
+          "text": "",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "inf",
+          "xMm": 10,
+          "yMm": 8,
+          "wMm": 130,
+          "hMm": 16,
+          "fontPt": 28,
+          "label": "Infinitiv",
+          "label_i18n": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "textMode": "static",
+          "staticText": "sehen",
+          "text": "sehen",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "tr",
+          "xMm": 10,
+          "yMm": 27,
+          "wMm": 130,
+          "hMm": 10,
+          "fontPt": 13,
+          "label": "Übersetzungen",
+          "label_i18n": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "textMode": "static",
+          "staticText": "видеть, смотреть, понимать (разг.: вижу)",
+          "text": "видеть, смотреть, понимать (разг.: вижу)",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "forms",
+          "xMm": 10,
+          "yMm": 40,
+          "wMm": 130,
+          "hMm": 10,
+          "fontPt": 16,
+          "label": "Formen",
+          "label_i18n": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "textMode": "static",
+          "staticText": "sieht / sah / haben gesehen",
+          "text": "sieht / sah / haben gesehen",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "syn",
+          "xMm": 10,
+          "yMm": 53,
+          "wMm": 130,
+          "hMm": 14,
+          "fontPt": 12,
+          "label": "Synonyme",
+          "label_i18n": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "textMode": "static",
+          "staticText": "schauen — смотреть\nbetrachten — рассматривать\nmerken (kontextuell) — замечать/понимать",
+          "text": "schauen — смотреть\nbetrachten — рассматривать\nmerken (kontextuell) — замечать/понимать",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "examples",
+          "xMm": 10,
+          "yMm": 70,
+          "wMm": 130,
+          "hMm": 22,
+          "fontPt": 12,
+          "label": "Beispiele",
+          "label_i18n": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "textMode": "static",
+          "staticText": "Ich sehe nichts.\nDu musst dir das ansehen.\nEr sah sehr müde aus.\nWir haben den Film gesehen.\n\nЯ ничего не вижу.\nТебе нужно это посмотреть.\nОн выглядел очень уставшим.\nМы посмотрели фильм.",
+          "text": "Ich sehe nichts.\nDu musst dir das ansehen.\nEr sah sehr müde aus.\nWir haben den Film gesehen.\n\nЯ ничего не вижу.\nТебе нужно это посмотреть.\nОн выглядел очень уставшим.\nМы посмотрели фильм.",
+          "geomMode": "manual",
+          "geomPinned": true
+        }
+      ]
+    },
+    {
+      "id": "card_06_geben",
+      "title": "Card 6",
+      "cardWmm": 150,
+      "cardHmm": 105,
+      "selectedIndex": 0,
+      "notesByVerb": {},
+      "boxes": [
+        {
+          "id": "freqCorner",
+          "type": "frequencyDots",
+          "xMm": 6,
+          "yMm": 6,
+          "wMm": 26,
+          "hMm": 8,
+          "fontPt": 10,
+          "label": "Freq",
+          "label_i18n": {
+            "de": "Freq",
+            "ru": "Частота",
+            "en": "Frequency"
+          },
+          "textMode": "static",
+          "staticText": "",
+          "text": "",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "inf",
+          "xMm": 10,
+          "yMm": 8,
+          "wMm": 130,
+          "hMm": 16,
+          "fontPt": 28,
+          "label": "Infinitiv",
+          "label_i18n": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "textMode": "static",
+          "staticText": "geben",
+          "text": "geben",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "tr",
+          "xMm": 10,
+          "yMm": 27,
+          "wMm": 130,
+          "hMm": 10,
+          "fontPt": 13,
+          "label": "Übersetzungen",
+          "label_i18n": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "textMode": "static",
+          "staticText": "давать, предоставлять, существовать (es gibt)",
+          "text": "давать, предоставлять, существовать (es gibt)",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "forms",
+          "xMm": 10,
+          "yMm": 40,
+          "wMm": 130,
+          "hMm": 10,
+          "fontPt": 16,
+          "label": "Formen",
+          "label_i18n": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "textMode": "static",
+          "staticText": "gibt / gab / haben gegeben",
+          "text": "gibt / gab / haben gegeben",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "syn",
+          "xMm": 10,
+          "yMm": 53,
+          "wMm": 130,
+          "hMm": 14,
+          "fontPt": 12,
+          "label": "Synonyme",
+          "label_i18n": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "textMode": "static",
+          "staticText": "überreichen — вручать\nspenden — жертвовать\nzur Verfügung stellen — предоставлять",
+          "text": "überreichen — вручать\nspenden — жертвовать\nzur Verfügung stellen — предоставлять",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "examples",
+          "xMm": 10,
+          "yMm": 70,
+          "wMm": 130,
+          "hMm": 22,
+          "fontPt": 12,
+          "label": "Beispiele",
+          "label_i18n": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "textMode": "static",
+          "staticText": "Er gibt mir das Buch.\nKannst du mir einen Tipp geben?\nEs gab ein Problem.\nSie hat mir geholfen und mir Zeit gegeben.\n\nОн даёт мне книгу.\nМожешь дать мне совет?\nБыла проблема.\nОна помогла мне и дала мне время.",
+          "text": "Er gibt mir das Buch.\nKannst du mir einen Tipp geben?\nEs gab ein Problem.\nSie hat mir geholfen und mir Zeit gegeben.\n\nОн даёт мне книгу.\nМожешь дать мне совет?\nБыла проблема.\nОна помогла мне и дала мне время.",
+          "geomMode": "manual",
+          "geomPinned": true
+        }
+      ]
+    },
+    {
+      "id": "card_07_nehmen",
+      "title": "Card 7",
+      "cardWmm": 150,
+      "cardHmm": 105,
+      "selectedIndex": 0,
+      "notesByVerb": {},
+      "boxes": [
+        {
+          "id": "freqCorner",
+          "type": "frequencyDots",
+          "xMm": 6,
+          "yMm": 6,
+          "wMm": 26,
+          "hMm": 8,
+          "fontPt": 10,
+          "label": "Freq",
+          "label_i18n": {
+            "de": "Freq",
+            "ru": "Частота",
+            "en": "Frequency"
+          },
+          "textMode": "static",
+          "staticText": "",
+          "text": "",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "inf",
+          "xMm": 10,
+          "yMm": 8,
+          "wMm": 130,
+          "hMm": 16,
+          "fontPt": 28,
+          "label": "Infinitiv",
+          "label_i18n": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "textMode": "static",
+          "staticText": "nehmen",
+          "text": "nehmen",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "tr",
+          "xMm": 10,
+          "yMm": 27,
+          "wMm": 130,
+          "hMm": 10,
+          "fontPt": 13,
+          "label": "Übersetzungen",
+          "label_i18n": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "textMode": "static",
+          "staticText": "брать, принимать, занимать (время)",
+          "text": "брать, принимать, занимать (время)",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "forms",
+          "xMm": 10,
+          "yMm": 40,
+          "wMm": 130,
+          "hMm": 10,
+          "fontPt": 16,
+          "label": "Formen",
+          "label_i18n": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "textMode": "static",
+          "staticText": "nimmt / nahm / haben genommen",
+          "text": "nimmt / nahm / haben genommen",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "syn",
+          "xMm": 10,
+          "yMm": 53,
+          "wMm": 130,
+          "hMm": 14,
+          "fontPt": 12,
+          "label": "Synonyme",
+          "label_i18n": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "textMode": "static",
+          "staticText": "holen — взять/принести\ngreifen — схватить\nakzeptieren — принимать",
+          "text": "holen — взять/принести\ngreifen — схватить\nakzeptieren — принимать",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "examples",
+          "xMm": 10,
+          "yMm": 70,
+          "wMm": 130,
+          "hMm": 22,
+          "fontPt": 12,
+          "label": "Beispiele",
+          "label_i18n": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "textMode": "static",
+          "staticText": "Ich nehme den Bus.\nDu musst diese Tablette nehmen.\nEr nahm das Angebot an.\nWir haben einen Taxi genommen.\n\nЯ еду на автобусе. (букв. “беру автобус”)\nТебе нужно принять эту таблетку.\nОн принял предложение.\nМы взяли такси.",
+          "text": "Ich nehme den Bus.\nDu musst diese Tablette nehmen.\nEr nahm das Angebot an.\nWir haben einen Taxi genommen.\n\nЯ еду на автобусе. (букв. “беру автобус”)\nТебе нужно принять эту таблетку.\nОн принял предложение.\nМы взяли такси.",
+          "geomMode": "manual",
+          "geomPinned": true
+        }
+      ]
+    },
+    {
+      "id": "card_08_finden",
+      "title": "Card 8",
+      "cardWmm": 150,
+      "cardHmm": 105,
+      "selectedIndex": 0,
+      "notesByVerb": {},
+      "boxes": [
+        {
+          "id": "freqCorner",
+          "type": "frequencyDots",
+          "xMm": 6,
+          "yMm": 6,
+          "wMm": 26,
+          "hMm": 8,
+          "fontPt": 10,
+          "label": "Freq",
+          "label_i18n": {
+            "de": "Freq",
+            "ru": "Частота",
+            "en": "Frequency"
+          },
+          "textMode": "static",
+          "staticText": "",
+          "text": "",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "inf",
+          "xMm": 10,
+          "yMm": 8,
+          "wMm": 130,
+          "hMm": 16,
+          "fontPt": 28,
+          "label": "Infinitiv",
+          "label_i18n": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "textMode": "static",
+          "staticText": "finden",
+          "text": "finden",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "tr",
+          "xMm": 10,
+          "yMm": 27,
+          "wMm": 130,
+          "hMm": 10,
+          "fontPt": 13,
+          "label": "Übersetzungen",
+          "label_i18n": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "textMode": "static",
+          "staticText": "находить, считать (по мнению), обнаруживать",
+          "text": "находить, считать (по мнению), обнаруживать",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "forms",
+          "xMm": 10,
+          "yMm": 40,
+          "wMm": 130,
+          "hMm": 10,
+          "fontPt": 16,
+          "label": "Formen",
+          "label_i18n": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "textMode": "static",
+          "staticText": "findet / fand / haben gefunden",
+          "text": "findet / fand / haben gefunden",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "syn",
+          "xMm": 10,
+          "yMm": 53,
+          "wMm": 130,
+          "hMm": 14,
+          "fontPt": 12,
+          "label": "Synonyme",
+          "label_i18n": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "textMode": "static",
+          "staticText": "entdecken — обнаруживать\nheraussuchen — отыскивать\nmeinen — считать/полагать",
+          "text": "entdecken — обнаруживать\nheraussuchen — отыскивать\nmeinen — считать/полагать",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "examples",
+          "xMm": 10,
+          "yMm": 70,
+          "wMm": 130,
+          "hMm": 22,
+          "fontPt": 12,
+          "label": "Beispiele",
+          "label_i18n": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "textMode": "static",
+          "staticText": "Ich finde den Schlüssel nicht.\nDu musst eine Lösung finden.\nSie fand das lustig.\nWir haben einen Fehler gefunden.\n\nЯ не нахожу ключ.\nТебе нужно найти решение.\nОна считала это смешным.\nМы нашли ошибку.",
+          "text": "Ich finde den Schlüssel nicht.\nDu musst eine Lösung finden.\nSie fand das lustig.\nWir haben einen Fehler gefunden.\n\nЯ не нахожу ключ.\nТебе нужно найти решение.\nОна считала это смешным.\nМы нашли ошибку.",
+          "geomMode": "manual",
+          "geomPinned": true
+        }
+      ]
+    },
+    {
+      "id": "card_09_denken",
+      "title": "Card 9",
+      "cardWmm": 150,
+      "cardHmm": 105,
+      "selectedIndex": 0,
+      "notesByVerb": {},
+      "boxes": [
+        {
+          "id": "freqCorner",
+          "type": "frequencyDots",
+          "xMm": 6,
+          "yMm": 6,
+          "wMm": 26,
+          "hMm": 8,
+          "fontPt": 10,
+          "label": "Freq",
+          "label_i18n": {
+            "de": "Freq",
+            "ru": "Частота",
+            "en": "Frequency"
+          },
+          "textMode": "static",
+          "staticText": "",
+          "text": "",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "inf",
+          "xMm": 10,
+          "yMm": 8,
+          "wMm": 130,
+          "hMm": 16,
+          "fontPt": 28,
+          "label": "Infinitiv",
+          "label_i18n": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "textMode": "static",
+          "staticText": "denken",
+          "text": "denken",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "tr",
+          "xMm": 10,
+          "yMm": 27,
+          "wMm": 130,
+          "hMm": 10,
+          "fontPt": 13,
+          "label": "Übersetzungen",
+          "label_i18n": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "textMode": "static",
+          "staticText": "думать, считать, помнить/вспоминать (an + Akk.)",
+          "text": "думать, считать, помнить/вспоминать (an + Akk.)",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "forms",
+          "xMm": 10,
+          "yMm": 40,
+          "wMm": 130,
+          "hMm": 10,
+          "fontPt": 16,
+          "label": "Formen",
+          "label_i18n": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "textMode": "static",
+          "staticText": "denkt / dachte / haben gedacht",
+          "text": "denkt / dachte / haben gedacht",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "syn",
+          "xMm": 10,
+          "yMm": 53,
+          "wMm": 130,
+          "hMm": 14,
+          "fontPt": 12,
+          "label": "Synonyme",
+          "label_i18n": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "textMode": "static",
+          "staticText": "glauben — полагать\nüberlegen — обдумывать\nsich erinnern (an) — вспоминать",
+          "text": "glauben — полагать\nüberlegen — обдумывать\nsich erinnern (an) — вспоминать",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "examples",
+          "xMm": 10,
+          "yMm": 70,
+          "wMm": 130,
+          "hMm": 22,
+          "fontPt": 12,
+          "label": "Beispiele",
+          "label_i18n": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "textMode": "static",
+          "staticText": "Ich denke oft daran.\nDu musst daran denken.\nEr dachte, das sei einfach.\nIch habe an dich gedacht.\n\nЯ часто об этом думаю.\nТебе нужно об этом помнить.\nОн думал, что это просто.\nЯ думал о тебе.",
+          "text": "Ich denke oft daran.\nDu musst daran denken.\nEr dachte, das sei einfach.\nIch habe an dich gedacht.\n\nЯ часто об этом думаю.\nТебе нужно об этом помнить.\nОн думал, что это просто.\nЯ думал о тебе.",
+          "geomMode": "manual",
+          "geomPinned": true
+        }
+      ]
+    },
+    {
+      "id": "card_10_sprechen",
+      "title": "Card 10",
+      "cardWmm": 150,
+      "cardHmm": 105,
+      "selectedIndex": 0,
+      "notesByVerb": {},
+      "boxes": [
+        {
+          "id": "freqCorner",
+          "type": "frequencyDots",
+          "xMm": 6,
+          "yMm": 6,
+          "wMm": 26,
+          "hMm": 8,
+          "fontPt": 10,
+          "label": "Freq",
+          "label_i18n": {
+            "de": "Freq",
+            "ru": "Частота",
+            "en": "Frequency"
+          },
+          "textMode": "static",
+          "staticText": "",
+          "text": "",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "inf",
+          "xMm": 10,
+          "yMm": 8,
+          "wMm": 130,
+          "hMm": 16,
+          "fontPt": 28,
+          "label": "Infinitiv",
+          "label_i18n": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "textMode": "static",
+          "staticText": "sprechen",
+          "text": "sprechen",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "tr",
+          "xMm": 10,
+          "yMm": 27,
+          "wMm": 130,
+          "hMm": 10,
+          "fontPt": 13,
+          "label": "Übersetzungen",
+          "label_i18n": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "textMode": "static",
+          "staticText": "говорить, разговаривать, выступать",
+          "text": "говорить, разговаривать, выступать",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "forms",
+          "xMm": 10,
+          "yMm": 40,
+          "wMm": 130,
+          "hMm": 10,
+          "fontPt": 16,
+          "label": "Formen",
+          "label_i18n": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "textMode": "static",
+          "staticText": "spricht / sprach / haben gesprochen",
+          "text": "spricht / sprach / haben gesprochen",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "syn",
+          "xMm": 10,
+          "yMm": 53,
+          "wMm": 130,
+          "hMm": 14,
+          "fontPt": 12,
+          "label": "Synonyme",
+          "label_i18n": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "textMode": "static",
+          "staticText": "reden — говорить\nsich unterhalten — беседовать\nvortragen — выступать",
+          "text": "reden — говорить\nsich unterhalten — беседовать\nvortragen — выступать",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "examples",
+          "xMm": 10,
+          "yMm": 70,
+          "wMm": 130,
+          "hMm": 22,
+          "fontPt": 12,
+          "label": "Beispiele",
+          "label_i18n": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "textMode": "static",
+          "staticText": "Er spricht Deutsch.\nWir müssen darüber sprechen.\nSie sprach sehr leise.\nIch habe mit ihm gesprochen.\n\nОн говорит по-немецки.\nНам нужно об этом поговорить.\nОна говорила очень тихо.\nЯ поговорил с ним.",
+          "text": "Er spricht Deutsch.\nWir müssen darüber sprechen.\nSie sprach sehr leise.\nIch habe mit ihm gesprochen.\n\nОн говорит по-немецки.\nНам нужно об этом поговорить.\nОна говорила очень тихо.\nЯ поговорил с ним.",
+          "geomMode": "manual",
+          "geomPinned": true
+        }
+      ]
+    }
+  ],
+  "verbs": [
+    {
+      "inf": "werden",
+      "translations": [
+        "становиться",
+        "делаться",
+        "быть (пассив/будущее)"
+      ],
+      "forms": {
+        "praesens_3": "wird",
+        "praeteritum": "wurde",
+        "partizip_2": "geworden",
+        "auxiliary": "sein"
+      },
+      "synonyms": [
+        {
+          "word": "sich verwandeln",
+          "translation": "превращаться"
+        },
+        {
+          "word": "sich entwickeln",
+          "translation": "развиваться"
+        },
+        {
+          "word": "beginnen (kontextuell)",
+          "translation": "начинаться (по смыслу)"
+        }
+      ],
+      "examples": {
+        "praesens": "Er wird müde.",
+        "modal": "Er muss müde werden.",
+        "praeteritum": "Er wurde plötzlich still.",
+        "perfekt": "Er ist schnell müde geworden."
+      },
+      "examples_ru": {
+        "praesens": "Он становится уставшим.",
+        "modal": "Ему приходится становиться уставшим.",
+        "praeteritum": "Он вдруг стал тихим.",
+        "perfekt": "Он быстро стал уставшим."
+      },
+      "prefixes": [
+        {
+          "prefix": "Es wird + Adj.",
+          "meaning": "становится (о погоде/ситуации)",
+          "examples": [
+            "Es wird dunkel."
+          ],
+          "examples_ru": [
+            "Темнеет."
+          ]
+        }
+      ],
+      "freq": 5
+    },
+    {
+      "inf": "gehen",
+      "translations": [
+        "идти",
+        "ходить",
+        "работать (о механизме)"
+      ],
+      "forms": {
+        "praesens_3": "geht",
+        "praeteritum": "ging",
+        "partizip_2": "gegangen",
+        "auxiliary": "sein"
+      },
+      "synonyms": [
+        {
+          "word": "laufen",
+          "translation": "бежать/ходить"
+        },
+        {
+          "word": "sich begeben",
+          "translation": "отправляться"
+        },
+        {
+          "word": "funktionieren",
+          "translation": "функционировать"
+        }
+      ],
+      "examples": {
+        "praesens": "Er geht nach Hause.",
+        "modal": "Ich muss jetzt gehen.",
+        "praeteritum": "Gestern ging alles schief.",
+        "perfekt": "Wir sind früh gegangen."
+      },
+      "examples_ru": {
+        "praesens": "Он идёт домой.",
+        "modal": "Мне нужно сейчас идти.",
+        "praeteritum": "Вчера всё пошло наперекосяк.",
+        "perfekt": "Мы ушли рано."
+      },
+      "prefixes": [
+        {
+          "prefix": "losgehen",
+          "meaning": "отправляться / начинаться",
+          "examples": [
+            "Der Film geht um 20 Uhr los."
+          ],
+          "examples_ru": [
+            "Фильм начинается в 20:00."
+          ]
+        }
+      ],
+      "freq": 5
+    },
+    {
+      "inf": "machen",
+      "translations": [
+        "делать",
+        "выполнять",
+        "заставлять (в разговорной речи)"
+      ],
+      "forms": {
+        "praesens_3": "macht",
+        "praeteritum": "machte",
+        "partizip_2": "gemacht",
+        "auxiliary": "haben"
+      },
+      "synonyms": [
+        {
+          "word": "tun",
+          "translation": "делать"
+        },
+        {
+          "word": "erstellen",
+          "translation": "создавать"
+        },
+        {
+          "word": "verursachen",
+          "translation": "вызывать/причинять"
+        }
+      ],
+      "examples": {
+        "praesens": "Ich mache Kaffee.",
+        "modal": "Du musst deine Hausaufgaben machen.",
+        "praeteritum": "Er machte einen Fehler.",
+        "perfekt": "Wir haben das schon gemacht."
+      },
+      "examples_ru": {
+        "praesens": "Я делаю кофе.",
+        "modal": "Тебе нужно сделать домашку.",
+        "praeteritum": "Он сделал ошибку.",
+        "perfekt": "Мы уже это сделали."
+      },
+      "prefixes": [
+        {
+          "prefix": "anmachen",
+          "meaning": "включать / приставать (разг.)",
+          "examples": [
+            "Mach bitte das Licht an."
+          ],
+          "examples_ru": [
+            "Включи, пожалуйста, свет."
+          ]
+        }
+      ],
+      "freq": 5
+    },
+    {
+      "inf": "kommen",
+      "translations": [
+        "приходить",
+        "приезжать",
+        "подходить (подходить по смыслу)"
+      ],
+      "forms": {
+        "praesens_3": "kommt",
+        "praeteritum": "kam",
+        "partizip_2": "gekommen",
+        "auxiliary": "sein"
+      },
+      "synonyms": [
+        {
+          "word": "ankommen",
+          "translation": "прибывать"
+        },
+        {
+          "word": "erscheinen",
+          "translation": "появляться"
+        },
+        {
+          "word": "passen (kontextuell)",
+          "translation": "подходить"
+        }
+      ],
+      "examples": {
+        "praesens": "Er kommt später.",
+        "modal": "Kannst du morgen kommen?",
+        "praeteritum": "Plötzlich kam eine Idee.",
+        "perfekt": "Sie ist gerade gekommen."
+      },
+      "examples_ru": {
+        "praesens": "Он придёт позже.",
+        "modal": "Ты можешь прийти завтра?",
+        "praeteritum": "Вдруг пришла идея.",
+        "perfekt": "Она только что пришла."
+      },
+      "prefixes": [
+        {
+          "prefix": "zurückkommen",
+          "meaning": "возвращаться",
+          "examples": [
+            "Ich komme später zurück."
+          ],
+          "examples_ru": [
+            "Я вернусь позже."
+          ]
+        }
+      ],
+      "freq": 5
+    },
+    {
+      "inf": "sehen",
+      "translations": [
+        "видеть",
+        "смотреть",
+        "понимать (разг.: вижу)"
+      ],
+      "forms": {
+        "praesens_3": "sieht",
+        "praeteritum": "sah",
+        "partizip_2": "gesehen",
+        "auxiliary": "haben"
+      },
+      "synonyms": [
+        {
+          "word": "schauen",
+          "translation": "смотреть"
+        },
+        {
+          "word": "betrachten",
+          "translation": "рассматривать"
+        },
+        {
+          "word": "merken (kontextuell)",
+          "translation": "замечать/понимать"
+        }
+      ],
+      "examples": {
+        "praesens": "Ich sehe nichts.",
+        "modal": "Du musst dir das ansehen.",
+        "praeteritum": "Er sah sehr müde aus.",
+        "perfekt": "Wir haben den Film gesehen."
+      },
+      "examples_ru": {
+        "praesens": "Я ничего не вижу.",
+        "modal": "Тебе нужно это посмотреть.",
+        "praeteritum": "Он выглядел очень уставшим.",
+        "perfekt": "Мы посмотрели фильм."
+      },
+      "prefixes": [
+        {
+          "prefix": "ansehen",
+          "meaning": "смотреть / рассматривать",
+          "examples": [
+            "Sieh dir das mal an."
+          ],
+          "examples_ru": [
+            "Посмотри-ка на это."
+          ]
+        }
+      ],
+      "freq": 4
+    },
+    {
+      "inf": "geben",
+      "translations": [
+        "давать",
+        "предоставлять",
+        "существовать (es gibt)"
+      ],
+      "forms": {
+        "praesens_3": "gibt",
+        "praeteritum": "gab",
+        "partizip_2": "gegeben",
+        "auxiliary": "haben"
+      },
+      "synonyms": [
+        {
+          "word": "überreichen",
+          "translation": "вручать"
+        },
+        {
+          "word": "spenden",
+          "translation": "жертвовать"
+        },
+        {
+          "word": "zur Verfügung stellen",
+          "translation": "предоставлять"
+        }
+      ],
+      "examples": {
+        "praesens": "Er gibt mir das Buch.",
+        "modal": "Kannst du mir einen Tipp geben?",
+        "praeteritum": "Es gab ein Problem.",
+        "perfekt": "Sie hat mir geholfen und mir Zeit gegeben."
+      },
+      "examples_ru": {
+        "praesens": "Он даёт мне книгу.",
+        "modal": "Можешь дать мне совет?",
+        "praeteritum": "Была проблема.",
+        "perfekt": "Она помогла мне и дала мне время."
+      },
+      "prefixes": [
+        {
+          "prefix": "ausgeben",
+          "meaning": "тратить / выдавать",
+          "examples": [
+            "Ich gebe nicht viel Geld aus."
+          ],
+          "examples_ru": [
+            "Я не трачу много денег."
+          ]
+        }
+      ],
+      "freq": 4
+    },
+    {
+      "inf": "nehmen",
+      "translations": [
+        "брать",
+        "принимать",
+        "занимать (время)"
+      ],
+      "forms": {
+        "praesens_3": "nimmt",
+        "praeteritum": "nahm",
+        "partizip_2": "genommen",
+        "auxiliary": "haben"
+      },
+      "synonyms": [
+        {
+          "word": "holen",
+          "translation": "взять/принести"
+        },
+        {
+          "word": "greifen",
+          "translation": "схватить"
+        },
+        {
+          "word": "akzeptieren",
+          "translation": "принимать"
+        }
+      ],
+      "examples": {
+        "praesens": "Ich nehme den Bus.",
+        "modal": "Du musst diese Tablette nehmen.",
+        "praeteritum": "Er nahm das Angebot an.",
+        "perfekt": "Wir haben einen Taxi genommen."
+      },
+      "examples_ru": {
+        "praesens": "Я еду на автобусе. (букв. “беру автобус”)",
+        "modal": "Тебе нужно принять эту таблетку.",
+        "praeteritum": "Он принял предложение.",
+        "perfekt": "Мы взяли такси."
+      },
+      "prefixes": [
+        {
+          "prefix": "annehmen",
+          "meaning": "принимать (предложение/посылку)",
+          "examples": [
+            "Ich nehme das Angebot an."
+          ],
+          "examples_ru": [
+            "Я принимаю это предложение."
+          ]
+        }
+      ],
+      "freq": 4
+    },
+    {
+      "inf": "finden",
+      "translations": [
+        "находить",
+        "считать (по мнению)",
+        "обнаруживать"
+      ],
+      "forms": {
+        "praesens_3": "findet",
+        "praeteritum": "fand",
+        "partizip_2": "gefunden",
+        "auxiliary": "haben"
+      },
+      "synonyms": [
+        {
+          "word": "entdecken",
+          "translation": "обнаруживать"
+        },
+        {
+          "word": "heraussuchen",
+          "translation": "отыскивать"
+        },
+        {
+          "word": "meinen",
+          "translation": "считать/полагать"
+        }
+      ],
+      "examples": {
+        "praesens": "Ich finde den Schlüssel nicht.",
+        "modal": "Du musst eine Lösung finden.",
+        "praeteritum": "Sie fand das lustig.",
+        "perfekt": "Wir haben einen Fehler gefunden."
+      },
+      "examples_ru": {
+        "praesens": "Я не нахожу ключ.",
+        "modal": "Тебе нужно найти решение.",
+        "praeteritum": "Она считала это смешным.",
+        "perfekt": "Мы нашли ошибку."
+      },
+      "prefixes": [
+        {
+          "prefix": "wiederfinden",
+          "meaning": "снова найти / узнать",
+          "examples": [
+            "Ich habe mich im Spiegel wiedergefunden."
+          ],
+          "examples_ru": [
+            "Я снова узнал себя в зеркале."
+          ]
+        }
+      ],
+      "freq": 3
+    },
+    {
+      "inf": "denken",
+      "translations": [
+        "думать",
+        "считать",
+        "помнить/вспоминать (an + Akk.)"
+      ],
+      "forms": {
+        "praesens_3": "denkt",
+        "praeteritum": "dachte",
+        "partizip_2": "gedacht",
+        "auxiliary": "haben"
+      },
+      "synonyms": [
+        {
+          "word": "glauben",
+          "translation": "полагать"
+        },
+        {
+          "word": "überlegen",
+          "translation": "обдумывать"
+        },
+        {
+          "word": "sich erinnern (an)",
+          "translation": "вспоминать"
+        }
+      ],
+      "examples": {
+        "praesens": "Ich denke oft daran.",
+        "modal": "Du musst daran denken.",
+        "praeteritum": "Er dachte, das sei einfach.",
+        "perfekt": "Ich habe an dich gedacht."
+      },
+      "examples_ru": {
+        "praesens": "Я часто об этом думаю.",
+        "modal": "Тебе нужно об этом помнить.",
+        "praeteritum": "Он думал, что это просто.",
+        "perfekt": "Я думал о тебе."
+      },
+      "prefixes": [
+        {
+          "prefix": "nachdenken (über)",
+          "meaning": "размышлять (о)",
+          "examples": [
+            "Ich denke über die Lösung nach."
+          ],
+          "examples_ru": [
+            "Я размышляю о решении."
+          ]
+        }
+      ],
+      "freq": 3
+    },
+    {
+      "inf": "sprechen",
+      "translations": [
+        "говорить",
+        "разговаривать",
+        "выступать"
+      ],
+      "forms": {
+        "praesens_3": "spricht",
+        "praeteritum": "sprach",
+        "partizip_2": "gesprochen",
+        "auxiliary": "haben"
+      },
+      "synonyms": [
+        {
+          "word": "reden",
+          "translation": "говорить"
+        },
+        {
+          "word": "sich unterhalten",
+          "translation": "беседовать"
+        },
+        {
+          "word": "vortragen",
+          "translation": "выступать"
+        }
+      ],
+      "examples": {
+        "praesens": "Er spricht Deutsch.",
+        "modal": "Wir müssen darüber sprechen.",
+        "praeteritum": "Sie sprach sehr leise.",
+        "perfekt": "Ich habe mit ihm gesprochen."
+      },
+      "examples_ru": {
+        "praesens": "Он говорит по-немецки.",
+        "modal": "Нам нужно об этом поговорить.",
+        "praeteritum": "Она говорила очень тихо.",
+        "perfekt": "Я поговорил с ним."
+      },
+      "prefixes": [
+        {
+          "prefix": "ansprechen",
+          "meaning": "заговорить с кем-то / затронуть тему",
+          "examples": [
+            "Ich möchte dich kurz ansprechen."
+          ],
+          "examples_ru": [
+            "Я хочу с тобой кратко поговорить."
+          ]
+        }
+      ],
+      "freq": 3
+    }
+  ]
+}

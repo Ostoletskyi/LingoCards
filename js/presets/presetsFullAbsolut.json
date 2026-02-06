@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 2,
+  "id": "verbs_full",
+  "title": "Verbs — Full",
+  "description": "Full verb card layout: frequency, infinitive, forms, translations, examples+prefixes, synonyms.",
+  "createdAt": "2026-01-06T00:00:00.000Z",
+  "updatedAt": "2026-01-06T00:00:00.000Z",
+
+  "card": {
+    "widthMm": 150,
+    "heightMm": 105,
+    "marginMm": 6,
+    "padMm": 0
+  },
+
+  "defaults": {
+    "fontFamily": "system-ui, sans-serif",
+    "color": "rgba(255,255,255,0.86)",
+    "mutedColor": "rgba(255,255,255,0.52)",
+    "lineHeight": 1.25,
+    "box": {
+      "radiusPx": 10,
+      "padXPx": 8,
+      "padYPx": 6,
+      "fill": "rgba(255,255,255,0.06)",
+      "stroke": "rgba(255,255,255,0.18)",
+      "strokeSelected": "rgba(56,189,248,0.95)",
+      "strokeEditing": "rgba(34,197,94,0.95)"
+    }
+  },
+
+  "bindProfile": {
+    "name": "verbs_v1",
+    "hints": {
+      "infinitive": ["inf", "Inf", "lemma", "base"],
+      "translations": ["meanings", "tr", "translation", "meaning"],
+      "forms": ["forms", "formsLine"],
+      "frequency": ["freq", "frequency", "rank"],
+      "synonyms": ["synonyms", "syns"],
+      "rektion": ["rektion"],
+      "examples": ["examples"]
+    }
+  },
+
+  "items": [
+    {
+      "id": "freq",
+      "role": "meta",
+      "type": "frequencyDots",
+      "xMm": 6,
+      "yMm": 6,
+      "wMm": 26,
+      "hMm": 10,
+      "bind": "frequency",
+      "priority": 1,
+      "options": {
+        "maxDots": 5,
+        "map": {
+          "5": "green",
+          "4": "yellow",
+          "3": "red",
+          "2": "brown",
+          "1": "black"
+        },
+        "fallback": 0
+      }
+    },
+
+    {
+      "id": "inf",
+      "role": "header",
+      "type": "text",
+      "xMm": 34,
+      "yMm": 6,
+      "wMm": 82,
+      "hMm": 12,
+      "bind": "infinitive",
+      "priority": 1,
+      "text": {
+        "fontPt": 26,
+        "align": "left",
+        "wrap": false,
+        "ellipsis": true,
+        "transform": "none"
+      },
+      "autosize": {
+        "enabled": true,
+        "mode": "shrinkToFit",
+        "minFontPt": 16,
+        "maxFontPt": 28
+      },
+      "fallback": "—"
+    },
+
+    {
+      "id": "forms",
+      "role": "meta",
+      "type": "text",
+      "xMm": 118,
+      "yMm": 6,
+      "wMm": 26,
+      "hMm": 22,
+      "bind": "formsLine",
+      "priority": 2,
+      "text": {
+        "fontPt": 13,
+        "align": "left",
+        "wrap": true
+      },
+      "autosize": {
+        "enabled": true,
+        "mode": "shrinkToFit",
+        "minFontPt": 9,
+        "maxFontPt": 13
+      },
+      "fallback": ""
+    },
+
+    {
+      "id": "tr",
+      "role": "subheader",
+      "type": "text",
+      "xMm": 34,
+      "yMm": 18,
+      "wMm": 110,
+      "hMm": 10,
+      "bind": "translationsLine",
+      "priority": 2,
+      "text": {
+        "fontPt": 12,
+        "align": "left",
+        "wrap": false,
+        "ellipsis": true
+      },
+      "format": {
+        "type": "join",
+        "sep": ", ",
+        "maxItems": 4
+      },
+      "fallback": ""
+    },
+
+    {
+      "id": "body",
+      "role": "content",
+      "type": "richText",
+      "xMm": 6,
+      "yMm": 30,
+      "wMm": 138,
+      "hMm": 54,
+      "bind": "examplesAndPrefixes",
+      "priority": 3,
+      "text": {
+        "fontPt": 11,
+        "align": "left",
+        "wrap": true
+      },
+      "autosize": {
+        "enabled": true,
+        "mode": "shrinkToFit",
+        "minFontPt": 8,
+        "maxFontPt": 12
+      },
+      "format": {
+        "type": "sections",
+        "sections": [
+          {
+            "title": "Примеры",
+            "bind": "examples",
+            "style": "bullets",
+            "maxItems": 5
+          },
+          {
+            "title": "Приставки",
+            "bind": "prefixes",
+            "style": "inlineChips",
+            "maxItems": 3
+          },
+          {
+            "title": "Rektion",
+            "bind": "rektion",
+            "style": "inline",
+            "maxItems": 3
+          }
+        ]
+      },
+      "fallback": ""
+    },
+
+    {
+      "id": "syn",
+      "role": "footer",
+      "type": "text",
+      "xMm": 6,
+      "yMm": 86,
+      "wMm": 138,
+      "hMm": 13,
+      "bind": "synonymsLine",
+      "priority": 4,
+      "text": {
+        "fontPt": 10,
+        "align": "left",
+        "wrap": true
+      },
+      "autosize": {
+        "enabled": true,
+        "mode": "shrinkToFit",
+        "minFontPt": 8,
+        "maxFontPt": 10
+      },
+      "format": {
+        "type": "joinPairs",
+        "pairSep": " — ",
+        "itemSep": " • ",
+        "maxItems": 3
+      },
+      "fallback": ""
+    }
+  ]
+}

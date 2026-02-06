@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LingoCard Editor — Help</title>
+  <style>
+    :root{
+      --bg: #0b1020;
+      --panel: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.14);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.70);
+      --accent: rgba(56,189,248,0.95);
+    }
+    body{
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(56,189,248,0.10), transparent 55%),
+                  radial-gradient(900px 500px at 80% 10%, rgba(239,68,68,0.10), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+    }
+    .wrap{ max-width: 980px; margin: 0 auto; padding: 26px 18px 50px; }
+    h1{ margin: 0 0 10px; font-size: 22px; letter-spacing: 0.2px; }
+    .sub{ color: var(--muted); margin-bottom: 18px; }
+    .card{
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: 16px;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.35);
+      padding: 16px 16px 8px;
+      margin: 14px 0;
+    }
+    h2{ font-size: 18px; margin: 0 0 8px; }
+    ul{ margin: 10px 0 14px 22px; }
+    li{ margin: 6px 0; }
+    .kbd{
+      display: inline-block;
+      padding: 1px 7px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-bottom-color: rgba(255,255,255,0.28);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+      font-size: 12px;
+      color: rgba(255,255,255,0.88);
+      transform: translateY(-1px);
+    }
+    .accent{ color: var(--accent); font-weight: 700; }
+    .hr{ height: 1px; background: rgba(255,255,255,0.10); margin: 12px 0; }
+    .note{ color: var(--muted); font-size: 13px; margin-top: 8px; }
+    pre{
+      margin: 10px 0 14px;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.04);
+      overflow:auto;
+      color: rgba(255,255,255,0.90);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+    code{ color: rgba(255,255,255,0.92); }
+
+    .topbar{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom: 10px; }
+    .closeBtn{
+      appearance:none; border:1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.92);
+      padding: 8px 12px; border-radius: 12px; cursor: pointer;
+      box-shadow: 0 0 0 rgba(244,114,182,0.0);
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+    }
+    .closeBtn:hover{ transform: translateY(-1px); background: rgba(255,255,255,0.09); box-shadow: 0 0 18px rgba(244,114,182,0.35); }
+    .closeBtn:active{ transform: translateY(0px); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <h1>LingoCard Editor — Instructions</h1>
+      <button class="closeBtn" id="closeBtn" type="button">Закрыть / Close</button>
+    </div>
+    <div class="sub">One app, two lists (left: verbs / source, right: created cards), one preview, and PDF export that matches the preview.</div>
+
+    <div class="card" id="ru">
+      <h2>Русский</h2>
+      <ul>
+        <li><span class="accent">Сирена</span> (2 огонька) переключает активный список: <b>Source</b> (слева) или <b>Cards</b> (справа). Навигационные стрелки и PDF-кнопки работают по активному режиму.</li>
+        <li><span class="accent">Режим Edit</span>: включите кнопку <b>Edit</b>, чтобы двигать блоки и править текст.</li>
+        <li><b>Перемещение</b>: клик по блоку → перетаскивание мышью. <span class="kbd">Shift</span> + клик — мультивыбор. Пустое место → рамка-выделение.</li>
+        <li><b>Редактирование текста</b>: двойной клик по блоку → ввод. <span class="kbd">Enter</span> — сохранить, <span class="kbd">Esc</span> — отменить.</li>
+        <li><b>Геометрия (голубые кружки)</b>:
+          <ul>
+            <li>кружок на середине <b>правой</b> стороны — меняет <b>ширину</b> блока;</li>
+            <li>кружок на середине <b>нижней</b> стороны — меняет <b>высоту</b> блока;</li>
+            <li>кружок в <b>правом верхнем углу</b> — <b>поворот</b> (примерно до ±90°).</li>
+          </ul>
+        </li>
+        <li><b>Автоподгонка</b>: если текст из JSON не помещается, блок автоматически увеличится, чтобы в превью ничего не обрезалось.</li>
+        <li><b>PDF</b>: используйте кнопки PDF для текущей карточки или для всех. В PDF не печатаются подсказки, рамки выделения и управляющие кружки.</li>
+        <li><b>Линейки / Сетка / Магнит</b>: помогают ровно расставлять блоки. Магнит привязывает перемещение к сетке.</li>
+      </ul>
+      <div class="note">Совет: сначала расставьте блоки как вам нравится, затем экспортируйте PDF — WYSIWYG (что в превью, то и в PDF).</div>
+
+      <div class="hr"></div>
+
+      <h2>Эталонный JSON (одна карточка)</h2>
+      <div class="sub" style="margin:0 0 10px;">Правый и левый списки умеют отображать название карточки из поля <b>title</b>. Если названия нет — будет “Card 1/2/3…”.</div>
+      <pre><code>{
+  "version": "1.0",
+  "lang": "de-ru",
+  "title": "Gehen",
+  "blocks": [
+    { "type": "word", "text": "gehen" },
+    { "type": "translation", "text": "идти" },
+    { "type": "form", "text": "ist gegangen" },
+    { "type": "example", "text": "Ich gehe nach Hause." }
+  ]
+}</code></pre>
+      <div class="note">Опционально: <span class="kbd">id</span>, <span class="kbd">meta</span>, геометрия блоков (<span class="kbd">x/y/w/h/rot</span>) и привязки (<span class="kbd">bind</span>).</div>
+
+      <div class="hr"></div>
+      <h2>Как попросить ChatGPT сгенерировать список глаголов (JSON)</h2>
+      <pre><code>Сгенерируй список из 20 немецких глаголов уровня A1–A2.
+Для каждого глагола дай:
+- инфинитив
+- перевод на русский
+- форму Perfekt
+- короткое примерное предложение
+
+Ответ верни строго в JSON, совместимом с LingoCard.
+Формат: массив карточек, где у каждой есть поля version, lang, title, blocks[].</code></pre>
+      <div class="note">Важно: попросите “строго JSON” и “без лишнего текста”. Любой лишний текст сломает импорт.</div>
+    </div>
+
+    <div class="card" id="de">
+      <h2>Deutsch</h2>
+      <ul>
+        <li>Die <span class="accent">Sirene</span> (2 Lichter) schaltet den aktiven Modus um: <b>Source</b> (links) oder <b>Cards</b> (rechts). Pfeile und PDF-Buttons folgen dem aktiven Modus.</li>
+        <li><span class="accent">Edit-Modus</span>: mit <b>Edit</b> aktivieren, um Blöcke zu bewegen und Text zu ändern.</li>
+        <li><b>Verschieben</b>: Block anklicken → ziehen. <span class="kbd">Shift</span> + Klick = Mehrfachauswahl. In freien Bereich klicken/ziehen = Rahmenauswahl.</li>
+        <li><b>Text bearbeiten</b>: Doppelklick auf einen Block → Eingabe. <span class="kbd">Enter</span> = speichern, <span class="kbd">Esc</span> = abbrechen.</li>
+        <li><b>Geometrie (türkisfarbene Punkte)</b>:
+          <ul>
+            <li>Punkt in der Mitte der <b>rechten</b> Kante = <b>Breite</b> ändern;</li>
+            <li>Punkt in der Mitte der <b>unteren</b> Kante = <b>Höhe</b> ändern;</li>
+            <li>Punkt oben <b>rechts</b> = <b>Drehen</b> (bis ca. ±90°).</li>
+          </ul>
+        </li>
+        <li><b>Auto-Fit</b>: Wenn Text aus dem JSON nicht passt, wird der Block automatisch vergrößert, damit im Preview nichts abgeschnitten wird.</li>
+        <li><b>PDF</b>: PDF für aktuelle Karte oder alle Karten exportieren. Hinweise, Auswahlrahmen und Punkte werden nicht gedruckt.</li>
+        <li><b>Lineale / Raster / Magnet</b>: helfen beim sauberen Ausrichten. Magnet richtet am Raster aus.</li>
+      </ul>
+
+      <div class="hr"></div>
+      <h2>JSON-Vorlage (eine Karte)</h2>
+      <pre><code>{
+  "version": "1.0",
+  "lang": "de-ru",
+  "title": "Gehen",
+  "blocks": [
+    { "type": "word", "text": "gehen" },
+    { "type": "translation", "text": "идти" },
+    { "type": "form", "text": "ist gegangen" },
+    { "type": "example", "text": "Ich gehe nach Hause." }
+  ]
+}</code></pre>
+
+      <div class="hr"></div>
+      <h2>ChatGPT-Prompt (Verb-Liste als JSON)</h2>
+      <pre><code>Erstelle eine Liste mit 20 deutschen Verben (Niveau A1–A2).
+Für jedes Verb gib:
+- Infinitiv
+- russische Übersetzung
+- Perfekt-Form
+- ein kurzes Beispielsatz
+
+Antworte strikt als JSON (ohne Extra-Text), kompatibel mit LingoCard.
+Format: Array von Karten mit version, lang, title, blocks[].</code></pre>
+    </div>
+
+    <div class="card" id="en">
+      <h2>English</h2>
+      <ul>
+        <li>The <span class="accent">siren</span> (two lights) switches the active mode: <b>Source</b> (left) or <b>Cards</b> (right). Arrows and PDF buttons follow the active mode.</li>
+        <li><span class="accent">Edit mode</span>: enable <b>Edit</b> to move blocks and change text.</li>
+        <li><b>Move</b>: click a block → drag. <span class="kbd">Shift</span> + click = multi-select. Drag on empty space = marquee select.</li>
+        <li><b>Edit text</b>: double-click a block → type. <span class="kbd">Enter</span> = save, <span class="kbd">Esc</span> = cancel.</li>
+        <li><b>Geometry (cyan knobs)</b>:
+          <ul>
+            <li>middle of the <b>right</b> edge = resize <b>width</b>;</li>
+            <li>middle of the <b>bottom</b> edge = resize <b>height</b>;</li>
+            <li><b>top-right</b> corner knob = <b>rotate</b> (up to about ±90°).</li>
+          </ul>
+        </li>
+        <li><b>Auto-fit</b>: if JSON text doesn’t fit, the block expands until the preview shows everything (no clipping).</li>
+        <li><b>PDF</b>: export current / all cards. Hints, selection outlines, and knobs are not printed.</li>
+        <li><b>Rulers / Grid / Snap</b>: helps align. Snap locks movement to the grid.</li>
+      </ul>
+
+      <div class="hr"></div>
+      <h2>Canonical JSON (single card)</h2>
+      <pre><code>{
+  "version": "1.0",
+  "lang": "de-ru",
+  "title": "Gehen",
+  "blocks": [
+    { "type": "word", "text": "gehen" },
+    { "type": "translation", "text": "идти" },
+    { "type": "form", "text": "ist gegangen" },
+    { "type": "example", "text": "Ich gehe nach Hause." }
+  ]
+}</code></pre>
+
+      <div class="hr"></div>
+      <h2>ChatGPT prompt (verbs list as JSON)</h2>
+      <pre><code>Generate a list of 20 German verbs (A1–A2).
+For each verb provide:
+- infinitive
+- Russian translation
+- Perfekt form
+- a short example sentence
+
+Return strictly as JSON (no extra text), compatible with LingoCard.
+Format: array of cards with version, lang, title, blocks[].</code></pre>
+    </div>
+
+    <div class="hr"></div>
+    <div class="note">If you ever see something in the preview that you don’t want in PDF — that’s a bug. The whole point is: preview == PDF.</div>
+    <div class="note">© 2026 Oleksii Ostoletskyi. All rights reserved.</div>
+  </div>
+
+  <script>
+    (function(){
+      const btn = document.getElementById("closeBtn");
+      if (!btn) return;
+      btn.addEventListener("click", () => {
+        // window.close() works if the page was opened by script / user gesture.
+        try { window.close(); } catch(_) {}
+        // Fallback: navigate back if close is blocked by the browser.
+        try { history.back(); } catch(_) {}
+      });
+    })();
+  </script>
+</body>
+</html>

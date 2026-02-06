@@ -1,0 +1,102 @@
+{
+  "schemaVersion": "1.0",
+
+  "meta": {
+    "name": "LingoCard Verb Schema",
+    "description": "Canonical structure of a verb card",
+    "author": "LingoCard",
+    "stable": true
+  },
+
+  "limits": {
+    "maxCustomBlocks": 5
+  },
+
+  "blockOrder": [
+    "inf",
+    "translations",
+    "forms",
+    "prefix",
+    "synonyms",
+    "examples",
+    "rek",
+    "custom_1",
+    "custom_2",
+    "custom_3",
+    "custom_4",
+    "custom_5",
+    "freq"
+  ],
+
+  "blocks": {
+    "inf": {
+      "role": "core",
+      "required": true,
+      "title": "Infinitiv",
+      "acceptsKeys": ["inf"]
+    },
+
+    "translations": {
+      "role": "core",
+      "required": true,
+      "title": "Übersetzungen",
+      "acceptsKeyPattern": "^tr_\\d+_(ru|ctx)$"
+    },
+
+    "forms": {
+      "role": "core",
+      "required": true,
+      "title": "Formen",
+      "acceptsKeys": [
+        "forms_p3",
+        "forms_prat",
+        "forms_aux",
+        "forms_p2"
+      ]
+    },
+
+    "prefix": {
+      "role": "core",
+      "required": false,
+      "title": "Präfix",
+      "acceptsKeys": [
+        "pref_type",
+        "pref_text"
+      ]
+    },
+
+    "synonyms": {
+      "role": "optional",
+      "required": false,
+      "title": "Synonyme",
+      "acceptsKeyPattern": "^syn_\\d+_(de|ru)$"
+    },
+
+    "examples": {
+      "role": "optional",
+      "required": false,
+      "title": "Beispiele",
+      "acceptsKeyPattern": "^ex_\\d+_(de|ru|tag)$"
+    },
+
+    "rek": {
+      "role": "optional",
+      "required": false,
+      "title": "Redemittel",
+      "acceptsKeyPattern": "^rek_\\d+_(de|ru)$"
+    },
+
+    "freq": {
+      "role": "meta",
+      "required": false,
+      "title": "Frequenz",
+      "acceptsKeys": ["freq"]
+    },
+
+    "custom_1": { "role": "custom", "required": false },
+    "custom_2": { "role": "custom", "required": false },
+    "custom_3": { "role": "custom", "required": false },
+    "custom_4": { "role": "custom", "required": false },
+    "custom_5": { "role": "custom", "required": false }
+  }
+}

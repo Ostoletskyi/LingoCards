@@ -1,0 +1,199 @@
+{
+  "version": 1,
+  "kind": "cards-right",
+  "passport": {
+    "app": "LingoCard-next",
+    "tag": "v0.9.0-editor-stable",
+    "commit": "12cae045e...",
+    "build": "YYYY-MM-DD HH:MM:SS",
+    "exportedAt": "2026-01-14T15:34:28Z",
+    "kind": "cards-right",
+    "scope": "right",
+    "schema": 1,
+    "bindMode": null,
+    "bindScan": null,
+    "viewMode": "cards"
+  },
+  "card": {
+    "widthMm": 150,
+    "heightMm": 105
+  },
+  "cards": [
+    {
+      "id": "card_TEMPLATE",
+      "title": "Card 1",
+      "cardWmm": 150,
+      "cardHmm": 105,
+      "selectedIndex": 0,
+      "notesByVerb": {},
+      "boxes": [
+        {
+          "id": "freqCorner",
+          "type": "frequencyDots",
+          "xMm": 6,
+          "yMm": 6,
+          "wMm": 26,
+          "hMm": 8,
+          "fontPt": 10,
+          "label": "Freq",
+          "label_i18n": {
+            "de": "Freq",
+            "ru": "Частота",
+            "en": "Frequency"
+          },
+          "textMode": "static",
+          "staticText": "",
+          "text": "",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "inf",
+          "xMm": 10,
+          "yMm": 8,
+          "wMm": 130,
+          "hMm": 16,
+          "fontPt": 28,
+          "label": "Infinitiv",
+          "label_i18n": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "textMode": "static",
+          "staticText": "",
+          "text": "",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "tr",
+          "xMm": 10,
+          "yMm": 27,
+          "wMm": 130,
+          "hMm": 10,
+          "fontPt": 13,
+          "label": "Übersetzungen",
+          "label_i18n": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "textMode": "static",
+          "staticText": "",
+          "text": "",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "forms",
+          "xMm": 10,
+          "yMm": 40,
+          "wMm": 130,
+          "hMm": 10,
+          "fontPt": 16,
+          "label": "Formen",
+          "label_i18n": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "textMode": "static",
+          "staticText": "",
+          "text": "",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "syn",
+          "xMm": 10,
+          "yMm": 53,
+          "wMm": 130,
+          "hMm": 14,
+          "fontPt": 12,
+          "label": "Synonyme",
+          "label_i18n": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "textMode": "static",
+          "staticText": "",
+          "text": "",
+          "geomMode": "manual",
+          "geomPinned": true
+        },
+        {
+          "id": "examples",
+          "xMm": 10,
+          "yMm": 70,
+          "wMm": 130,
+          "hMm": 22,
+          "fontPt": 12,
+          "label": "Beispiele",
+          "label_i18n": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "textMode": "static",
+          "staticText": "",
+          "text": "",
+          "geomMode": "manual",
+          "geomPinned": true
+        }
+      ]
+    }
+  ],
+  "verbs": [
+    {
+      "inf": "werden",
+      "translations": [
+        "становиться",
+        "делаться",
+        "быть (пассив/будущее)"
+      ],
+      "forms": {
+        "praesens_3": "wird",
+        "praeteritum": "wurde",
+        "partizip_2": "geworden",
+        "auxiliary": "sein"
+      },
+      "synonyms": [
+        {
+          "word": "sich verwandeln",
+          "translation": "превращаться"
+        },
+        {
+          "word": "sich entwickeln",
+          "translation": "развиваться"
+        }
+      ],
+      "examples": {
+        "praesens": "Er wird müde.",
+        "modal": "Er muss müde werden.",
+        "praeteritum": "Er wurde plötzlich still.",
+        "perfekt": "Er ist schnell müde geworden."
+      },
+      "examples_ru": {
+        "praesens": "Он становится усталым.",
+        "modal": "Ему приходится становиться усталым. (контекстно)",
+        "praeteritum": "Он вдруг стал тихим.",
+        "perfekt": "Он быстро стал усталым."
+      },
+      "prefixes": [
+        {
+          "prefix": "werden + ...",
+          "meaning": "контекстные варианты",
+          "examples": [
+            "Es wird dunkel."
+          ],
+          "examples_ru": [
+            "Темнеет."
+          ]
+        }
+      ],
+      "freq": 5
+    }
+  ]
+}

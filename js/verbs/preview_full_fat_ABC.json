@@ -1,0 +1,143 @@
+{
+  "schema": "lingocard-verbs-v2.2-preview",
+  "meta": {
+    "language": "de",
+    "createdAt": "2026-01-08T19:25:00Z",
+    "notes": "Preview pack: 3 verbs with full fields (frequency, synonyms, forms, multiple translations, examples). Strategies: A=example_ru only, B=examples_ru full, C=example_ru (for praesens) + prefix examples."
+  },
+  "verbs": [
+    {
+      "id": "A_verstehen",
+      "frequency": 5,
+      "infinitive": "verstehen",
+      "translations": [
+        "понимать",
+        "осознавать",
+        "разбираться (в чём‑то)"
+      ],
+      "synonyms": [
+        {
+          "word": "begreifen",
+          "translation": "постигать"
+        },
+        {
+          "word": "kapieren",
+          "translation": "схватывать (разг.)"
+        }
+      ],
+      "forms": {
+        "praesens_3": "versteht",
+        "praeteritum": "verstand",
+        "partizip_2": "verstanden",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er versteht die Aufgabe.",
+        "modal": "Ich muss das verstehen.",
+        "praeteritum": "Er verstand mich sofort.",
+        "partizip": "Wir haben alles verstanden.",
+        "impersonal": "Es versteht sich von selbst."
+      },
+      "example_ru": "Он понимает задание.",
+      "prefixes": [],
+      "debug": {
+        "strategy": "A"
+      }
+    },
+    {
+      "id": "B_gehen",
+      "frequency": 5,
+      "infinitive": "gehen",
+      "translations": [
+        "идти",
+        "ходить",
+        "работать (о механизме)"
+      ],
+      "synonyms": [
+        {
+          "word": "laufen",
+          "translation": "идти/бежать"
+        },
+        {
+          "word": "spazieren",
+          "translation": "гулять"
+        }
+      ],
+      "forms": {
+        "praesens_3": "geht",
+        "praeteritum": "ging",
+        "partizip_2": "gegangen",
+        "auxiliary": "ist"
+      },
+      "examples": {
+        "praesens": "Er geht jeden Tag zur Arbeit.",
+        "modal": "Ich muss jetzt gehen.",
+        "praeteritum": "Gestern ging er sehr spät nach Hause.",
+        "partizip": "Wir sind nach Hause gegangen.",
+        "impersonal": "Es geht um Vertrauen."
+      },
+      "examples_ru": {
+        "praesens": "Он каждый день ходит на работу.",
+        "modal": "Мне нужно сейчас идти.",
+        "praeteritum": "Вчера он очень поздно пошёл домой.",
+        "partizip": "Мы пошли домой.",
+        "impersonal": "Речь идёт о доверии."
+      },
+      "prefixes": [],
+      "debug": {
+        "strategy": "B"
+      }
+    },
+    {
+      "id": "C_annehmen",
+      "frequency": 4,
+      "infinitive": "annehmen",
+      "translations": [
+        "принимать",
+        "предполагать",
+        "считать (что…)"
+      ],
+      "synonyms": [
+        {
+          "word": "akzeptieren",
+          "translation": "принимать (соглашаться)"
+        },
+        {
+          "word": "vermuten",
+          "translation": "предполагать"
+        }
+      ],
+      "forms": {
+        "praesens_3": "nimmt an",
+        "praeteritum": "nahm an",
+        "partizip_2": "angenommen",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er nimmt das Angebot an.",
+        "modal": "Ich muss das Angebot annehmen.",
+        "praeteritum": "Gestern nahm er das Angebot an.",
+        "partizip": "Wir haben das Angebot angenommen.",
+        "impersonal": "Man nimmt an, dass er schon unterwegs ist."
+      },
+      "example_ru": "Он принимает предложение.",
+      "prefixes": [
+        {
+          "prefix": "annehmen",
+          "meaning": "принимать; предполагать",
+          "examples": [
+            "Ich nehme die Einladung gern an.",
+            "Wir nehmen an, dass der Termin passt."
+          ],
+          "examples_ru": [
+            "Я с удовольствием принимаю приглашение.",
+            "Мы предполагаем, что дата подходит."
+          ]
+        }
+      ],
+      "debug": {
+        "strategy": "C"
+      }
+    }
+  ]
+}

@@ -1,0 +1,603 @@
+:root {
+  --bg: #0b0f14;
+  --panel: #101826;
+  --panel2: #0f172a;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #38bdf8;
+  --danger: #ef4444;
+  --ok: #22c55e;
+  --border: rgba(255,255,255,0.10);
+  --shadow: rgba(0,0,0,0.35);
+
+  /* Responsive controls */
+  --lc-btn-font: 14px;
+  --lc-btn-pad-y: 8px;
+  --lc-btn-pad-x: 10px;
+  --lc-btn-gap: 8px;
+  --lc-title-font: 18px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+html, body { height: 100%; margin: 0; background: var(--bg); color: var(--text); overflow: hidden; }
+#appRoot { height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+
+#topBar {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 12px;
+  background: linear-gradient(180deg, var(--panel), var(--panel2));
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 6px 18px var(--shadow);
+}
+
+#topBar > div{ flex-wrap: wrap; }
+
+#lcTitle{ font-size: var(--lc-title-font); }
+
+#lcTopActions{ flex-wrap: wrap; gap: var(--lc-btn-gap); }
+
+/* ===== Top bar grouping (desktop tidiness) ===== */
+.lc-top-group{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--lc-btn-gap);
+  padding-right: 12px;
+  margin-right: 2px;
+  border-right: 1px solid rgba(255,255,255,0.10);
+}
+.lc-top-group:last-child{
+  border-right: none;
+  padding-right: 0;
+}
+
+/* Slightly tighter on wide screens so the bar looks like a toolbar, not a paragraph */
+@media (min-width: 1100px){
+  #lcTopActions{ gap: 12px; }
+  .lc-top-group{ padding-right: 14px; }
+}
+
+#mainRow { flex: 1; display: flex; min-height: 0; }
+
+#leftPanel {
+  width: 280px; min-width: 220px;
+  border-right: 1px solid var(--border);
+  background: rgba(255,255,255,0.02);
+  padding: 10px;
+  /* Prevent a second scrollbar: lists inside panels handle scrolling */
+  overflow: hidden;
+}
+
+#cardHost {
+  flex: 1; padding: 12px;
+  overflow: hidden;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Right panel (cards list / exports) */
+#rightPanel{
+  width: 280px;
+  min-width: 220px;
+  border-left: 1px solid var(--border);
+  background: rgba(255,255,255,0.02);
+  padding: 10px;
+  overflow: hidden;
+}
+
+.lc-right-title{
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.lc-cardlist{
+  display: grid;
+  gap: 8px;
+  margin-bottom: 12px;
+  /* Don't stretch cards to fill the whole panel height.
+     When there are 1-2 cards, the default `align-content: stretch` makes
+     them look like huge "half-height" tiles. */
+  align-content: start;
+  grid-auto-rows: max-content;
+}
+
+.lc-carditem{
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px;
+  background: rgba(255,255,255,0.03);
+  cursor: pointer;
+  user-select: none;
+}
+.lc-carditem:hover{ border-color: rgba(255,255,255,0.22); }
+.lc-carditem.isActive{
+  border-color: rgba(56,189,248,0.7);
+  box-shadow: 0 0 0 2px rgba(56,189,248,0.25) inset;
+}
+
+.lc-carditem.isEditing{
+  cursor: default;
+}
+
+.lc-carditem-edit{
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(56,189,248,0.55);
+  background: rgba(0,0,0,0.25);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 8px 10px;
+  outline: none;
+  font-size: 14px;
+}
+.lc-carditem-edit:focus{
+  border-color: rgba(56,189,248,0.85);
+  box-shadow: 0 0 0 2px rgba(56,189,248,0.22);
+}
+
+/* === Mode siren indicator (source vs created cards) === */
+.lc-mode-siren{
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center; /* visually center the lights inside the pill */
+  justify-content: center;
+  line-height: 1;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(6px);
+  pointer-events: none; /* indicator only */
+}
+.lc-mode-light{
+  width: 44px;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(148,163,184,0.18); /* neutral grey (off) */
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+  opacity: 0.55;
+}
+.lc-mode-light.isOn{
+  opacity: 1;
+}
+.lc-mode-light.isSource.isOn{
+  background: rgba(239,68,68,0.30);
+  border-color: rgba(239,68,68,0.55);
+  box-shadow: 0 0 0 2px rgba(239,68,68,0.18), 0 10px 25px rgba(239,68,68,0.10);
+}
+.lc-mode-light.isCards.isOn{
+  background: rgba(59,130,246,0.30);
+  border-color: rgba(59,130,246,0.55);
+  box-shadow: 0 0 0 2px rgba(59,130,246,0.18), 0 10px 25px rgba(59,130,246,0.10);
+}
+
+.lc-right-actions{
+  display: grid;
+  gap: 8px;
+}
+
+/* Shared actions area under left/right lists */
+.lc-panel-actions{
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+}
+
+#statusBar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 12px;
+  border-top: 1px solid var(--border);
+  background: rgba(255,255,255,0.02);
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* Status text can be long; keep it readable and avoid awkward clipped fragments */
+#lcStatusText{
+  /* Status can be long (e.g., "Выбран глагол: 44/64") — keep it readable */
+  max-width: 60vw;
+  overflow: hidden;
+  white-space: normal;
+  line-height: 1.15;
+  font-size: 10px;
+
+  /* 2 lines max (so it won't eat the whole screen), with graceful truncation */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.lc-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: var(--lc-btn-pad-y) var(--lc-btn-pad-x);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+  font-size: var(--lc-btn-font);
+}
+.lc-btn:hover { border-color: rgba(255,255,255,0.22); }
+.lc-btn:active { transform: translateY(1px); }
+
+/* Panel action buttons (light orange accent to distinguish from list items) */
+.lc-btn.lc-btn-action{
+  border-color: rgba(251,191,36,0.55); /* amber */
+  background: rgba(251,191,36,0.14);
+  box-shadow: 0 0 0 2px rgba(251,191,36,0.10) inset;
+}
+.lc-btn.lc-btn-action:hover{
+  border-color: rgba(251,191,36,0.78);
+  background: rgba(251,191,36,0.18);
+}
+
+/* Warning / reset (non-destructive but important) */
+.lc-btn.lc-btn-warn{
+  border-color: rgba(245,158,11,0.70); /* orange */
+  background: rgba(245,158,11,0.16);
+  box-shadow: 0 0 0 2px rgba(245,158,11,0.12) inset;
+}
+.lc-btn.lc-btn-warn:hover{
+  border-color: rgba(245,158,11,0.90);
+  background: rgba(245,158,11,0.20);
+}
+
+/* Delete / destructive action */
+.lc-btn.lc-btn-danger{
+  border-color: rgba(239,68,68,0.62);
+  background: rgba(239,68,68,0.14);
+  box-shadow: 0 0 0 2px rgba(239,68,68,0.10) inset;
+}
+.lc-btn.lc-btn-danger:hover{
+  border-color: rgba(239,68,68,0.85);
+  background: rgba(239,68,68,0.18);
+}
+
+/* Presets modal: make reset buttons pop a bit more than in the main UI.
+   (Users reported they looked too similar to neutral buttons.) */
+.lc-modal .lc-btn.lc-btn-warn{
+  border-color: rgba(245,158,11,0.90);
+  background: linear-gradient(180deg, rgba(245,158,11,0.28), rgba(245,158,11,0.12));
+  box-shadow: 0 0 0 1px rgba(245,158,11,0.12) inset, 0 0 16px rgba(245,158,11,0.10);
+}
+.lc-modal .lc-btn.lc-btn-warn:hover{
+  background: linear-gradient(180deg, rgba(245,158,11,0.36), rgba(245,158,11,0.16));
+  box-shadow: 0 0 0 1px rgba(245,158,11,0.16) inset, 0 0 20px rgba(245,158,11,0.14);
+}
+
+.lc-modal .lc-btn.lc-btn-danger{
+  border-color: rgba(239,68,68,0.92);
+  background: linear-gradient(180deg, rgba(239,68,68,0.26), rgba(239,68,68,0.10));
+  box-shadow: 0 0 0 1px rgba(239,68,68,0.12) inset, 0 0 18px rgba(239,68,68,0.10);
+}
+.lc-modal .lc-btn.lc-btn-danger:hover{
+  background: linear-gradient(180deg, rgba(239,68,68,0.34), rgba(239,68,68,0.14));
+  box-shadow: 0 0 0 1px rgba(239,68,68,0.16) inset, 0 0 22px rgba(239,68,68,0.14);
+}
+
+/* Right-panel action emphasis (Export + PDF buttons) */
+.lc-btn.lc-btn-primary{
+  border-color: rgba(56,189,248,0.65);
+  background: rgba(56,189,248,0.14);
+  box-shadow: 0 0 0 2px rgba(56,189,248,0.12) inset;
+}
+.lc-btn.lc-btn-primary:hover{
+  border-color: rgba(56,189,248,0.85);
+  background: rgba(56,189,248,0.18);
+}
+
+/* Positive / "create" action */
+.lc-btn.lc-btn-success{
+  border-color: rgba(34,197,94,0.62);
+  background: rgba(34,197,94,0.14);
+  box-shadow: 0 0 0 2px rgba(34,197,94,0.10) inset;
+}
+.lc-btn.lc-btn-success:hover{
+  border-color: rgba(34,197,94,0.85);
+  background: rgba(34,197,94,0.18);
+}
+
+/* Import/Export gradient cues (direction matters)
+   - Import: left -> right
+   - Export: right -> left
+*/
+.lc-btn.lc-btn-import{
+  /* Import: left -> right */
+  border-color: rgba(56,189,248,0.62);
+  background: linear-gradient(90deg,
+    rgba(56,189,248,0.32) 0%,
+    rgba(251,191,36,0.26) 100%
+  );
+  box-shadow: 0 0 0 2px rgba(56,189,248,0.10) inset, 0 0 18px rgba(56,189,248,0.08);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.35);
+}
+.lc-btn.lc-btn-import:hover{
+  border-color: rgba(56,189,248,0.85);
+  background: linear-gradient(90deg,
+    rgba(56,189,248,0.28) 0%,
+    rgba(251,191,36,0.22) 100%
+  );
+}
+
+.lc-btn.lc-btn-export{
+  /* Export: right -> left */
+  border-color: rgba(251,191,36,0.62);
+  background: linear-gradient(270deg,
+    rgba(56,189,248,0.32) 0%,
+    rgba(251,191,36,0.26) 100%
+  );
+  box-shadow: 0 0 0 2px rgba(251,191,36,0.10) inset, 0 0 18px rgba(251,191,36,0.07);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.35);
+}
+.lc-btn.lc-btn-export:hover{
+  border-color: rgba(251,191,36,0.85);
+  background: linear-gradient(270deg,
+    rgba(56,189,248,0.28) 0%,
+    rgba(251,191,36,0.22) 100%
+  );
+}
+
+.lc-btn.lc-btn-pdf{
+  border-color: rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.03);
+}
+.lc-btn.lc-btn-pdf:hover{
+  border-color: rgba(56,189,248,0.35);
+  box-shadow: 0 0 0 2px rgba(56,189,248,0.08) inset;
+}
+
+.lc-btn.lc-btn-sm{
+  padding: 6px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  gap: 6px;
+}
+
+/* Help button: same shape as others but with a gentle glow */
+.lc-btn.lc-btn-help{
+  border-color: rgba(56,189,248,0.55);
+  background: rgba(56,189,248,0.10);
+  box-shadow: 0 0 0 2px rgba(56,189,248,0.10) inset, 0 0 18px rgba(56,189,248,0.18);
+}
+.lc-btn.lc-btn-help:hover{
+  border-color: rgba(56,189,248,0.85);
+  box-shadow: 0 0 0 2px rgba(56,189,248,0.14) inset, 0 0 24px rgba(56,189,248,0.26);
+}
+.lc-btn[aria-pressed="true"] { border-color: rgba(56,189,248,0.7); box-shadow: 0 0 0 2px rgba(56,189,248,0.25) inset; }
+
+/* Text mode buttons (Unique/Common) */
+.lc-btn.lc-mode-btn{
+  border-color: rgba(255,255,255,0.18);
+}
+.lc-btn.lc-mode-btn.isActive{
+  border-color: rgba(239,68,68,0.85);
+  background: rgba(239,68,68,0.18);
+  box-shadow: 0 0 0 2px rgba(239,68,68,0.20) inset;
+}
+
+.lc-badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+.lc-badge.on { color: var(--ok); border-color: rgba(34,197,94,0.4); }
+.lc-badge.off { color: var(--muted); }
+
+.lc-banner {
+  position: fixed;
+  left: 12px; right: 12px; top: 12px;
+  padding: 10px 12px;
+  background: rgba(239,68,68,0.12);
+  border: 1px solid rgba(239,68,68,0.35);
+  color: var(--text);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px var(--shadow);
+  z-index: 9999;
+}
+.lc-banner b { color: #fecaca; }
+
+/* ===== Bottom dock (version + presets) ===== */
+:root{
+  --lcDockFont: 10px;
+  --lcDockPadY: 3px;
+  --lcDockPadX: 6px;
+  --lcDockGap: 6px;
+  --lcDockRadius: 12px;
+  --lcDockBorder: rgba(255,255,255,0.14);
+  --lcDockBg: rgba(20,20,20,0.28); /* меньше выделяется */
+  --lcDockBgHover: rgba(20,20,20,0.45);
+}
+
+#lcBottomDock{
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 8px; opacity: 0.85;
+  display: flex;
+  align-items: center;
+  gap: var(--lcDockGap);
+  padding: var(--lcDockPadY) var(--lcDockPadX);
+  border-radius: var(--lcDockRadius);
+  border: 1px solid var(--lcDockBorder);
+  background: var(--lcDockBg);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+
+  /* “в линию”: визуально тише */
+  box-shadow: none;
+}
+
+#lcBottomDock .lcDockBtn,
+#lcBottomDock .lcDockBadge{
+  font-size: var(--lcDockFont);
+  line-height: 1.25;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.88);
+  padding: var(--lcDockPadY) var(--lcDockPadX);
+  cursor: pointer;
+  user-select: none;
+}
+
+#lcBottomDock .lcDockBadge{
+  cursor: default;
+  opacity: 0.92;
+}
+
+#lcBottomDock .lcDockBtn:hover{
+  background: rgba(255,255,255,0.08);
+}
+
+
+/* ===== Tooltip ===== */
+#lcTooltip{
+  padding: 6px 8px;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 10px;
+  background: rgba(0,0,0,0.70);
+  color: rgba(255,255,255,0.92);
+  font-size: 12px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  max-width: min(320px, calc(100vw - 16px));
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===== History panel ===== */
+#lcHistoryPanel{
+  width: 260px;
+  max-height: 55vh;
+  overflow: auto;
+  background: rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 8px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* ===== History panel (cosmetic) ===== */
+#lcHistoryPanel{
+  width: 260px;
+  max-height: 55vh;
+  overflow: auto;
+  padding: 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(10,10,10,0.45);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+  opacity: 0.92;
+}
+
+/* Language switcher */
+.lc-lang-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:34px;
+  height:28px;
+  padding:0;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  cursor:pointer;
+  font-weight:700;
+  font-size:12px;
+  letter-spacing:0.2px;
+}
+.lc-lang-btn:hover{ border-color: rgba(255,255,255,0.22); }
+.lc-lang-btn[aria-pressed="true"]{
+  border-color: rgba(56,189,248,0.8);
+  box-shadow: 0 0 0 2px rgba(56,189,248,0.22) inset;
+}
+
+
+/* Responsive layout (desktop/tablet/mobile)
+   Important: card itself stays WYSIWYG (mm-based), we only adapt the surrounding UI and trigger rerender on resize. */
+@media (max-width: 980px){
+  #leftPanel{ width: 260px; min-width: 220px; }
+  #rightPanel{ width: 240px; min-width: 200px; }
+  #topBar{ flex-wrap: wrap; gap: 8px; }
+
+  :root{ --lc-btn-font: 13px; --lc-btn-pad-y: 7px; --lc-btn-pad-x: 9px; --lc-title-font: 17px; }
+}
+@media (max-width: 760px){
+  #mainRow{ flex-direction: column; }
+  #leftPanel{
+    width: auto; min-width: 0;
+    max-height: 220px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  #cardHost{ padding: 8px; overflow: hidden; }
+
+  #rightPanel{
+    width: auto; min-width: 0;
+    border-left: none;
+    border-top: 1px solid var(--border);
+    max-height: 260px;
+  }
+
+  :root{ --lc-btn-font: 12px; --lc-btn-pad-y: 6px; --lc-btn-pad-x: 8px; --lc-btn-gap: 6px; --lc-title-font: 16px; }
+}
+@media (max-width: 480px){
+  #leftPanel{ max-height: 180px; padding: 8px; }
+  #cardHost{ padding: 6px; }
+  #rightPanel{ max-height: 220px; padding: 8px; }
+
+  :root{ --lc-btn-font: 11px; --lc-btn-pad-y: 6px; --lc-btn-pad-x: 7px; --lc-btn-gap: 6px; --lc-title-font: 15px; }
+}
+
+
+/* ===== LC Toast (non-blocking notifications) ===== */
+.lc-toast-host{
+  position: fixed;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+.lc-toast{
+  pointer-events: none;
+  max-width: min(720px, calc(100vw - 32px));
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(15,23,42,0.92);
+  color: rgba(255,255,255,0.92);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity .18s ease, transform .18s ease;
+  font-size: 13px;
+  line-height: 1.25;
+}
+.lc-toast.lc-toast-in{
+  opacity: 1;
+  transform: translateY(0);
+}
+.lc-toast.lc-toast-out{
+  opacity: 0;
+  transform: translateY(-8px);
+}
+.lc-toast-info{ border-color: rgba(59,130,246,0.35); }
+.lc-toast-warn{ border-color: rgba(245,158,11,0.55); }
+.lc-toast-error{ border-color: rgba(239,68,68,0.55); }

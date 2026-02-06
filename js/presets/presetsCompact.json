@@ -1,0 +1,16 @@
+{
+  "id": "verbs_compact",
+  "title": "Verbs — Compact",
+  "card": { "widthMm": 150, "heightMm": 105, "marginMm": 6 },
+  "items": [
+    { "id": "freq", "type": "frequencyDots", "xMm": 6,  "yMm": 6,  "wMm": 22,  "hMm": 10, "bind": "frequency" },
+
+    { "id": "inf",  "type": "text", "xMm": 30, "yMm": 6,  "wMm": 86,  "hMm": 11, "fontPt": 24, "bind": "infinitive" },
+
+    { "id": "forms","type": "text", "xMm": 118,"yMm": 6,  "wMm": 26,  "hMm": 20, "fontPt": 12, "bind": "formsLine" },
+
+    { "id": "tr",   "type": "text", "xMm": 30, "yMm": 17, "wMm": 114, "hMm": 9,  "fontPt": 11, "bind": "translationsLineCompact" },
+
+    { "id": "body", "type": "text", "xMm": 6,  "yMm": 28, "wMm": 138, "hMm": 71, "fontPt": 10.5, "bind": "examplesAndPrefixesCompact" }
+  ]
+}

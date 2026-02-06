@@ -1,0 +1,1876 @@
+{
+  "schema": "lingocard-verbs-v2.1",
+  "meta": {
+    "language": "de",
+    "createdAt": "2026-01-06",
+    "notes": "Pack 001-064. Canonical educational verb format (irregular/mixed/modals)."
+  },
+  "verbs": [
+    {
+      "id": "sein",
+      "frequency": 5,
+      "infinitive": "sein",
+      "translations": ["быть", "являться", "находиться"],
+      "synonyms": [
+        { "word": "existieren", "translation": "существовать" },
+        { "word": "sich befinden", "translation": "находиться" },
+        { "word": "werden", "translation": "становиться" }
+      ],
+      "forms": {
+        "praesens_3": "ist",
+        "praeteritum": "war",
+        "partizip_2": "gewesen",
+        "auxiliary": "ist"
+      },
+      "examples": {
+        "praesens": "Er ist heute zu Hause.",
+        "modal": "Er muss heute zu Hause sein.",
+        "partizip": "Er ist schon hier gewesen.",
+        "praeteritum": "Er war gestern krank.",
+        "impersonal": "Es ist kalt."
+      },
+      "prefixes": []
+    },
+    {
+      "id": "haben",
+      "frequency": 5,
+      "infinitive": "haben",
+      "translations": ["иметь", "обладать", "держать (при себе)"],
+      "synonyms": [
+        { "word": "besitzen", "translation": "владеть" },
+        { "word": "verfügen über", "translation": "располагать (чем-то)" },
+        { "word": "halten", "translation": "держать" }
+      ],
+      "forms": {
+        "praesens_3": "hat",
+        "praeteritum": "hatte",
+        "partizip_2": "gehabt",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Sie hat Zeit.",
+        "modal": "Sie muss Zeit haben.",
+        "partizip": "Sie hat keine Zeit gehabt.",
+        "praeteritum": "Sie hatte gestern Zeit.",
+        "impersonal": "Es hat keinen Sinn."
+      },
+      "prefixes": []
+    },
+    {
+      "id": "werden",
+      "frequency": 5,
+      "infinitive": "werden",
+      "translations": ["становиться", "делаться", "быть (пассив/будущее)"],
+      "synonyms": [
+        { "word": "sich verwandeln", "translation": "превращаться" },
+        { "word": "sich entwickeln", "translation": "развиваться" },
+        { "word": "beginnen", "translation": "начинаться (контекстно)" }
+      ],
+      "forms": {
+        "praesens_3": "wird",
+        "praeteritum": "wurde",
+        "partizip_2": "geworden",
+        "auxiliary": "ist"
+      },
+      "examples": {
+        "praesens": "Er wird müde.",
+        "modal": "Er muss müde werden.",
+        "partizip": "Er ist schnell müde geworden.",
+        "praeteritum": "Er wurde plötzlich still.",
+        "impersonal": "Es wird spät."
+      },
+      "prefixes": []
+    },
+    {
+      "id": "gehen",
+      "frequency": 5,
+      "infinitive": "gehen",
+      "translations": ["идти", "ходить", "направляться"],
+      "synonyms": [
+        { "word": "laufen", "translation": "бежать, ходить" },
+        { "word": "sich begeben", "translation": "направляться" },
+        { "word": "marschieren", "translation": "шагать" }
+      ],
+      "forms": {
+        "praesens_3": "geht",
+        "praeteritum": "ging",
+        "partizip_2": "gegangen",
+        "auxiliary": "ist"
+      },
+      "examples": {
+        "praesens": "Ich gehe nach Hause.",
+        "modal": "Ich muss nach Hause gehen.",
+        "partizip": "Ich bin nach Hause gegangen.",
+        "praeteritum": "Ich ging nach Hause.",
+        "impersonal": "Es geht hier um etwas anderes."
+      },
+      "prefixes": [
+        {
+          "prefix": "hingehen",
+          "meaning": "пойти туда",
+          "examples": ["Ich gehe schnell hin.", "Geh bitte dort hin."]
+        },
+        {
+          "prefix": "weggehen",
+          "meaning": "уходить",
+          "examples": ["Er geht früh weg.", "Ich bin sofort weggegangen."]
+        }
+      ]
+    },
+    {
+      "id": "kommen",
+      "frequency": 5,
+      "infinitive": "kommen",
+      "translations": ["приходить", "приезжать", "поступать (куда-то)"],
+      "synonyms": [
+        { "word": "ankommen", "translation": "прибывать" },
+        { "word": "erscheinen", "translation": "появляться" },
+        { "word": "eintreffen", "translation": "прибывать (офиц.)" }
+      ],
+      "forms": {
+        "praesens_3": "kommt",
+        "praeteritum": "kam",
+        "partizip_2": "gekommen",
+        "auxiliary": "ist"
+      },
+      "examples": {
+        "praesens": "Er kommt gleich.",
+        "modal": "Er muss gleich kommen.",
+        "partizip": "Er ist spät gekommen.",
+        "praeteritum": "Er kam gestern an.",
+        "impersonal": "Es kommt darauf an."
+      },
+      "prefixes": [
+        {
+          "prefix": "ankommen",
+          "meaning": "прибывать",
+          "examples": ["Der Zug kommt um 18 Uhr an.", "Wir sind pünktlich angekommen."]
+        },
+        {
+          "prefix": "mitkommen",
+          "meaning": "пойти/поехать вместе",
+          "examples": ["Kommst du mit?", "Er ist nicht mitgekommen."]
+        }
+      ]
+    },
+    {
+      "id": "sehen",
+      "frequency": 5,
+      "infinitive": "sehen",
+      "translations": ["видеть", "смотреть", "понимать (контекстно)"],
+      "synonyms": [
+        { "word": "anschauen", "translation": "рассматривать" },
+        { "word": "blicken", "translation": "глядеть" },
+        { "word": "beobachten", "translation": "наблюдать" }
+      ],
+      "forms": {
+        "praesens_3": "sieht",
+        "praeteritum": "sah",
+        "partizip_2": "gesehen",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Sie sieht mich an.",
+        "modal": "Ich muss das sehen.",
+        "partizip": "Ich habe das schon gesehen.",
+        "praeteritum": "Ich sah ihn gestern.",
+        "impersonal": "Es sieht gut aus."
+      },
+      "prefixes": [
+        {
+          "prefix": "ansehen",
+          "meaning": "посмотреть, рассмотреть",
+          "examples": ["Ich sehe mir das an.", "Wir haben uns den Film angesehen."]
+        }
+      ]
+    },
+    {
+      "id": "geben",
+      "frequency": 5,
+      "infinitive": "geben",
+      "translations": ["давать", "выдавать", "предоставлять"],
+      "synonyms": [
+        { "word": "reichen", "translation": "передавать" },
+        { "word": "übergeben", "translation": "вручать" },
+        { "word": "spenden", "translation": "жертвовать" }
+      ],
+      "forms": {
+        "praesens_3": "gibt",
+        "praeteritum": "gab",
+        "partizip_2": "gegeben",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er gibt mir das Buch.",
+        "modal": "Ich muss dir etwas geben.",
+        "partizip": "Ich habe es dir gegeben.",
+        "praeteritum": "Er gab mir einen Tipp.",
+        "impersonal": "Es gibt hier ein Problem."
+      },
+      "prefixes": [
+        {
+          "prefix": "abgeben",
+          "meaning": "сдавать, отдавать",
+          "examples": ["Bitte geben Sie den Schlüssel ab.", "Ich habe das Paket abgegeben."]
+        },
+        {
+          "prefix": "ausgeben",
+          "meaning": "тратить; выдавать себя за",
+          "examples": ["Ich gebe nicht viel Geld aus.", "Er gab sich als Arzt aus."]
+        }
+      ]
+    },
+    {
+      "id": "nehmen",
+      "frequency": 5,
+      "infinitive": "nehmen",
+      "translations": ["брать", "принимать", "забирать"],
+      "synonyms": [
+        { "word": "holen", "translation": "забирать, приносить" },
+        { "word": "greifen", "translation": "схватить" },
+        { "word": "akzeptieren", "translation": "принимать (согласиться)" }
+      ],
+      "forms": {
+        "praesens_3": "nimmt",
+        "praeteritum": "nahm",
+        "partizip_2": "genommen",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er nimmt den Zug.",
+        "modal": "Du musst das nehmen.",
+        "partizip": "Ich habe es genommen.",
+        "praeteritum": "Er nahm das Handy.",
+        "impersonal": "Es nimmt kein Ende."
+      },
+      "prefixes": [
+        {
+          "prefix": "mitnehmen",
+          "meaning": "взять с собой",
+          "examples": ["Nimm bitte Wasser mit.", "Ich habe meinen Ausweis mitgenommen."]
+        },
+        {
+          "prefix": "aufnehmen",
+          "meaning": "поднимать; записывать",
+          "examples": ["Ich nehme das auf.", "Der Verein nimmt neue Mitglieder auf."]
+        }
+      ]
+    },
+
+    {
+      "id": "sprechen",
+      "frequency": 5,
+      "infinitive": "sprechen",
+      "translations": ["говорить", "разговаривать", "выступать"],
+      "synonyms": [
+        { "word": "reden", "translation": "разговаривать" },
+        { "word": "sagen", "translation": "сказать" },
+        { "word": "erzählen", "translation": "рассказывать" }
+      ],
+      "forms": {
+        "praesens_3": "spricht",
+        "praeteritum": "sprach",
+        "partizip_2": "gesprochen",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er spricht Deutsch.",
+        "modal": "Ich muss mit dir sprechen.",
+        "partizip": "Wir haben darüber gesprochen.",
+        "praeteritum": "Sie sprach leise.",
+        "impersonal": "Es spricht vieles dafür."
+      },
+      "prefixes": [
+        {
+          "prefix": "ansprechen",
+          "meaning": "обратиться; затронуть тему",
+          "examples": ["Ich spreche ihn an.", "Wir haben das Thema angesprochen."]
+        }
+      ]
+    },
+    {
+      "id": "essen",
+      "frequency": 5,
+      "infinitive": "essen",
+      "translations": ["есть", "кушать", "питаться"],
+      "synonyms": [
+        { "word": "speisen", "translation": "кушать (вежл.)" },
+        { "word": "verzehren", "translation": "употреблять (пищу)" },
+        { "word": "futtern", "translation": "жрать (разг.)" }
+      ],
+      "forms": {
+        "praesens_3": "isst",
+        "praeteritum": "aß",
+        "partizip_2": "gegessen",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er isst einen Apfel.",
+        "modal": "Ich muss etwas essen.",
+        "partizip": "Wir haben schon gegessen.",
+        "praeteritum": "Er aß sehr schnell.",
+        "impersonal": "Es isst sich hier gut."
+      },
+      "prefixes": [
+        {
+          "prefix": "aufessen",
+          "meaning": "доесть",
+          "examples": ["Iss bitte alles auf.", "Ich habe die Suppe aufgegessen."]
+        }
+      ]
+    },
+    {
+      "id": "trinken",
+      "frequency": 5,
+      "infinitive": "trinken",
+      "translations": ["пить", "выпивать", "потреблять напитки"],
+      "synonyms": [
+        { "word": "saufen", "translation": "пить (грубо/про алкоголь)" },
+        { "word": "schlucken", "translation": "глотать" },
+        { "word": "zu sich nehmen", "translation": "принимать внутрь" }
+      ],
+      "forms": {
+        "praesens_3": "trinkt",
+        "praeteritum": "trank",
+        "partizip_2": "getrunken",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Sie trinkt Wasser.",
+        "modal": "Ich muss etwas trinken.",
+        "partizip": "Er hat Kaffee getrunken.",
+        "praeteritum": "Er trank Tee.",
+        "impersonal": "Es trinkt sich leichter mit Strohhalm."
+      },
+      "prefixes": [
+        {
+          "prefix": "austrinken",
+          "meaning": "допить",
+          "examples": ["Trink bitte aus.", "Ich habe das Glas ausgetrunken."]
+        }
+      ]
+    },
+
+    {
+      "id": "fahren",
+      "frequency": 5,
+      "infinitive": "fahren",
+      "translations": ["ехать", "ездить", "управлять (ТС)"],
+      "synonyms": [
+        { "word": "reisen", "translation": "путешествовать" },
+        { "word": "lenken", "translation": "вести (машину)" },
+        { "word": "unterwegs sein", "translation": "быть в пути" }
+      ],
+      "forms": {
+        "praesens_3": "fährt",
+        "praeteritum": "fuhr",
+        "partizip_2": "gefahren",
+        "auxiliary": "ist"
+      },
+      "examples": {
+        "praesens": "Er fährt nach Berlin.",
+        "modal": "Ich muss heute fahren.",
+        "partizip": "Wir sind früh gefahren.",
+        "praeteritum": "Er fuhr sehr schnell.",
+        "impersonal": "Es fährt sich gut mit dem Fahrrad."
+      },
+      "prefixes": [
+        {
+          "prefix": "abfahren",
+          "meaning": "отправляться (поезд)",
+          "examples": ["Der Zug fährt um 19 Uhr ab.", "Wir sind pünktlich abgefahren."]
+        },
+        {
+          "prefix": "einfahren",
+          "meaning": "въезжать",
+          "examples": ["Der Zug fährt ein.", "Wir sind in die Garage eingefahren."]
+        }
+      ]
+    },
+    {
+      "id": "laufen",
+      "frequency": 4,
+      "infinitive": "laufen",
+      "translations": ["бегать", "идти (о процессе)", "работать (о технике)"],
+      "synonyms": [
+        { "word": "rennen", "translation": "бежать" },
+        { "word": "funktionieren", "translation": "работать" },
+        { "word": "gehen", "translation": "идти (общее)" }
+      ],
+      "forms": {
+        "praesens_3": "läuft",
+        "praeteritum": "lief",
+        "partizip_2": "gelaufen",
+        "auxiliary": "ist"
+      },
+      "examples": {
+        "praesens": "Der Motor läuft.",
+        "modal": "Ich muss schneller laufen.",
+        "partizip": "Er ist nach Hause gelaufen.",
+        "praeteritum": "Er lief sehr weit.",
+        "impersonal": "Es läuft gut."
+      },
+      "prefixes": [
+        {
+          "prefix": "ablaufen",
+          "meaning": "истекать; происходить",
+          "examples": ["Der Vertrag läuft ab.", "Wie ist das Gespräch abgelaufen?"]
+        }
+      ]
+    },
+    {
+      "id": "schlafen",
+      "frequency": 4,
+      "infinitive": "schlafen",
+      "translations": ["спать", "ночевать", "заснуть (контекстно)"],
+      "synonyms": [
+        { "word": "ruhen", "translation": "отдыхать" },
+        { "word": "einschlafen", "translation": "засыпать" },
+        { "word": "dösen", "translation": "дремать" }
+      ],
+      "forms": {
+        "praesens_3": "schläft",
+        "praeteritum": "schlief",
+        "partizip_2": "geschlafen",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Das Kind schläft.",
+        "modal": "Ich muss schlafen.",
+        "partizip": "Ich habe schlecht geschlafen.",
+        "praeteritum": "Er schlief lange.",
+        "impersonal": "Es schläft sich hier ruhig."
+      },
+      "prefixes": [
+        {
+          "prefix": "einschlafen",
+          "meaning": "засыпать",
+          "examples": ["Ich schlafe schnell ein.", "Das Kind ist eingeschlafen."]
+        }
+      ]
+    },
+
+    {
+      "id": "finden",
+      "frequency": 5,
+      "infinitive": "finden",
+      "translations": ["находить", "считать (мнение)", "обнаруживать"],
+      "synonyms": [
+        { "word": "entdecken", "translation": "обнаруживать" },
+        { "word": "bemerken", "translation": "замечать" },
+        { "word": "meinen", "translation": "считать, полагать" }
+      ],
+      "forms": {
+        "praesens_3": "findet",
+        "praeteritum": "fand",
+        "partizip_2": "gefunden",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Ich finde den Schlüssel.",
+        "modal": "Ich muss das gut finden.",
+        "partizip": "Wir haben eine Lösung gefunden.",
+        "praeteritum": "Er fand das komisch.",
+        "impersonal": "Es findet sich immer ein Weg."
+      },
+      "prefixes": [
+        {
+          "prefix": "erfinden",
+          "meaning": "изобретать, придумывать",
+          "examples": ["Wer hat das erfunden?", "Er hat eine Geschichte erfunden."]
+        }
+      ]
+    },
+    {
+      "id": "denken",
+      "frequency": 5,
+      "infinitive": "denken",
+      "translations": ["думать", "полагать", "вспоминать"],
+      "synonyms": [
+        { "word": "glauben", "translation": "считать, думать" },
+        { "word": "meinen", "translation": "полагать" },
+        { "word": "sich erinnern", "translation": "вспоминать" }
+      ],
+      "forms": {
+        "praesens_3": "denkt",
+        "praeteritum": "dachte",
+        "partizip_2": "gedacht",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er denkt an dich.",
+        "modal": "Ich muss daran denken.",
+        "partizip": "Ich habe daran gedacht.",
+        "praeteritum": "Ich dachte sofort daran.",
+        "impersonal": "Es denkt sich leicht."
+      },
+      "prefixes": [
+        {
+          "prefix": "nachdenken",
+          "meaning": "обдумывать",
+          "examples": ["Denk darüber nach.", "Ich habe lange nachgedacht."]
+        }
+      ]
+    },
+    {
+      "id": "wissen",
+      "frequency": 5,
+      "infinitive": "wissen",
+      "translations": ["знать", "быть в курсе", "понимать (о факте)"],
+      "synonyms": [
+        { "word": "kennen", "translation": "знать (быть знакомым)" },
+        { "word": "ahnen", "translation": "предполагать" },
+        { "word": "begreifen", "translation": "понимать" }
+      ],
+      "forms": {
+        "praesens_3": "weiß",
+        "praeteritum": "wusste",
+        "partizip_2": "gewusst",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er weiß es nicht.",
+        "modal": "Du musst das wissen.",
+        "partizip": "Ich habe es nicht gewusst.",
+        "praeteritum": "Ich wusste das schon.",
+        "impersonal": "Es ist nicht zu wissen."
+      },
+      "prefixes": []
+    },
+
+    {
+      "id": "tun",
+      "frequency": 5,
+      "infinitive": "tun",
+      "translations": ["делать", "совершать", "поступать"],
+      "synonyms": [
+        { "word": "machen", "translation": "делать" },
+        { "word": "handeln", "translation": "действовать" },
+        { "word": "ausführen", "translation": "выполнять" }
+      ],
+      "forms": {
+        "praesens_3": "tut",
+        "praeteritum": "tat",
+        "partizip_2": "getan",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Was tut er?",
+        "modal": "Ich muss etwas tun.",
+        "partizip": "Ich habe alles getan.",
+        "praeteritum": "Er tat so, als ob.",
+        "impersonal": "Es tut mir leid."
+      },
+      "prefixes": []
+    },
+    {
+      "id": "lassen",
+      "frequency": 5,
+      "infinitive": "lassen",
+      "translations": ["оставлять", "позволять", "давать сделать"],
+      "synonyms": [
+        { "word": "erlauben", "translation": "разрешать" },
+        { "word": "zulassen", "translation": "допускать" },
+        { "word": "weglegen", "translation": "отложить (контекстно)" }
+      ],
+      "forms": {
+        "praesens_3": "lässt",
+        "praeteritum": "ließ",
+        "partizip_2": "gelassen",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Lass mich in Ruhe.",
+        "modal": "Ich muss das so lassen.",
+        "partizip": "Ich habe es so gelassen.",
+        "praeteritum": "Er ließ den Koffer stehen.",
+        "impersonal": "Es lässt sich nicht ändern."
+      },
+      "prefixes": [
+        {
+          "prefix": "zulassen",
+          "meaning": "допускать, разрешать",
+          "examples": ["Das lässt er nicht zu.", "Das ist nicht zugelassen."]
+        }
+      ]
+    },
+
+    {
+      "id": "können",
+      "frequency": 5,
+      "infinitive": "können",
+      "translations": ["мочь", "уметь", "быть в состоянии"],
+      "synonyms": [
+        { "word": "imstande sein", "translation": "быть в состоянии" },
+        { "word": "fähig sein", "translation": "быть способным" },
+        { "word": "vermögen", "translation": "мочь (книжн.)" }
+      ],
+      "forms": {
+        "praesens_3": "kann",
+        "praeteritum": "konnte",
+        "partizip_2": "gekonnt",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er kann schwimmen.",
+        "modal": "Ich muss das können.",
+        "partizip": "Er hat das nicht gekonnt.",
+        "praeteritum": "Er konnte nicht kommen.",
+        "impersonal": "Es kann passieren."
+      },
+      "prefixes": []
+    },
+    {
+      "id": "müssen",
+      "frequency": 5,
+      "infinitive": "müssen",
+      "translations": ["должен", "быть обязан", "нужно"],
+      "synonyms": [
+        { "word": "sollen", "translation": "следует (должен по плану)" },
+        { "word": "gezwungen sein", "translation": "быть вынужденным" },
+        { "word": "notwendig sein", "translation": "быть необходимым" }
+      ],
+      "forms": {
+        "praesens_3": "muss",
+        "praeteritum": "musste",
+        "partizip_2": "gemusst",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Ich muss arbeiten.",
+        "modal": "Du musst das machen.",
+        "partizip": "Ich habe das gemusst.",
+        "praeteritum": "Ich musste warten.",
+        "impersonal": "Es muss nicht sein."
+      },
+      "prefixes": []
+    },
+    {
+      "id": "dürfen",
+      "frequency": 4,
+      "infinitive": "dürfen",
+      "translations": ["иметь право", "можно (разрешение)", "сметь"],
+      "synonyms": [
+        { "word": "erlaubt sein", "translation": "быть разрешённым" },
+        { "word": "können", "translation": "мочь (в мягком смысле)" },
+        { "word": "gestatten", "translation": "разрешать (как действие)" }
+      ],
+      "forms": {
+        "praesens_3": "darf",
+        "praeteritum": "durfte",
+        "partizip_2": "gedurft",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Du darfst hier nicht rauchen.",
+        "modal": "Ich muss das dürfen? (selten)",
+        "partizip": "Er hat das nicht gedurft.",
+        "praeteritum": "Er durfte nicht rein.",
+        "impersonal": "Das darf nicht passieren."
+      },
+      "prefixes": []
+    },
+    {
+      "id": "sollen",
+      "frequency": 5,
+      "infinitive": "sollen",
+      "translations": ["следует", "быть должным (по плану)", "говорят, что"],
+      "synonyms": [
+        { "word": "müssen", "translation": "должен (жёстче)" },
+        { "word": "angeblich", "translation": "якобы (по слухам)" },
+        { "word": "es heißt", "translation": "говорят" }
+      ],
+      "forms": {
+        "praesens_3": "soll",
+        "praeteritum": "sollte",
+        "partizip_2": "gesollt",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Du sollst warten.",
+        "modal": "Ich muss morgen arbeiten sollen? (редко)",
+        "partizip": "Er hat das so gesollt (selten).",
+        "praeteritum": "Du solltest anrufen.",
+        "impersonal": "Es soll morgen regnen."
+      },
+      "prefixes": []
+    },
+    {
+      "id": "wollen",
+      "frequency": 5,
+      "infinitive": "wollen",
+      "translations": ["хотеть", "собираться", "намереваться"],
+      "synonyms": [
+        { "word": "möchten", "translation": "хотел бы (вежл.)" },
+        { "word": "beabsichtigen", "translation": "намереваться" },
+        { "word": "vorhaben", "translation": "планировать" }
+      ],
+      "forms": {
+        "praesens_3": "will",
+        "praeteritum": "wollte",
+        "partizip_2": "gewollt",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Ich will nach Hause.",
+        "modal": "Ich muss das nicht wollen.",
+        "partizip": "Ich habe das nicht gewollt.",
+        "praeteritum": "Er wollte gehen.",
+        "impersonal": "Das will gelernt sein."
+      },
+      "prefixes": []
+    },
+    {
+      "id": "mögen",
+      "frequency": 4,
+      "infinitive": "mögen",
+      "translations": ["любить (нравится)", "нравиться", "мочь (устар./вежл.)"],
+      "synonyms": [
+        { "word": "gern haben", "translation": "любить, нравиться" },
+        { "word": "lieben", "translation": "любить" },
+        { "word": "schätzen", "translation": "ценить" }
+      ],
+      "forms": {
+        "praesens_3": "mag",
+        "praeteritum": "mochte",
+        "partizip_2": "gemocht",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Ich mag Kaffee.",
+        "modal": "Ich muss das nicht mögen.",
+        "partizip": "Ich habe ihn gemocht.",
+        "praeteritum": "Ich mochte das früher.",
+        "impersonal": "Das mag sein."
+      },
+      "prefixes": []
+    },
+
+    {
+      "id": "bleiben",
+      "frequency": 5,
+      "infinitive": "bleiben",
+      "translations": ["оставаться", "пребывать", "не уходить"],
+      "synonyms": [
+        { "word": "verbleiben", "translation": "оставаться (офиц.)" },
+        { "word": "da sein", "translation": "быть здесь" },
+        { "word": "stehen bleiben", "translation": "остановиться" }
+      ],
+      "forms": {
+        "praesens_3": "bleibt",
+        "praeteritum": "blieb",
+        "partizip_2": "geblieben",
+        "auxiliary": "ist"
+      },
+      "examples": {
+        "praesens": "Ich bleibe zu Hause.",
+        "modal": "Ich muss zu Hause bleiben.",
+        "partizip": "Ich bin zu Hause geblieben.",
+        "praeteritum": "Ich blieb lange dort.",
+        "impersonal": "Es bleibt dabei."
+      },
+      "prefixes": []
+    },
+    {
+      "id": "bringen",
+      "frequency": 5,
+      "infinitive": "bringen",
+      "translations": ["приносить", "приводить", "доставлять"],
+      "synonyms": [
+        { "word": "liefern", "translation": "доставлять" },
+        { "word": "mitbringen", "translation": "принести с собой" },
+        { "word": "holen", "translation": "принести/забрать" }
+      ],
+      "forms": {
+        "praesens_3": "bringt",
+        "praeteritum": "brachte",
+        "partizip_2": "gebracht",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er bringt die Tasche.",
+        "modal": "Ich muss das bringen.",
+        "partizip": "Ich habe es gebracht.",
+        "praeteritum": "Er brachte Kaffee.",
+        "impersonal": "Das bringt nichts."
+      },
+      "prefixes": [
+        {
+          "prefix": "mitbringen",
+          "meaning": "принести с собой",
+          "examples": ["Bring bitte Wasser mit.", "Ich habe Kuchen mitgebracht."]
+        }
+      ]
+    },
+    {
+      "id": "helfen",
+      "frequency": 5,
+      "infinitive": "helfen",
+      "translations": ["помогать", "выручать", "содействовать"],
+      "synonyms": [
+        { "word": "unterstützen", "translation": "поддерживать" },
+        { "word": "beistehen", "translation": "выручать" },
+        { "word": "retten", "translation": "спасать" }
+      ],
+      "forms": {
+        "praesens_3": "hilft",
+        "praeteritum": "half",
+        "partizip_2": "geholfen",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er hilft mir.",
+        "modal": "Ich muss dir helfen.",
+        "partizip": "Sie hat mir geholfen.",
+        "praeteritum": "Er half sofort.",
+        "impersonal": "Das hilft."
+      },
+      "prefixes": []
+    },
+    {
+      "id": "lesen",
+      "frequency": 5,
+      "infinitive": "lesen",
+      "translations": ["читать", "прочитывать", "изучать (текст)"],
+      "synonyms": [
+        { "word": "studieren", "translation": "изучать" },
+        { "word": "durchlesen", "translation": "прочитать (внимательно)" },
+        { "word": "vorlesen", "translation": "читать вслух" }
+      ],
+      "forms": {
+        "praesens_3": "liest",
+        "praeteritum": "las",
+        "partizip_2": "gelesen",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Sie liest ein Buch.",
+        "modal": "Ich muss das lesen.",
+        "partizip": "Ich habe das gelesen.",
+        "praeteritum": "Er las die Nachricht.",
+        "impersonal": "Es liest sich leicht."
+      },
+      "prefixes": [
+        {
+          "prefix": "vorlesen",
+          "meaning": "читать вслух",
+          "examples": ["Lies mir das vor.", "Sie hat dem Kind vorgelesen."]
+        }
+      ]
+    },
+    {
+      "id": "schreiben",
+      "frequency": 5,
+      "infinitive": "schreiben",
+      "translations": ["писать", "написать", "записывать"],
+      "synonyms": [
+        { "word": "notieren", "translation": "записывать" },
+        { "word": "verfassen", "translation": "составлять (текст)" },
+        { "word": "tippen", "translation": "печатать (на клавиатуре)" }
+      ],
+      "forms": {
+        "praesens_3": "schreibt",
+        "praeteritum": "schrieb",
+        "partizip_2": "geschrieben",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er schreibt eine E-Mail.",
+        "modal": "Ich muss dir schreiben.",
+        "partizip": "Ich habe dir geschrieben.",
+        "praeteritum": "Er schrieb einen Brief.",
+        "impersonal": "Es schreibt sich schnell."
+      },
+      "prefixes": [
+        {
+          "prefix": "aufschreiben",
+          "meaning": "записать",
+          "examples": ["Schreib das auf.", "Ich habe es aufgeschrieben."]
+        }
+      ]
+    },
+
+    {
+      "id": "stehen",
+      "frequency": 4,
+      "infinitive": "stehen",
+      "translations": ["стоять", "находиться (расположено)", "состоять (в тексте)"],
+      "synonyms": [
+        { "word": "sich befinden", "translation": "находиться" },
+        { "word": "liegen", "translation": "лежать (как позиция)" },
+        { "word": "verbleiben", "translation": "оставаться (контекстно)" }
+      ],
+      "forms": {
+        "praesens_3": "steht",
+        "praeteritum": "stand",
+        "partizip_2": "gestanden",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er steht vor der Tür.",
+        "modal": "Ich muss hier stehen.",
+        "partizip": "Er hat lange gestanden.",
+        "praeteritum": "Er stand dort.",
+        "impersonal": "Es steht fest."
+      },
+      "prefixes": [
+        {
+          "prefix": "aufstehen",
+          "meaning": "вставать",
+          "examples": ["Ich stehe um 7 Uhr auf.", "Er ist früh aufgestanden."]
+        }
+      ]
+    },
+    {
+      "id": "sitzen",
+      "frequency": 4,
+      "infinitive": "sitzen",
+      "translations": ["сидеть", "находиться (в заключении)", "располагаться"],
+      "synonyms": [
+        { "word": "hocken", "translation": "сидеть (разг.)" },
+        { "word": "platznehmen", "translation": "присаживаться" },
+        { "word": "sich setzen", "translation": "садиться" }
+      ],
+      "forms": {
+        "praesens_3": "sitzt",
+        "praeteritum": "saß",
+        "partizip_2": "gesessen",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er sitzt am Tisch.",
+        "modal": "Ich muss hier sitzen.",
+        "partizip": "Ich habe dort gesessen.",
+        "praeteritum": "Er saß lange da.",
+        "impersonal": "Es sitzt sich bequem."
+      },
+      "prefixes": []
+    },
+    {
+      "id": "liegen",
+      "frequency": 4,
+      "infinitive": "liegen",
+      "translations": ["лежать", "находиться", "заключаться (в чём-то)"],
+      "synonyms": [
+        { "word": "sich befinden", "translation": "находиться" },
+        { "word": "ruhen", "translation": "покоиться" },
+        { "word": "bestehen", "translation": "состоять (в чём-то)" }
+      ],
+      "forms": {
+        "praesens_3": "liegt",
+        "praeteritum": "lag",
+        "partizip_2": "gelegen",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Das Buch liegt hier.",
+        "modal": "Das muss dort liegen.",
+        "partizip": "Es hat dort gelegen.",
+        "praeteritum": "Es lag auf dem Boden.",
+        "impersonal": "Es liegt an dir."
+      },
+      "prefixes": []
+    },
+
+    {
+      "id": "halten",
+      "frequency": 5,
+      "infinitive": "halten",
+      "translations": ["держать", "останавливать", "считать (мнение)"],
+      "synonyms": [
+        { "word": "stoppen", "translation": "останавливать" },
+        { "word": "festhalten", "translation": "держать крепко" },
+        { "word": "meinen", "translation": "считать" }
+      ],
+      "forms": {
+        "praesens_3": "hält",
+        "praeteritum": "hielt",
+        "partizip_2": "gehalten",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er hält das Glas.",
+        "modal": "Ich muss das fest halten.",
+        "partizip": "Ich habe es gehalten.",
+        "praeteritum": "Er hielt eine Rede.",
+        "impersonal": "Das hält nicht lange."
+      },
+      "prefixes": [
+        {
+          "prefix": "anhalten",
+          "meaning": "останавливаться/останавливать",
+          "examples": ["Der Bus hält hier an.", "Die Polizei hat das Auto angehalten."]
+        }
+      ]
+    },
+    {
+      "id": "fallen",
+      "frequency": 4,
+      "infinitive": "fallen",
+      "translations": ["падать", "выпадать", "приходиться (на дату)"],
+      "synonyms": [
+        { "word": "stürzen", "translation": "упасть (резко)" },
+        { "word": "hinfallen", "translation": "упасть (на землю)" },
+        { "word": "sinken", "translation": "опускаться" }
+      ],
+      "forms": {
+        "praesens_3": "fällt",
+        "praeteritum": "fiel",
+        "partizip_2": "gefallen",
+        "auxiliary": "ist"
+      },
+      "examples": {
+        "praesens": "Das Glas fällt.",
+        "modal": "Das darf nicht fallen.",
+        "partizip": "Es ist runtergefallen.",
+        "praeteritum": "Er fiel hin.",
+        "impersonal": "Mir fällt nichts ein."
+      },
+      "prefixes": [
+        {
+          "prefix": "einfallen",
+          "meaning": "приходить в голову",
+          "examples": ["Mir fällt etwas ein.", "Das ist mir eingefallen."]
+        }
+      ]
+    },
+    {
+      "id": "treffen",
+      "frequency": 5,
+      "infinitive": "treffen",
+      "translations": ["встречать", "встречаться", "попадать (в цель)"],
+      "synonyms": [
+        { "word": "begegnen", "translation": "встречать (случайно)" },
+        { "word": "kennenlernen", "translation": "познакомиться" },
+        { "word": "erwischen", "translation": "задеть, попасть" }
+      ],
+      "forms": {
+        "praesens_3": "trifft",
+        "praeteritum": "traf",
+        "partizip_2": "getroffen",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Ich treffe meinen Freund.",
+        "modal": "Ich muss ihn treffen.",
+        "partizip": "Wir haben uns getroffen.",
+        "praeteritum": "Ich traf ihn zufällig.",
+        "impersonal": "Es trifft sich gut."
+      },
+      "prefixes": [
+        {
+          "prefix": "antreffen",
+          "meaning": "застать (найти кого-то где-то)",
+          "examples": ["Ich treffe ihn nicht an.", "Ich habe ihn im Büro angetroffen."]
+        }
+      ]
+    },
+
+    {
+      "id": "vergessen",
+      "frequency": 5,
+      "infinitive": "vergessen",
+      "translations": ["забывать", "не помнить", "упустить"],
+      "synonyms": [
+        { "word": "übersehen", "translation": "пропустить, не заметить" },
+        { "word": "verpassen", "translation": "упустить" },
+        { "word": "sich nicht erinnern", "translation": "не помнить" }
+      ],
+      "forms": {
+        "praesens_3": "vergisst",
+        "praeteritum": "vergaß",
+        "partizip_2": "vergessen",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er vergisst oft Termine.",
+        "modal": "Ich darf das nicht vergessen.",
+        "partizip": "Ich habe es vergessen.",
+        "praeteritum": "Ich vergaß den Namen.",
+        "impersonal": "Es ist nicht zu vergessen."
+      },
+      "prefixes": []
+    },
+    {
+      "id": "verlieren",
+      "frequency": 5,
+      "infinitive": "verlieren",
+      "translations": ["терять", "проигрывать", "утрачивать"],
+      "synonyms": [
+        { "word": "verpassen", "translation": "упустить" },
+        { "word": "einbüßen", "translation": "потерять (офиц.)" },
+        { "word": "unterliegen", "translation": "проигрывать" }
+      ],
+      "forms": {
+        "praesens_3": "verliert",
+        "praeteritum": "verlor",
+        "partizip_2": "verloren",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er verliert den Schlüssel.",
+        "modal": "Ich darf das nicht verlieren.",
+        "partizip": "Ich habe das Spiel verloren.",
+        "praeteritum": "Er verlor sein Handy.",
+        "impersonal": "Es verliert sich."
+      },
+      "prefixes": []
+    },
+    {
+      "id": "gewinnen",
+      "frequency": 4,
+      "infinitive": "gewinnen",
+      "translations": ["выигрывать", "побеждать", "получать (в итоге)"],
+      "synonyms": [
+        { "word": "siegen", "translation": "побеждать" },
+        { "word": "erlangen", "translation": "достигать" },
+        { "word": "bekommen", "translation": "получать" }
+      ],
+      "forms": {
+        "praesens_3": "gewinnt",
+        "praeteritum": "gewann",
+        "partizip_2": "gewonnen",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er gewinnt oft.",
+        "modal": "Ich muss gewinnen.",
+        "partizip": "Ich habe gewonnen.",
+        "praeteritum": "Er gewann das Spiel.",
+        "impersonal": "Es gewinnt der Beste."
+      },
+      "prefixes": []
+    },
+    {
+      "id": "beginnen",
+      "frequency": 5,
+      "infinitive": "beginnen",
+      "translations": ["начинать", "начинаться", "приступать"],
+      "synonyms": [
+        { "word": "anfangen", "translation": "начинать" },
+        { "word": "starten", "translation": "стартовать" },
+        { "word": "einsetzen", "translation": "начинаться (процесс)" }
+      ],
+      "forms": {
+        "praesens_3": "beginnt",
+        "praeteritum": "begann",
+        "partizip_2": "begonnen",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Der Kurs beginnt um 9 Uhr.",
+        "modal": "Ich muss jetzt beginnen.",
+        "partizip": "Wir haben schon begonnen.",
+        "praeteritum": "Er begann sofort.",
+        "impersonal": "Es beginnt zu regnen."
+      },
+      "prefixes": []
+    },
+
+    {
+      "id": "finden",
+      "frequency": 5,
+      "infinitive": "finden",
+      "translations": ["находить", "считать", "обнаруживать"],
+      "synonyms": [
+        { "word": "entdecken", "translation": "обнаруживать" },
+        { "word": "bemerken", "translation": "замечать" },
+        { "word": "meinen", "translation": "полагать" }
+      ],
+      "forms": {
+        "praesens_3": "findet",
+        "praeteritum": "fand",
+        "partizip_2": "gefunden",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Ich finde den Weg.",
+        "modal": "Ich muss das finden.",
+        "partizip": "Wir haben es gefunden.",
+        "praeteritum": "Er fand das gut.",
+        "impersonal": "Es findet sich eine Lösung."
+      },
+      "prefixes": []
+    },
+
+    {
+      "id": "nehmen",
+      "frequency": 5,
+      "infinitive": "nehmen",
+      "translations": ["брать", "принимать", "забирать"],
+      "synonyms": [
+        { "word": "holen", "translation": "забрать/принести" },
+        { "word": "greifen", "translation": "схватить" },
+        { "word": "akzeptieren", "translation": "принять" }
+      ],
+      "forms": {
+        "praesens_3": "nimmt",
+        "praeteritum": "nahm",
+        "partizip_2": "genommen",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er nimmt den Bus.",
+        "modal": "Du musst das nehmen.",
+        "partizip": "Ich habe es genommen.",
+        "praeteritum": "Er nahm das Messer.",
+        "impersonal": "Es nimmt zu."
+      },
+      "prefixes": []
+    },
+
+    {
+      "id": "ziehen",
+      "frequency": 4,
+      "infinitive": "ziehen",
+      "translations": ["тянуть", "переезжать", "тащить"],
+      "synonyms": [
+        { "word": "zerren", "translation": "тащить, дёргать" },
+        { "word": "umziehen", "translation": "переезжать" },
+        { "word": "ziehen an", "translation": "тянуть за" }
+      ],
+      "forms": {
+        "praesens_3": "zieht",
+        "praeteritum": "zog",
+        "partizip_2": "gezogen",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er zieht die Tür zu.",
+        "modal": "Ich muss umziehen.",
+        "partizip": "Wir haben umgezogen.",
+        "praeteritum": "Er zog am Seil.",
+        "impersonal": "Es zieht (im Zimmer)."
+      },
+      "prefixes": [
+        {
+          "prefix": "umziehen",
+          "meaning": "переезжать",
+          "examples": ["Wir ziehen nächste Woche um.", "Wir sind letztes Jahr umgezogen."]
+        }
+      ]
+    },
+
+    {
+      "id": "tragen",
+      "frequency": 4,
+      "infinitive": "tragen",
+      "translations": ["носить", "нести", "выдерживать"],
+      "synonyms": [
+        { "word": "anhaben", "translation": "носить (на себе)" },
+        { "word": "mitnehmen", "translation": "нести с собой" },
+        { "word": "ertragen", "translation": "выносить, терпеть" }
+      ],
+      "forms": {
+        "praesens_3": "trägt",
+        "praeteritum": "trug",
+        "partizip_2": "getragen",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Sie trägt eine Jacke.",
+        "modal": "Ich muss das tragen.",
+        "partizip": "Er hat das Paket getragen.",
+        "praeteritum": "Er trug die Tasche.",
+        "impersonal": "Das trägt nicht."
+      },
+      "prefixes": [
+        {
+          "prefix": "ertragen",
+          "meaning": "выдержать, вытерпеть",
+          "examples": ["Ich ertrage das nicht.", "Er hat den Schmerz ertragen."]
+        }
+      ]
+    },
+
+    {
+      "id": "werfen",
+      "frequency": 3,
+      "infinitive": "werfen",
+      "translations": ["бросать", "кидать", "выбрасывать"],
+      "synonyms": [
+        { "word": "schmeißen", "translation": "кидать (разг.)" },
+        { "word": "werfen weg", "translation": "выбрасывать" },
+        { "word": "wenden", "translation": "бросать/поворачивать (контекстно)" }
+      ],
+      "forms": {
+        "praesens_3": "wirft",
+        "praeteritum": "warf",
+        "partizip_2": "geworfen",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er wirft den Ball.",
+        "modal": "Du musst es wegwerfen.",
+        "partizip": "Ich habe es weggeworfen.",
+        "praeteritum": "Er warf den Stein.",
+        "impersonal": "Es wirft Fragen auf."
+      },
+      "prefixes": [
+        {
+          "prefix": "wegwerfen",
+          "meaning": "выбрасывать",
+          "examples": ["Wirf das weg.", "Ich habe es weggeworfen."]
+        }
+      ]
+    },
+
+    {
+      "id": "schneiden",
+      "frequency": 4,
+      "infinitive": "schneiden",
+      "translations": ["резать", "отрезать", "разрезать"],
+      "synonyms": [
+        { "word": "teilen", "translation": "делить" },
+        { "word": "abschneiden", "translation": "отрезать" },
+        { "word": "zerscheiden", "translation": "разрезать (книжн.)" }
+      ],
+      "forms": {
+        "praesens_3": "schneidet",
+        "praeteritum": "schnitt",
+        "partizip_2": "geschnitten",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er schneidet Brot.",
+        "modal": "Ich muss das schneiden.",
+        "partizip": "Ich habe das geschnitten.",
+        "praeteritum": "Er schnitt den Stoff.",
+        "impersonal": "Es schneidet sich gut."
+      },
+      "prefixes": [
+        {
+          "prefix": "abschneiden",
+          "meaning": "отрезать; выступить (о результате)",
+          "examples": ["Er schneidet ein Stück ab.", "Wie hast du abgeschnitten?"]
+        }
+      ]
+    },
+
+    {
+      "id": "schließen",
+      "frequency": 5,
+      "infinitive": "schließen",
+      "translations": ["закрывать", "запирать", "делать вывод"],
+      "synonyms": [
+        { "word": "zumachen", "translation": "закрыть (разг.)" },
+        { "word": "abschließen", "translation": "запереть; завершить" },
+        { "word": "folgern", "translation": "делать вывод" }
+      ],
+      "forms": {
+        "praesens_3": "schließt",
+        "praeteritum": "schloss",
+        "partizip_2": "geschlossen",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er schließt die Tür.",
+        "modal": "Ich muss abschließen.",
+        "partizip": "Ich habe die Tür geschlossen.",
+        "praeteritum": "Er schloss das Fenster.",
+        "impersonal": "Daraus schließt man."
+      },
+      "prefixes": [
+        {
+          "prefix": "abschließen",
+          "meaning": "закрыть на ключ; завершить",
+          "examples": ["Schließ bitte ab.", "Er hat die Ausbildung abgeschlossen."]
+        }
+      ]
+    },
+
+    {
+      "id": "schlagen",
+      "frequency": 4,
+      "infinitive": "schlagen",
+      "translations": ["бить", "ударять", "побеждать"],
+      "synonyms": [
+        { "word": "hauen", "translation": "ударить (разг.)" },
+        { "word": "treffen", "translation": "ударить/попасть" },
+        { "word": "besiegen", "translation": "победить" }
+      ],
+      "forms": {
+        "praesens_3": "schlägt",
+        "praeteritum": "schlug",
+        "partizip_2": "geschlagen",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er schlägt den Ball.",
+        "modal": "Du musst ihn schlagen.",
+        "partizip": "Er hat ihn geschlagen.",
+        "praeteritum": "Er schlug hart zu.",
+        "impersonal": "Das schlägt dem Fass den Boden aus."
+      },
+      "prefixes": [
+        {
+          "prefix": "vorschlagen",
+          "meaning": "предлагать",
+          "examples": ["Ich schlage vor, zu gehen.", "Er hat einen Plan vorgeschlagen."]
+        }
+      ]
+    },
+
+    {
+      "id": "wachsen",
+      "frequency": 4,
+      "infinitive": "wachsen",
+      "translations": ["расти", "увеличиваться", "подрастать"],
+      "synonyms": [
+        { "word": "steigen", "translation": "расти (показатели)" },
+        { "word": "zunehmen", "translation": "увеличиваться" },
+        { "word": "gedeihen", "translation": "развиваться (растения)" }
+      ],
+      "forms": {
+        "praesens_3": "wächst",
+        "praeteritum": "wuchs",
+        "partizip_2": "gewachsen",
+        "auxiliary": "ist"
+      },
+      "examples": {
+        "praesens": "Die Stadt wächst.",
+        "modal": "Das muss weiter wachsen.",
+        "partizip": "Die Kinder sind gewachsen.",
+        "praeteritum": "Das Problem wuchs schnell.",
+        "impersonal": "Es wächst zusammen, was zusammengehört."
+      },
+      "prefixes": []
+    },
+
+    {
+      "id": "sterben",
+      "frequency": 4,
+      "infinitive": "sterben",
+      "translations": ["умирать", "скончаться", "гибнуть"],
+      "synonyms": [
+        { "word": "versterben", "translation": "скончаться (офиц.)" },
+        { "word": "umkommen", "translation": "погибнуть" },
+        { "word": "ableben", "translation": "умереть (книжн.)" }
+      ],
+      "forms": {
+        "praesens_3": "stirbt",
+        "praeteritum": "starb",
+        "partizip_2": "gestorben",
+        "auxiliary": "ist"
+      },
+      "examples": {
+        "praesens": "Der Hund stirbt.",
+        "modal": "Er darf nicht sterben.",
+        "partizip": "Er ist gestorben.",
+        "praeteritum": "Er starb jung.",
+        "impersonal": "Es stirbt nie aus."
+      },
+      "prefixes": []
+    },
+
+    {
+      "id": "steigen",
+      "frequency": 4,
+      "infinitive": "steigen",
+      "translations": ["подниматься", "взбираться", "возрастать"],
+      "synonyms": [
+        { "word": "klettern", "translation": "взбираться" },
+        { "word": "ansteigen", "translation": "увеличиваться" },
+        { "word": "aufsteigen", "translation": "подниматься вверх" }
+      ],
+      "forms": {
+        "praesens_3": "steigt",
+        "praeteritum": "stieg",
+        "partizip_2": "gestiegen",
+        "auxiliary": "ist"
+      },
+      "examples": {
+        "praesens": "Der Preis steigt.",
+        "modal": "Ich muss aussteigen.",
+        "partizip": "Wir sind eingestiegen.",
+        "praeteritum": "Er stieg die Treppe hoch.",
+        "impersonal": "Es steigt Rauch auf."
+      },
+      "prefixes": [
+        {
+          "prefix": "aussteigen",
+          "meaning": "выходить (из транспорта); уйти из темы",
+          "examples": ["Steigen Sie hier aus.", "Er ist aus dem Projekt ausgestiegen."]
+        },
+        {
+          "prefix": "einsteigen",
+          "meaning": "входить/садиться (в транспорт)",
+          "examples": ["Steig ein!", "Wir sind schnell eingestiegen."]
+        }
+      ]
+    },
+
+    {
+      "id": "fliegen",
+      "frequency": 4,
+      "infinitive": "fliegen",
+      "translations": ["летать", "лететь", "перелетать"],
+      "synonyms": [
+        { "word": "schweben", "translation": "парить" },
+        { "word": "reisen", "translation": "путешествовать" },
+        { "word": "abheben", "translation": "взлетать" }
+      ],
+      "forms": {
+        "praesens_3": "fliegt",
+        "praeteritum": "flog",
+        "partizip_2": "geflogen",
+        "auxiliary": "ist"
+      },
+      "examples": {
+        "praesens": "Das Flugzeug fliegt nach Rom.",
+        "modal": "Ich muss morgen fliegen.",
+        "partizip": "Wir sind gestern geflogen.",
+        "praeteritum": "Der Vogel flog weg.",
+        "impersonal": "Die Zeit fliegt."
+      },
+      "prefixes": [
+        {
+          "prefix": "abfliegen",
+          "meaning": "вылетать",
+          "examples": ["Wir fliegen um 6 Uhr ab.", "Der Flieger ist abgeflogen."]
+        }
+      ]
+    },
+
+    {
+      "id": "schwimmen",
+      "frequency": 4,
+      "infinitive": "schwimmen",
+      "translations": ["плавать", "плыть", "держаться на воде"],
+      "synonyms": [
+        { "word": "baden", "translation": "купаться" },
+        { "word": "tauchen", "translation": "нырять" },
+        { "word": "treiben", "translation": "плыть по течению" }
+      ],
+      "forms": {
+        "praesens_3": "schwimmt",
+        "praeteritum": "schwamm",
+        "partizip_2": "geschwommen",
+        "auxiliary": "ist"
+      },
+      "examples": {
+        "praesens": "Er schwimmt gut.",
+        "modal": "Ich muss schwimmen lernen.",
+        "partizip": "Wir sind im See geschwommen.",
+        "praeteritum": "Er schwamm ans Ufer.",
+        "impersonal": "Alles schwimmt."
+      },
+      "prefixes": []
+    },
+
+    {
+      "id": "singen",
+      "frequency": 3,
+      "infinitive": "singen",
+      "translations": ["петь", "исполнять", "напевать"],
+      "synonyms": [
+        { "word": "summen", "translation": "напевать (вполголоса)" },
+        { "word": "trällern", "translation": "напевать (разг.)" },
+        { "word": "vorsingen", "translation": "петь перед кем-то" }
+      ],
+      "forms": {
+        "praesens_3": "singt",
+        "praeteritum": "sang",
+        "partizip_2": "gesungen",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Sie singt ein Lied.",
+        "modal": "Ich muss heute singen.",
+        "partizip": "Wir haben gesungen.",
+        "praeteritum": "Er sang laut.",
+        "impersonal": "Es singt sich leicht."
+      },
+      "prefixes": []
+    },
+
+    {
+      "id": "waschen",
+      "frequency": 4,
+      "infinitive": "waschen",
+      "translations": ["мыть", "стирать", "умывать"],
+      "synonyms": [
+        { "word": "reinigen", "translation": "чистить" },
+        { "word": "säubern", "translation": "очищать" },
+        { "word": "putzen", "translation": "убирать/чистить" }
+      ],
+      "forms": {
+        "praesens_3": "wäscht",
+        "praeteritum": "wusch",
+        "partizip_2": "gewaschen",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Sie wäscht das Auto.",
+        "modal": "Ich muss Wäsche waschen.",
+        "partizip": "Ich habe die Hände gewaschen.",
+        "praeteritum": "Er wusch den Boden.",
+        "impersonal": "Es wäscht sich leicht."
+      },
+      "prefixes": [
+        {
+          "prefix": "abwaschen",
+          "meaning": "смывать; мыть посуду",
+          "examples": ["Ich wasche das ab.", "Ich habe die Teller abgewaschen."]
+        }
+      ]
+    },
+
+    {
+      "id": "fangen",
+      "frequency": 3,
+      "infinitive": "fangen",
+      "translations": ["ловить", "поймать", "захватывать"],
+      "synonyms": [
+        { "word": "erwischen", "translation": "поймать (разг.)" },
+        { "word": "fassen", "translation": "схватить" },
+        { "word": "einfangen", "translation": "поймать (животное)" }
+      ],
+      "forms": {
+        "praesens_3": "fängt",
+        "praeteritum": "fing",
+        "partizip_2": "gefangen",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er fängt den Ball.",
+        "modal": "Ich muss dich fangen.",
+        "partizip": "Wir haben einen Fisch gefangen.",
+        "praeteritum": "Er fing die Maus.",
+        "impersonal": "Es fängt an zu regnen."
+      },
+      "prefixes": [
+        {
+          "prefix": "anfangen",
+          "meaning": "начинать",
+          "examples": ["Ich fange an.", "Wir haben angefangen."]
+        }
+      ]
+    },
+
+    {
+      "id": "halten",
+      "frequency": 5,
+      "infinitive": "halten",
+      "translations": ["держать", "останавливать", "считать"],
+      "synonyms": [
+        { "word": "stoppen", "translation": "останавливать" },
+        { "word": "festhalten", "translation": "держать крепко" },
+        { "word": "meinen", "translation": "считать" }
+      ],
+      "forms": {
+        "praesens_3": "hält",
+        "praeteritum": "hielt",
+        "partizip_2": "gehalten",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Er hält die Tasche.",
+        "modal": "Ich muss das halten.",
+        "partizip": "Ich habe es gehalten.",
+        "praeteritum": "Er hielt an.",
+        "impersonal": "Das hält nicht."
+      },
+      "prefixes": []
+    },
+
+    {
+      "id": "bekommen",
+      "frequency": 5,
+      "infinitive": "bekommen",
+      "translations": ["получать", "доставать", "принимать (пищу/лекарство)"],
+      "synonyms": [
+        { "word": "erhalten", "translation": "получать (офиц.)" },
+        { "word": "kriegen", "translation": "получать (разг.)" },
+        { "word": "nehmen", "translation": "получать/брать (контекстно)" }
+      ],
+      "forms": {
+        "praesens_3": "bekommt",
+        "praeteritum": "bekam",
+        "partizip_2": "bekommen",
+        "auxiliary": "hat"
+      },
+      "examples": {
+        "praesens": "Ich bekomme eine E-Mail.",
+        "modal": "Ich muss Hilfe bekommen.",
+        "partizip": "Ich habe das bekommen.",
+        "praeteritum": "Ich bekam einen Brief.",
+        "impersonal": "Es bekommt ihm nicht."
+      },
+      "prefixes": []
+    },
+{
+  "id": "heißen",
+  "frequency": 5,
+  "infinitive": "heißen",
+  "translations": ["называться", "зваться", "означать"],
+  "synonyms": [
+    { "word": "genannt werden", "translation": "называться" },
+    { "word": "bedeuten", "translation": "означать" },
+    { "word": "lauten", "translation": "звучать (как текст/название)" }
+  ],
+  "forms": {
+    "praesens_3": "heißt",
+    "praeteritum": "hieß",
+    "partizip_2": "geheißen",
+    "auxiliary": "hat"
+  },
+  "examples": {
+    "praesens": "Wie heißt du?",
+    "modal": "Er muss so heißen.",
+    "partizip": "Ich habe ihn so geheißen (selten).",
+    "praeteritum": "Er hieß früher anders.",
+    "impersonal": "Das heißt, wir beginnen später."
+  },
+  "prefixes": []
+},
+{
+  "id": "rufen",
+  "frequency": 4,
+  "infinitive": "rufen",
+  "translations": ["звать", "вызывать", "звонить (разг.: anrufen)"],
+  "synonyms": [
+    { "word": "schreien", "translation": "кричать" },
+    { "word": "anrufen", "translation": "позвонить" },
+    { "word": "herbeirufen", "translation": "позвать" }
+  ],
+  "forms": {
+    "praesens_3": "ruft",
+    "praeteritum": "rief",
+    "partizip_2": "gerufen",
+    "auxiliary": "hat"
+  },
+  "examples": {
+    "praesens": "Er ruft nach Hilfe.",
+    "modal": "Ich muss dich rufen.",
+    "partizip": "Ich habe dich gerufen.",
+    "praeteritum": "Er rief laut.",
+    "impersonal": "Es ruft nach einer Lösung."
+  },
+  "prefixes": [
+    {
+      "prefix": "anrufen",
+      "meaning": "позвонить",
+      "examples": ["Ich rufe dich später an.", "Er hat mich gestern angerufen."]
+    },
+    {
+      "prefix": "zurufen",
+      "meaning": "крикнуть кому-то",
+      "examples": ["Sie rufen ihm etwas zu.", "Er hat mir zugerufen."]
+    }
+  ]
+},
+{
+  "id": "verstehen",
+  "frequency": 5,
+  "infinitive": "verstehen",
+  "translations": ["понимать", "разбираться", "улавливать смысл"],
+  "synonyms": [
+    { "word": "begreifen", "translation": "понимать (осознать)" },
+    { "word": "kapieren", "translation": "понимать (разг.)" },
+    { "word": "nachvollziehen", "translation": "понимать/проследить логику" }
+  ],
+  "forms": {
+    "praesens_3": "versteht",
+    "praeteritum": "verstand",
+    "partizip_2": "verstanden",
+    "auxiliary": "hat"
+  },
+  "examples": {
+    "praesens": "Ich verstehe dich.",
+    "modal": "Ich muss das verstehen.",
+    "partizip": "Ich habe das nicht verstanden.",
+    "praeteritum": "Ich verstand ihn kaum.",
+    "impersonal": "Das versteht sich von selbst."
+  },
+  "prefixes": []
+},
+{
+  "id": "binden",
+  "frequency": 3,
+  "infinitive": "binden",
+  "translations": ["связывать", "перевязывать", "привязывать"],
+  "synonyms": [
+    { "word": "festmachen", "translation": "закреплять, привязывать" },
+    { "word": "verknüpfen", "translation": "связывать (логически)" },
+    { "word": "schnüren", "translation": "шнуровать/перевязывать" }
+  ],
+  "forms": {
+    "praesens_3": "bindet",
+    "praeteritum": "band",
+    "partizip_2": "gebunden",
+    "auxiliary": "hat"
+  },
+  "examples": {
+    "praesens": "Er bindet die Schuhe.",
+    "modal": "Ich muss das fest binden.",
+    "partizip": "Ich habe das Paket gebunden.",
+    "praeteritum": "Er band das Seil.",
+    "impersonal": "Das bindet Ressourcen."
+  },
+  "prefixes": [
+    {
+      "prefix": "abbinden",
+      "meaning": "перевязать/перетянуть (мед./техн.)",
+      "examples": ["Der Arzt bindet das Gefäß ab.", "Er hat es fest abgebunden."]
+    }
+  ]
+},
+{
+  "id": "frieren",
+  "frequency": 4,
+  "infinitive": "frieren",
+  "translations": ["мёрзнуть", "замерзать", "застывать"],
+  "synonyms": [
+    { "word": "zittern", "translation": "дрожать" },
+    { "word": "erfrieren", "translation": "замёрзнуть насмерть" },
+    { "word": "kalt sein", "translation": "быть холодным" }
+  ],
+  "forms": {
+    "praesens_3": "friert",
+    "praeteritum": "fror",
+    "partizip_2": "gefroren",
+    "auxiliary": "hat"
+  },
+  "examples": {
+    "praesens": "Ich friere.",
+    "modal": "Ich muss nicht frieren.",
+    "partizip": "Ich habe die ganze Nacht gefroren.",
+    "praeteritum": "Ich fror im Wind.",
+    "impersonal": "Es friert."
+  },
+  "prefixes": [
+    {
+      "prefix": "einfrieren",
+      "meaning": "замораживать",
+      "examples": ["Ich friere das Brot ein.", "Ich habe das Essen eingefroren."]
+    }
+  ]
+},
+{
+  "id": "empfehlen",
+  "frequency": 4,
+  "infinitive": "empfehlen",
+  "translations": ["рекомендовать", "советовать", "предлагать (как вариант)"],
+  "synonyms": [
+    { "word": "raten", "translation": "советовать" },
+    { "word": "vorschlagen", "translation": "предлагать" },
+    { "word": "anraten", "translation": "рекомендовать (официальнее)" }
+  ],
+  "forms": {
+    "praesens_3": "empfiehlt",
+    "praeteritum": "empfahl",
+    "partizip_2": "empfohlen",
+    "auxiliary": "hat"
+  },
+  "examples": {
+    "praesens": "Der Arzt empfiehlt viel Wasser.",
+    "modal": "Ich muss dir das empfehlen.",
+    "partizip": "Ich habe es dir empfohlen.",
+    "praeteritum": "Er empfahl mir ein Buch.",
+    "impersonal": "Es empfiehlt sich, früh zu starten."
+  },
+  "prefixes": []
+}
+  ]
+}

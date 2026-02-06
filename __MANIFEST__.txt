@@ -1,0 +1,11 @@
+project=lingocard-next
+created_at=2026-02-04 22:33:47
+path=/c/Users/ostol/Downloads/lingocard_canonical_full_boxes_patch0065_Stabile
+tag=v1.0.7-commercial
+build=2026-02-04 22:33:47
+branch=HEAD
+unknown
+commit=a2c1cf9d05a04d93dfe4dc3a748ff93bde73ac77
+commit_short=a2c1cf9d
+message=
+note=Backup created by 4_Backup_Menu.sh

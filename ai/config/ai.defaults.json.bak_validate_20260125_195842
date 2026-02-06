@@ -1,0 +1,13 @@
+{
+  "endpoint": "http://localhost:1234/v1",
+  "timeoutMs": 8000,
+  "cacheTtlMs": 600000,
+  "validate": {
+    "requireBoxes": [
+      "inf",
+      "tr",
+      "forms"
+    ],
+    "minInfChars": 2
+  }
+}

@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>LingoCard — Help (EN)</title>
+  <link rel="stylesheet" href="./help.css"/>
+</head>
+<body>
+  <div class="container">
+
+    <div class="topbar">
+      <div class="brand">
+        <div class="title">LingoCard</div>
+        <div class="subtitle">Help (EN)</div>
+      </div>
+      <div class="nav">
+        <a class="pill" href="../index.html">← Back to app</a>
+        <button class="pill" type="button" id="helpCloseBtn" data-fallback-text="Please close the tab">Close</button>
+        <a class="pill" href="./index.html">RU / DE / EN</a>
+      </div>
+    </div>
+
+    <div class="hero">
+      <h1>Help & features</h1>
+      <p>
+        LingoCard is an app for creating and printing flashcards for German verbs.
+        The goal is simple: less manual work, more solid cards, and PDF exports without surprises.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="accordion">
+
+        <section class="chapter" data-open="0">
+          <div class="chapter-header">
+            <div class="chapter-title">
+              <span class="num">01</span>
+              <span class="text">What is a card?</span>
+            </div>
+            <div class="chapter-meta">
+              <span>basics</span><span class="chev"></span>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="chapter-content">
+              <p><strong>A card</strong> is one verb and its related data:</p>
+              <ul>
+                <li>translations and context</li>
+                <li>verb forms (Präsens / Präteritum / Partizip II / auxiliary)</li>
+                <li>examples (DE/RU)</li>
+                <li>government/valency (Rektion), tags, frequency</li>
+              </ul>
+              <p>A card is a structure. The look can change — the meaning stays.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter" data-open="0">
+          <div class="chapter-header">
+            <div class="chapter-title">
+              <span class="num">02</span>
+              <span class="text">Left list and right list</span>
+            </div>
+            <div class="chapter-meta">
+              <span>workflow</span><span class="chev"></span>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="chapter-content">
+              <p>The app has two card lists.</p>
+              <p><strong>Left list</strong> — the main/reference list, typically used for printing and export.</p>
+              <p><strong>Right list</strong> — the draft area. It’s a safe place to try, expand, and fix cards without risking the main set.</p>
+              <div class="note">
+                <strong>Idea:</strong> drafts exist so a mistake doesn’t turn into a disaster.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter" data-open="0">
+          <div class="chapter-header">
+            <div class="chapter-title">
+              <span class="num">03</span>
+              <span class="text">Creating and editing cards</span>
+            </div>
+            <div class="chapter-meta">
+              <span>practice</span><span class="chev"></span>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="chapter-content">
+              <p>You can create and edit cards manually. You can also use AI (if connected).</p>
+              <ul>
+                <li>Create new cards in the draft list first if you want to review the result.</li>
+                <li>Move a card to the main list when it looks correct.</li>
+              </ul>
+              <p>Best approach: get the meaning right first, then polish the layout.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter" data-open="0">
+          <div class="chapter-header">
+            <div class="chapter-title">
+              <span class="num">04</span>
+              <span class="text">Blocks and layout</span>
+            </div>
+            <div class="chapter-meta">
+              <span>layout</span><span class="chev"></span>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="chapter-content">
+              <p>A card consists of blocks (translations, forms, examples, etc.).</p>
+              <p>Typically you can:</p>
+              <ul>
+                <li>show/hide blocks</li>
+                <li>drag and resize blocks</li>
+                <li>fit the card to the print format</li>
+              </ul>
+              <p>The idea: build the card like a constructor kit, tailored to your format.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter" data-open="0">
+          <div class="chapter-header">
+            <div class="chapter-title">
+              <span class="num">05</span>
+              <span class="text">PDF export and printing</span>
+            </div>
+            <div class="chapter-meta">
+              <span>print</span><span class="chev"></span>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="chapter-content">
+              <p>LingoCard can generate a PDF for printing.</p>
+              <ul>
+                <li>The preview should match the final PDF.</li>
+                <li>If something doesn’t fit, you’ll see it before exporting.</li>
+              </ul>
+              <p>Tip: perfect 1–2 cards first, then export in bulk.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter" data-open="0">
+          <div class="chapter-header">
+            <div class="chapter-title">
+              <span class="num">06</span>
+              <span class="text">Local AI: LM Studio (install & setup)</span>
+            </div>
+            <div class="chapter-meta">
+              <span>AI</span><span class="chev"></span>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="chapter-content">
+              <p><strong>LM Studio</strong> is an app for running language models locally on your PC.</p>
+              <p>Official website: <code>https://lmstudio.ai</code></p>
+
+              <p><strong>Getting started:</strong></p>
+              <ol>
+                <li>Download LM Studio from the official website and install it.</li>
+                <li>Launch LM Studio and download a model (without a model it won’t run — that’s normal).</li>
+                <li>Open <strong>Local Server</strong> and start the server (Start Server).</li>
+              </ol>
+
+              <p><strong>Recommended model settings:</strong></p>
+              <ul>
+                <li>Type: <strong>Chat / Instruct</strong> (not Base)</li>
+                <li>Size: <strong>7B–8B</strong> (quality/speed balance)</li>
+                <li>Format: <strong>GGUF</strong></li>
+                <li>Quantization: <strong>Q4_K_M</strong> or <strong>Q5_K_M</strong></li>
+              </ul>
+
+              <p><strong>Connect to LingoCard:</strong></p>
+              <p>In the AI Control Panel, set the endpoint to:</p>
+              <pre>http://localhost:1234/v1</pre>
+
+              <div class="note">
+                <strong>Important:</strong> if LM Studio isn’t running, the app still works — just without AI.
+                AI is a helper, not a requirement.
+              </div>
+
+              <p><strong>If it’s slow:</strong> use a smaller model, close heavy apps, and check the server is running.</p>
+            </div>
+          </div>
+        </section>
+
+        
+        <section class="chapter" data-open="0">
+          <div class="chapter-header">
+            <div class="chapter-title">
+              <span class="num">07</span>
+              <span class="text">Ways to enter verbs for generation</span>
+            </div>
+            <div class="chapter-meta">
+              <span>AI</span><span class="chev"></span>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="chapter-content">
+              <p>You can feed verbs into the generator in several ways — from a single infinitive to a full batch.</p>
+
+              <h3>1) One infinitive (the “Infinitive” field)</h3>
+              <ul>
+                <li>Type an infinitive and press <strong>Generate</strong>.</li>
+                <li>Autocomplete: <strong>Tab</strong> or <strong>→</strong> accepts the suggestion.</li>
+              </ul>
+              <div class="note">
+                <strong>New mode:</strong> you can type the verb in <strong>Russian</strong> or <strong>English</strong>. The panel will try to translate it into a German infinitive (via LM Studio) and then generate the card as usual.
+              </div>
+
+              <h3>2) Multiple infinitives in the same field</h3>
+              <p>You can enter multiple verbs at once:</p>
+              <ul>
+                <li>comma-separated: <code>gehen, kommen, bleiben</code></li>
+                <li>space-separated: <code>gehen kommen bleiben</code></li>
+                <li>multi-word verbs in quotes: <code>"Rad fahren" "spazieren gehen"</code></li>
+              </ul>
+              <div class="note">
+                <strong>Important:</strong> spaces are treated as separators. Use quotes for multi-word verbs.
+              </div>
+
+              <h3>3) Batch list via file (“Import verbs from file”)</h3>
+              <p>Best for mass generation.</p>
+              <ul>
+                <li>Recommended format: <strong>1 infinitive per line</strong>.</li>
+                <li>Comma/space lists may work, but lines are more reliable.</li>
+              </ul>
+
+              <h3>4) Import cards via JSON (no generation)</h3>
+              <p>If you already have ready-made cards in JSON, you can import them into the app. This is data import, not AI generation.</p>
+              <ul>
+                <li>Use import when the cards are already filled.</li>
+                <li>If a card is incomplete, improve it in the right draft list first, then move it to the left list.</li>
+              </ul>
+
+              <h3>Recommended workflow</h3>
+              <ol>
+                <li>Generate → the card appears in the <strong>right list</strong></li>
+                <li>Review/improve → move to the <strong>left list</strong></li>
+                <li>Export PDF</li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+
+<section class="chapter" data-open="0">
+          <div class="chapter-header">
+            <div class="chapter-title">
+              <span class="num">08</span>
+              <span class="text">Data safety & what to do if things feel “off”</span>
+            </div>
+            <div class="chapter-meta">
+              <span>calm mode</span><span class="chev"></span>
+            </div>
+          </div>
+          <div class="chapter-body">
+            <div class="chapter-content">
+              <p>If the app behaves strangely:</p>
+              <ul>
+                <li>don’t delete everything immediately</li>
+                <li>check which list you’re working in (main / draft)</li>
+                <li>check whether a mode is enabled that hides/filters items</li>
+              </ul>
+              <p>Best strategy: small changes and frequent result checks.</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <div class="footer">
+      LingoCard Help • EN • Accordion: click to open/close. Auto-close happens only after clicking another chapter.
+    </div>
+
+  </div>
+
+  <script src="./help.js"></script>
+</body>
+</html>

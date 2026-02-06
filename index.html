@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LingoCard Editor</title>
+  <link rel="stylesheet" href="styles/base.css" />
+</head>
+<body>
+  <div id="appRoot">
+    <div id="topBar"></div>
+    <div id="mainRow">
+      <div id="leftPanel"></div>
+      <div id="cardHost"></div>
+      <div id="rightPanel"></div>
+    </div>
+    <div id="statusBar"></div>
+  </div>
+
+  <!-- Robust ESM bootstrap with fallback -->
+  <script type="module">
+    const qs = new URLSearchParams(location.search);
+    const v = qs.get('v') || String(Date.now());
+    window.__LC_BUILD__ = v;
+
+    const PRIMARY = `./js/app/app.js?v=${encodeURIComponent(v)}`;
+    const FALLBACK = `./js/app/app.legacy.js?v=${encodeURIComponent(v)}`;
+
+    import(PRIMARY).catch(err => {
+      console.error("[LC] Primary ESM boot failed:", err);
+
+      const fb = document.createElement("script");
+      fb.src = FALLBACK;
+      fb.defer = true;
+      fb.onerror = e => {
+        console.error("[LC] Fallback boot failed:", e);
+        document.body.innerHTML =
+          '<div style="padding:12px;font:14px/1.4 system-ui">' +
+          '<b>LingoCard:</b> ошибка загрузки приложения.<br>' +
+          'Открой DevTools → Console и пришли первую ошибку.' +
+          '</div>';
+      };
+      document.head.appendChild(fb);
+    });
+  </script>
+
+  <!-- Legacy browsers (no ES modules at all) -->
+  <script nomodule src="./js/app/app.legacy.js"></script>
+</body>
+</html>

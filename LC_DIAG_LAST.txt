@@ -1,0 +1,18 @@
+
+Smoke test mode:
+  1) Normal      (fast, most useful checks)
+  2) Full        (deep scan, slower)
+  3) Paranoid    (everything + can cancel, slowest)
+Choose (1-3, Enter=2): 
+== Smoke test ==
+Mode: normal
+[OK] index.html
+[OK] js/
+[OK] Utilities/
+Baseline time: 103ms
+
+== Scan files ==
+Files scanned: 79 (time: 290ms)
+
+== Reference sanity: JS imports ==
+JS files: 75

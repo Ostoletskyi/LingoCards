@@ -1,0 +1,18 @@
+{
+  "id": "verbs_full",
+  "title": "Verbs — Full",
+  "card": { "widthMm": 150, "heightMm": 105, "marginMm": 6 },
+  "items": [
+    { "id": "freq", "type": "frequencyDots", "xMm": 6,  "yMm": 6,  "wMm": 26,  "hMm": 10, "bind": "frequency" },
+
+    { "id": "inf",  "type": "text", "xMm": 34, "yMm": 6,  "wMm": 82,  "hMm": 12, "fontPt": 26, "bind": "infinitive" },
+
+    { "id": "forms","type": "text", "xMm": 118,"yMm": 6,  "wMm": 26,  "hMm": 22, "fontPt": 13, "bind": "formsLine" },
+
+    { "id": "tr",   "type": "text", "xMm": 34, "yMm": 18, "wMm": 110, "hMm": 10, "fontPt": 12, "bind": "translationsLine" },
+
+    { "id": "body", "type": "text", "xMm": 6,  "yMm": 30, "wMm": 138, "hMm": 54, "fontPt": 11, "bind": "examplesAndPrefixes" },
+
+    { "id": "syn",  "type": "text", "xMm": 6,  "yMm": 86, "wMm": 138, "hMm": 13, "fontPt": 10, "bind": "synonymsLine" }
+  ]
+}

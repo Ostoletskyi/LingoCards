@@ -1,0 +1,28 @@
+<!-- LingoCard boot: primary ESM + automatic fallback -->
+<script>
+  (function () {
+    var PRIMARY  = "./js/app/app.js";          // primary ES-module entry
+    var FALLBACK = "./js/app/app.legacy.js";   // fallback classic script
+
+    // Try booting as ES module via dynamic import (catchable).
+    var s = document.createElement("script");
+    s.type = "module";
+    s.textContent =
+      "import(" + JSON.stringify(PRIMARY) + ").catch(function(err){" +
+        "console.error('[LC] ESM boot failed:', err);" +
+        "var fb = document.createElement('script');" +
+        "fb.src = " + JSON.stringify(FALLBACK) + ";" +
+        "fb.defer = true;" +
+        "fb.onerror = function(e){ console.error('[LC] Fallback failed:', e); };" +
+        "document.head.appendChild(fb);" +
+      "});";
+    document.head.appendChild(s);
+
+    // Old browsers without module support will run this fallback automatically.
+    var nom = document.createElement("script");
+    nom.src = FALLBACK;
+    nom.defer = true;
+    nom.noModule = true;
+    document.head.appendChild(nom);
+  })();
+</script>

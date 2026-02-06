@@ -1,0 +1,493 @@
+export function buildShell(mounts, i18n){
+  // Toast notifications (styled, non-blocking). Exposed as window.LC_UI.toast
+  function ensureToastHost(){
+    let host = document.getElementById('lcToastHost');
+    if (host) return host;
+    host = document.createElement('div');
+    host.id = 'lcToastHost';
+    host.style.position = 'fixed';
+    host.style.zIndex = '10050';
+    host.style.top = '10px';
+    host.style.left = '50%';
+    host.style.transform = 'translateX(-50%)';
+    host.style.display = 'flex';
+    host.style.flexDirection = 'column';
+    host.style.gap = '8px';
+    host.style.pointerEvents = 'none';
+    document.body.appendChild(host);
+    return host;
+  }
+
+  function toast(message, level){
+    try{
+      const host = ensureToastHost();
+      const el = document.createElement('div');
+      el.className = 'lc-toast';
+      el.textContent = String(message || '');
+      el.style.pointerEvents = 'auto';
+      el.style.maxWidth = '900px';
+      el.style.padding = '10px 14px';
+      el.style.borderRadius = '14px';
+      el.style.border = '1px solid rgba(255,255,255,0.18)';
+      el.style.background = 'rgba(10,14,26,0.92)';
+      el.style.backdropFilter = 'blur(10px)';
+      el.style.color = 'rgba(255,255,255,0.92)';
+      el.style.boxShadow = '0 18px 60px rgba(0,0,0,0.45)';
+      el.style.fontSize = '13px';
+      el.style.lineHeight = '1.35';
+      if (level === 'error') el.style.borderColor = 'rgba(255,80,80,0.55)';
+      if (level === 'ok') el.style.borderColor = 'rgba(70,220,140,0.45)';
+
+      host.appendChild(el);
+      // auto-remove
+      const ttl = (level === 'error') ? 5200 : 3200;
+      setTimeout(() => { if (el && el.parentNode) el.parentNode.removeChild(el); }, ttl);
+    }catch(_e){
+      // last resort
+      console.warn('Toast failed:', _e);
+    }
+  }
+
+  window.LC_UI = window.LC_UI || {};
+  window.LC_UI.toast = toast;
+
+  // TopBar
+  mounts.topBar.innerHTML = "";
+
+  // make top bar split: left content + right content
+  mounts.topBar.style.justifyContent = "space-between";
+
+  const topLeft = document.createElement("div");
+  topLeft.style.display = "flex";
+  topLeft.style.alignItems = "center";
+  topLeft.style.gap = "10px";
+  topLeft.style.flex = "1";
+
+  // App title / logo (clickable => author mini-card)
+  const title = document.createElement("button");
+  title.id = "lcTitle";
+  title.type = "button";
+  title.className = "lc-title";
+  // Important: do NOT set data-i18n-key on the button itself.
+  // applyI18n() updates textContent and would wipe child nodes.
+  title.style.fontWeight = "800";
+  title.style.letterSpacing = "0.4px";
+  title.style.cursor = "pointer";
+  title.style.border = "1px solid rgba(255,255,255,0.12)";
+  title.style.background = "rgba(255,255,255,0.04)";
+  title.style.color = "rgba(255,255,255,0.92)";
+  title.style.padding = "6px 10px";
+  title.style.borderRadius = "12px";
+  title.style.userSelect = "none";
+  title.style.display = "inline-flex";
+  title.style.alignItems = "center";
+  title.style.gap = "8px";
+
+  const titleMain = document.createElement("span");
+  titleMain.id = "lcTitleMain";
+  titleMain.textContent = i18n.t("app.title");
+  titleMain.dataset.i18nKey = "app.title";
+  title.appendChild(titleMain);
+
+  const subtitle = document.createElement("span");
+  subtitle.id = "lcTitleSub";
+  subtitle.textContent = i18n.t("app.subtitle") || "";
+  subtitle.dataset.i18nKey = "app.subtitle";
+  subtitle.style.fontWeight = "700";
+  subtitle.style.opacity = "0.75";
+  subtitle.style.fontSize = "12px";
+  subtitle.style.letterSpacing = "0.2px";
+  title.appendChild(subtitle);
+
+  // Author popover (created once, toggled by title click)
+  let authorPop = document.getElementById("lcAuthorPopover");
+  if (!authorPop){
+    authorPop = document.createElement("div");
+    authorPop.id = "lcAuthorPopover";
+    authorPop.style.position = "fixed";
+    authorPop.style.zIndex = "10001";
+    authorPop.style.display = "none";
+    authorPop.style.minWidth = "280px";
+    authorPop.style.maxWidth = "340px";
+    authorPop.style.border = "1px solid rgba(255,255,255,0.18)";
+    authorPop.style.background = "rgba(10,14,26,0.92)";
+    authorPop.style.backdropFilter = "blur(10px)";
+    authorPop.style.borderRadius = "16px";
+    authorPop.style.boxShadow = "0 18px 60px rgba(0,0,0,0.45)";
+    authorPop.style.padding = "12px 12px";
+    authorPop.style.color = "rgba(255,255,255,0.92)";
+    authorPop.style.lineHeight = "1.35";
+    authorPop.style.fontSize = "13px";
+    // Content is rendered dynamically on open, so it follows language switching.
+    document.body.appendChild(authorPop);
+
+    // Close handlers
+    authorPop.addEventListener("click", (e) => {
+      // prevent closing when clicking inside
+      e.stopPropagation();
+    });
+    document.addEventListener("click", () => {
+      authorPop.style.display = "none";
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") authorPop.style.display = "none";
+    });
+  }
+
+  function renderAuthorPopover(){
+    authorPop.innerHTML = `
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+        <div style="font-weight:800;letter-spacing:.2px;">${i18n.t("app.author.title")}</div>
+        <button id="lcAuthorClose" type="button" style="border:1px solid rgba(255,255,255,0.14);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.9);border-radius:10px;padding:4px 8px;cursor:pointer;">×</button>
+      </div>
+      <div style="height:8px"></div>
+      <div style="font-weight:700;">${i18n.t("app.author.name")}</div>
+      <div style="opacity:.75;margin-top:2px;">${i18n.t("app.author.role")}</div>
+      <div style="height:10px"></div>
+      <div style="opacity:.9;">${i18n.t("app.author.email")}</div>
+      <div style="opacity:.9;margin-top:2px;">${i18n.t("app.author.youtube")}</div>
+      <div style="height:10px"></div>
+      <div style="opacity:.65;font-size:12px;">${i18n.t("app.author.rights")}</div>
+    `;
+    const closeBtn = authorPop.querySelector("#lcAuthorClose");
+    if (closeBtn && !closeBtn.dataset.bound){
+      closeBtn.dataset.bound = "1";
+      closeBtn.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        ev.stopPropagation();
+        authorPop.style.display = "none";
+      });
+    }
+  }
+
+  const topActions = document.createElement("div");
+  topActions.id = "lcTopActions";
+  // Grouped action bar (buttons go into groups for nicer desktop layout)
+  topActions.style.display = "flex";
+  topActions.style.alignItems = "center";
+  topActions.style.flexWrap = "wrap";
+  topActions.style.gap = "10px";
+  topActions.style.marginLeft = "12px";
+
+  // Groups (order matters)
+  const groups = [
+    { id: "edit",   title: null },
+    { id: "cards",  title: null },
+    { id: "verbs",  title: null },
+    { id: "view",   title: null },
+    { id: "export", title: null },
+  ];
+
+  const groupHosts = {};
+  for (const g of groups){
+    const host = document.createElement("div");
+    host.className = "lc-top-group";
+    host.dataset.group = g.id;
+    host.id = `lcGrp_${g.id}`;
+    groupHosts[g.id] = host;
+    topActions.appendChild(host);
+  }
+
+  topLeft.appendChild(title);
+  topLeft.appendChild(topActions);
+
+  // Toggle author popover
+  if (!title.dataset.authorBound){
+    title.dataset.authorBound = "1";
+    title.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      renderAuthorPopover();
+      const r = title.getBoundingClientRect();
+      authorPop.style.left = Math.max(10, Math.min(window.innerWidth - 360, r.left)) + "px";
+      authorPop.style.top = Math.min(window.innerHeight - 20, r.bottom + 10) + "px";
+      authorPop.style.display = (authorPop.style.display === "none") ? "block" : "none";
+    });
+  }
+
+  const topRight = document.createElement("div");
+  topRight.style.display = "flex";
+  topRight.style.alignItems = "center";
+  topRight.style.gap = "8px";
+
+  // View toggles (Rulers / Grid step / Magnet) live near language switches.
+  // This frees the main toolbar area for the mode indicator ("siren").
+  const viewHost = document.createElement("div");
+  viewHost.id = "lcViewHost";
+  viewHost.style.display = "flex";
+  viewHost.style.alignItems = "center";
+  viewHost.style.gap = "8px";
+
+  const langHost = document.createElement("div");
+  langHost.id = "lcLangHost";
+  langHost.style.display = "flex";
+  langHost.style.alignItems = "center";
+  langHost.style.gap = "6px";
+
+  // --- AI Control Panel (lazy-loaded, isolated module) ---
+  const aiBtn = document.createElement("button");
+  aiBtn.id = "lcAiControlBtn";
+  aiBtn.className = "lc-btn lc-btn-sm";
+  aiBtn.textContent = "\uD83E\uDDE0  AI Control Panel";
+
+  aiBtn.title = "Open AI Control Panel";
+  aiBtn.addEventListener("click", async () => {
+    try{
+      // If module not loaded yet, load it dynamically
+      if (!window.AI_PANEL){
+        // Load contract first (shared helpers, prompt schema)
+        try{
+          const c = new URL("../../ai/ai.contract.js", import.meta.url);
+          // NOTE: use stable build id to avoid re-importing on every open.
+          // Old code used Date.now(), which created *new* module URLs each time ->
+          // duplicated handlers and double LM Studio requests.
+          c.searchParams.set('v', (window.__LC_BUILD__ || 'dev').toString());
+          await import(c.href);
+        }catch(_e){ /* contract module is optional for older builds */ }
+        const u = new URL("../../ai/ai.entry.js", import.meta.url);
+        // Stable build id keeps module cache working; a normal browser refresh is enough
+        // to pick up updates.
+        u.searchParams.set('v', (window.__LC_BUILD__ || 'dev').toString());
+        const url = u.href;
+        await import(url);
+      }
+      window.AI_PANEL?.open?.();
+    }catch(e){
+      console.error("AI panel load failed:", e);
+      toast("AI Control Panel: load failed. Check console.", "error");
+    }
+  });
+
+  // Place near language controls (top right)
+  topRight.appendChild(aiBtn);
+
+  topRight.appendChild(viewHost);
+  topRight.appendChild(langHost);
+
+  mounts.topBar.appendChild(topLeft);
+  mounts.topBar.appendChild(topRight);
+
+  // Expose group hosts for UI registry
+  mounts.topBar.__lcGroupHosts = groupHosts;
+
+  // Mode siren indicator (source vs created cards)
+  // We place it in the main action area (old "view" slot) so it never overlaps rulers.
+  const siren = document.createElement("div");
+  siren.id = "lcModeSiren";
+  siren.className = "lc-mode-siren";
+  siren.innerHTML = `
+    <div id="lcModeSiren_source" class="lc-mode-light" title="Source"></div>
+    <div id="lcModeSiren_cards" class="lc-mode-light" title="Cards"></div>
+  `;
+  // Put siren into the "view" group host (left side action clusters)
+  if (groupHosts.view) groupHosts.view.appendChild(siren);
+
+  // Help / instructions button (to the right of the siren)
+  const helpBtn = document.createElement("button");
+  helpBtn.id = "lcHelpBtn";
+  helpBtn.className = "lc-btn lc-btn-sm lc-btn-help";
+  helpBtn.textContent = "?";
+  helpBtn.title = i18n.t("ui.tip.help") || "Help";
+  if (groupHosts.view) groupHosts.view.appendChild(helpBtn);
+
+  // Left panel
+  mounts.leftPanel.innerHTML = "";
+  // Panel layout should never force an extra scrollbar on the whole panel.
+  // Internal lists handle scrolling.
+  mounts.leftPanel.style.display = "flex";
+  mounts.leftPanel.style.flexDirection = "column";
+  mounts.leftPanel.style.minHeight = "0";
+  const leftTitle = document.createElement("div");
+  leftTitle.textContent = i18n.t("ui.left.title");
+  leftTitle.dataset.i18nKey = "ui.left.title";
+  leftTitle.style.fontWeight = "700";
+  leftTitle.style.marginBottom = "10px";
+  // UX: this title is redundant (the list already shows its purpose) and on some
+  // screen sizes it ended up as a confusing leftover label near the bottom.
+  // Hide it to keep the panel clean.
+  leftTitle.style.display = "none";
+
+  const leftBody = document.createElement("div");
+  leftBody.id = "lcLeftBody";
+  leftBody.style.display = "grid";
+  leftBody.style.gap = "8px";
+  leftBody.style.flex = "1 1 auto";
+  leftBody.style.minHeight = "0";
+  leftBody.style.overflow = "hidden";
+
+  mounts.leftPanel.appendChild(leftTitle);
+  mounts.leftPanel.appendChild(leftBody);
+
+  // Card host: layered container
+  mounts.cardHost.innerHTML = "";
+  const cardLayer = document.createElement("div");
+  cardLayer.id = "lcCardLayer";
+  cardLayer.style.position = "absolute";
+  cardLayer.style.left = "0";
+  cardLayer.style.top = "0";
+  cardLayer.style.right = "0";
+  cardLayer.style.bottom = "0";
+  // Preview should stay WYSIWYG. We don't shift/scale it to avoid UI overlaps.
+  // Overlaps are solved by rearranging the top bar (view toggles + mode indicator).
+  cardLayer.style.transform = "none";
+
+  mounts.cardHost.style.position = "relative";
+  mounts.cardHost.appendChild(cardLayer);
+
+  // Right panel (optional)
+  let rightBody = null;
+  if (mounts.rightPanel){
+    mounts.rightPanel.innerHTML = "";
+    mounts.rightPanel.style.display = "flex";
+    mounts.rightPanel.style.flexDirection = "column";
+    mounts.rightPanel.style.minHeight = "0";
+    const rt = document.createElement("div");
+    rt.className = "lc-right-title";
+    rt.textContent = i18n.t("ui.right.title");
+    rt.dataset.i18nKey = "ui.right.title";
+
+    rightBody = document.createElement("div");
+    rightBody.id = "lcRightBody";
+    rightBody.style.flex = "1 1 auto";
+    rightBody.style.minHeight = "0";
+    rightBody.style.overflow = "hidden";
+
+    mounts.rightPanel.appendChild(rt);
+    mounts.rightPanel.appendChild(rightBody);
+  }
+
+  // Status bar
+  mounts.statusBar.innerHTML = "";
+
+  const statusLeft = document.createElement("div");
+  statusLeft.id = "lcStatusText";
+  statusLeft.textContent = i18n.t("ui.status.ready");
+  statusLeft.dataset.i18nKey = "ui.status.ready";
+
+  const statusRight = document.createElement("div");
+  statusRight.style.display = "flex";
+  statusRight.style.alignItems = "center";
+  statusRight.style.gap = "10px";
+
+  const editBadge = document.createElement("span");
+  editBadge.id = "lcEditBadge";
+  editBadge.className = "lc-badge off";
+  editBadge.textContent = i18n.t("ui.status.editingOff");
+  statusRight.appendChild(editBadge);
+
+  // Card badge (persistent card counter, so it doesn't get overwritten by other status messages)
+  const cardBadge = document.createElement("span");
+  cardBadge.id = "lcCardBadge";
+  cardBadge.className = "lc-badge";
+  cardBadge.textContent = "";
+  statusRight.appendChild(cardBadge);
+
+  mounts.statusBar.appendChild(statusLeft);
+
+  // ===== Tooltip (instant show, auto-hide 2s after leave) =====
+  let tip = document.getElementById("lcTooltip");
+  if (!tip){
+    tip = document.createElement("div");
+    tip.id = "lcTooltip";
+    tip.style.position = "fixed";
+    tip.style.zIndex = "10000";
+    tip.style.pointerEvents = "none";
+    tip.style.display = "none";
+    document.body.appendChild(tip);
+
+    let hideTimer = null;
+    const show = (el) => {
+      const text = el?.getAttribute?.("data-tip");
+      if (!text) return;
+      if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+      tip.textContent = text;
+      tip.style.display = "block";
+      const r = el.getBoundingClientRect();
+      const x = Math.max(8, Math.min(window.innerWidth - 8, r.left + r.width/2));
+      const y = Math.max(8, r.bottom + 8);
+      tip.style.left = x + "px";
+      tip.style.top = y + "px";
+      tip.style.transform = "translateX(-50%)";
+    };
+    const scheduleHide = () => {
+      if (hideTimer) clearTimeout(hideTimer);
+      hideTimer = setTimeout(() => { tip.style.display = "none"; }, 2000);
+    };
+
+    document.addEventListener("mouseover", (e) => {
+      const el = e.target?.closest?.("[data-tip]");
+      if (!el) return;
+      show(el);
+    });
+
+    // FIX: avoid flicker when moving between child nodes inside the same [data-tip] element
+    document.addEventListener("mouseout", (e) => {
+      const el = e.target?.closest?.("[data-tip]");
+      if (!el) return;
+      if (e.relatedTarget && el.contains(e.relatedTarget)) return;
+      scheduleHide();
+    });
+
+    window.addEventListener("scroll", () => { tip.style.display = "none"; }, true);
+  }
+
+  mounts.statusBar.appendChild(statusRight);
+
+  // Bottom dock (version badge / admin)
+  let bottomDock = document.getElementById("lcBottomDock");
+  if (!bottomDock) {
+    bottomDock = document.createElement("div");
+    bottomDock.id = "lcBottomDock";
+    bottomDock.className = "lc-bottom-dock";
+    document.body.appendChild(bottomDock);
+  }
+
+  return {
+    topActions,
+    groupHosts,
+    viewHost,
+    langHost,
+    leftBody,
+    statusText: statusLeft,
+    editBadge,
+    cardBadge,
+    bottomDock,
+    rightBody,
+  };
+}
+
+// Legacy helper (older UI stack). Not used by the current app, but kept so that
+// static import/export checks (and old experiments) don't break.
+export function ensureUIShell(t){
+  const rootId = "lcLegacyShell";
+  let root = document.getElementById(rootId);
+  if (!root){
+    root = document.createElement("div");
+    root.id = rootId;
+    root.style.position = "fixed";
+    root.style.left = "10px";
+    root.style.top = "10px";
+    root.style.zIndex = "99999";
+    root.style.maxWidth = "520px";
+    root.style.pointerEvents = "none";
+    document.body.appendChild(root);
+  }
+
+  let banner = document.getElementById("lcLegacyBanner");
+  if (!banner){
+    banner = document.createElement("div");
+    banner.id = rootId;
+    banner.style.pointerEvents = "auto";
+    banner.style.padding = "8px 10px";
+    banner.style.borderRadius = "10px";
+    banner.style.border = "1px solid #e5e7eb";
+    banner.style.background = "#fff";
+    banner.style.color = "#111827";
+    banner.style.boxShadow = "0 6px 18px rgba(0,0,0,0.18)";
+    banner.style.display = "none";
+    banner.textContent = (typeof t === "function") ? t("app.title") : "LingoCard";
+    root.appendChild(banner);
+  }
+
+  return { banner };
+}

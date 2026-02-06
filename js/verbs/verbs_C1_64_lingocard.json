@@ -1,0 +1,3038 @@
+{
+  "version": 1,
+  "kind": "verbs-left",
+  "passport": {
+    "app": "LingoCard-next",
+    "tag": "v1.0.1-commercial",
+    "build": "",
+    "exportedAt": "2026-01-15T14:00:55.931031Z",
+    "kind": "verbs-left",
+    "scope": "left",
+    "schema": 1,
+    "viewMode": "verbs"
+  },
+  "data": {
+    "verbs": [
+      {
+        "inf": "bewältigen",
+        "translations": [
+          "справляться",
+          "преодолевать"
+        ],
+        "forms": {
+          "praesens_3": "bewältigt",
+          "praeteritum": "bewältigte",
+          "partizip_2": "bewältigt",
+          "auxiliary": "haben"
+        },
+        "synonyms": [
+          {
+            "word": "meistern",
+            "translation": "осваивать"
+          }
+        ],
+        "examples": {
+          "praesens": "Er bewältigt die Krise souverän.",
+          "modal": "Man muss diese Aufgabe bewältigen können.",
+          "praeteritum": "Sie bewältigte die Situation allein.",
+          "perfekt": "Er hat alle Probleme bewältigt."
+        },
+        "examples_ru": {
+          "praesens": "Он уверенно справляется с кризисом.",
+          "modal": "Нужно уметь справляться с этой задачей.",
+          "praeteritum": "Она справилась с ситуацией одна.",
+          "perfekt": "Он преодолел все проблемы."
+        },
+        "prefixes": [],
+        "freq": 4,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "hinterfragen",
+        "translations": [
+          "подвергать сомнению",
+          "критически анализировать"
+        ],
+        "forms": {
+          "praesens_3": "hinterfragt",
+          "praeteritum": "hinterfragte",
+          "partizip_2": "hinterfragt",
+          "auxiliary": "haben"
+        },
+        "synonyms": [
+          {
+            "word": "anzweifeln",
+            "translation": "сомневаться"
+          }
+        ],
+        "examples": {
+          "praesens": "Sie hinterfragt jede Entscheidung.",
+          "modal": "Man sollte Informationen hinterfragen.",
+          "praeteritum": "Er hinterfragte die Theorie.",
+          "perfekt": "Sie hat alles kritisch hinterfragt."
+        },
+        "examples_ru": {
+          "praesens": "Она подвергает сомнению каждое решение.",
+          "modal": "Следует критически анализировать информацию.",
+          "praeteritum": "Он поставил теорию под сомнение.",
+          "perfekt": "Она всё критически проанализировала."
+        },
+        "prefixes": [],
+        "freq": 4,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "veranschaulichen",
+        "translations": [
+          "иллюстрировать"
+        ],
+        "forms": {
+          "praesens_3": "veranschaulicht",
+          "praeteritum": "veranschaulichte",
+          "partizip_2": "veranschaulicht",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man veranschaulichen die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte veranschaulichen können.",
+          "praeteritum": "Er veranschaulichte den Plan.",
+          "perfekt": "Er hat den Plan veranschaulicht."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию иллюстрировать.",
+          "modal": "Нужно уметь иллюстрировать.",
+          "praeteritum": "Он иллюстрировать план.",
+          "perfekt": "Он иллюстрировать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "nachvollziehen",
+        "translations": [
+          "прослеживать"
+        ],
+        "forms": {
+          "praesens_3": "vollzieht nach",
+          "praeteritum": "vollzog nach",
+          "partizip_2": "nachvollzogen",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man nachvollziehen die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte nachvollziehen können.",
+          "praeteritum": "Er vollzog nach den Plan.",
+          "perfekt": "Er hat den Plan nachvollzogen."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию прослеживать.",
+          "modal": "Нужно уметь прослеживать.",
+          "praeteritum": "Он прослеживать план.",
+          "perfekt": "Он прослеживать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "beeinträchtigen",
+        "translations": [
+          "негативно влиять"
+        ],
+        "forms": {
+          "praesens_3": "beeinträchtigt",
+          "praeteritum": "beeinträchtigte",
+          "partizip_2": "beeinträchtigt",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man beeinträchtigen die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte beeinträchtigen können.",
+          "praeteritum": "Er beeinträchtigte den Plan.",
+          "perfekt": "Er hat den Plan beeinträchtigt."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию негативно влиять.",
+          "modal": "Нужно уметь негативно влиять.",
+          "praeteritum": "Он негативно влиять план.",
+          "perfekt": "Он негативно влиять план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "gewährleisten",
+        "translations": [
+          "гарантировать"
+        ],
+        "forms": {
+          "praesens_3": "gewährleistet",
+          "praeteritum": "gewährleistete",
+          "partizip_2": "gewährleistet",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man gewährleisten die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte gewährleisten können.",
+          "praeteritum": "Er gewährleistete den Plan.",
+          "perfekt": "Er hat den Plan gewährleistet."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию гарантировать.",
+          "modal": "Нужно уметь гарантировать.",
+          "praeteritum": "Он гарантировать план.",
+          "perfekt": "Он гарантировать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "konzipieren",
+        "translations": [
+          "разрабатывать концепцию"
+        ],
+        "forms": {
+          "praesens_3": "konzipiert",
+          "praeteritum": "konzipierte",
+          "partizip_2": "konzipiert",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man konzipieren die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte konzipieren können.",
+          "praeteritum": "Er konzipierte den Plan.",
+          "perfekt": "Er hat den Plan konzipiert."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию разрабатывать концепцию.",
+          "modal": "Нужно уметь разрабатывать концепцию.",
+          "praeteritum": "Он разрабатывать концепцию план.",
+          "perfekt": "Он разрабатывать концепцию план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "rechtfertigen",
+        "translations": [
+          "оправдывать"
+        ],
+        "forms": {
+          "praesens_3": "rechtfertigt",
+          "praeteritum": "rechtfertigte",
+          "partizip_2": "gerechtfertigt",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man rechtfertigen die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte rechtfertigen können.",
+          "praeteritum": "Er rechtfertigte den Plan.",
+          "perfekt": "Er hat den Plan gerechtfertigt."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию оправдывать.",
+          "modal": "Нужно уметь оправдывать.",
+          "praeteritum": "Он оправдывать план.",
+          "perfekt": "Он оправдывать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "untergraben",
+        "translations": [
+          "подрывать"
+        ],
+        "forms": {
+          "praesens_3": "untergräbt",
+          "praeteritum": "untergrub",
+          "partizip_2": "untergraben",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man untergraben die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte untergraben können.",
+          "praeteritum": "Er untergrub den Plan.",
+          "perfekt": "Er hat den Plan untergraben."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию подрывать.",
+          "modal": "Нужно уметь подрывать.",
+          "praeteritum": "Он подрывать план.",
+          "perfekt": "Он подрывать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "hervorheben",
+        "translations": [
+          "подчеркивать"
+        ],
+        "forms": {
+          "praesens_3": "hebt hervor",
+          "praeteritum": "hob hervor",
+          "partizip_2": "hervorgehoben",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man hervorheben die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte hervorheben können.",
+          "praeteritum": "Er hob hervor den Plan.",
+          "perfekt": "Er hat den Plan hervorgehoben."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию подчеркивать.",
+          "modal": "Нужно уметь подчеркивать.",
+          "praeteritum": "Он подчеркивать план.",
+          "perfekt": "Он подчеркивать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "implizieren",
+        "translations": [
+          "подразумевать"
+        ],
+        "forms": {
+          "praesens_3": "impliziert",
+          "praeteritum": "implizierte",
+          "partizip_2": "impliziert",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man implizieren die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte implizieren können.",
+          "praeteritum": "Er implizierte den Plan.",
+          "perfekt": "Er hat den Plan impliziert."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию подразумевать.",
+          "modal": "Нужно уметь подразумевать.",
+          "praeteritum": "Он подразумевать план.",
+          "perfekt": "Он подразумевать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "präzisieren",
+        "translations": [
+          "уточнять"
+        ],
+        "forms": {
+          "praesens_3": "präzisiert",
+          "praeteritum": "präzisierte",
+          "partizip_2": "präzisiert",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man präzisieren die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte präzisieren können.",
+          "praeteritum": "Er präzisierte den Plan.",
+          "perfekt": "Er hat den Plan präzisiert."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию уточнять.",
+          "modal": "Нужно уметь уточнять.",
+          "praeteritum": "Он уточнять план.",
+          "perfekt": "Он уточнять план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "relativieren",
+        "translations": [
+          "относить к контексту"
+        ],
+        "forms": {
+          "praesens_3": "relativiert",
+          "praeteritum": "relativierte",
+          "partizip_2": "relativiert",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man relativieren die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte relativieren können.",
+          "praeteritum": "Er relativierte den Plan.",
+          "perfekt": "Er hat den Plan relativiert."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию относить к контексту.",
+          "modal": "Нужно уметь относить к контексту.",
+          "praeteritum": "Он относить к контексту план.",
+          "perfekt": "Он относить к контексту план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "durchsetzen",
+        "translations": [
+          "добиваться"
+        ],
+        "forms": {
+          "praesens_3": "setzt durch",
+          "praeteritum": "setzte durch",
+          "partizip_2": "durchgesetzt",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man durchsetzen die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte durchsetzen können.",
+          "praeteritum": "Er setzte durch den Plan.",
+          "perfekt": "Er hat den Plan durchgesetzt."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию добиваться.",
+          "modal": "Нужно уметь добиваться.",
+          "praeteritum": "Он добиваться план.",
+          "perfekt": "Он добиваться план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "einschränken",
+        "translations": [
+          "ограничивать"
+        ],
+        "forms": {
+          "praesens_3": "schränkt ein",
+          "praeteritum": "schränkte ein",
+          "partizip_2": "eingeschränkt",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man einschränken die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte einschränken können.",
+          "praeteritum": "Er schränkte ein den Plan.",
+          "perfekt": "Er hat den Plan eingeschränkt."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию ограничивать.",
+          "modal": "Нужно уметь ограничивать.",
+          "praeteritum": "Он ограничивать план.",
+          "perfekt": "Он ограничивать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "abwägen",
+        "translations": [
+          "взвешивать"
+        ],
+        "forms": {
+          "praesens_3": "wägt ab",
+          "praeteritum": "wog ab",
+          "partizip_2": "abgewogen",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man abwägen die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte abwägen können.",
+          "praeteritum": "Er wog ab den Plan.",
+          "perfekt": "Er hat den Plan abgewogen."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию взвешивать.",
+          "modal": "Нужно уметь взвешивать.",
+          "praeteritum": "Он взвешивать план.",
+          "perfekt": "Он взвешивать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "erörtern",
+        "translations": [
+          "обсуждать"
+        ],
+        "forms": {
+          "praesens_3": "erörtert",
+          "praeteritum": "erörterte",
+          "partizip_2": "erörtert",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man erörtern die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte erörtern können.",
+          "praeteritum": "Er erörterte den Plan.",
+          "perfekt": "Er hat den Plan erörtert."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию обсуждать.",
+          "modal": "Нужно уметь обсуждать.",
+          "praeteritum": "Он обсуждать план.",
+          "perfekt": "Он обсуждать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "aufrechterhalten",
+        "translations": [
+          "поддерживать"
+        ],
+        "forms": {
+          "praesens_3": "hält aufrecht",
+          "praeteritum": "hielt aufrecht",
+          "partizip_2": "aufrechterhalten",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man aufrechterhalten die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte aufrechterhalten können.",
+          "praeteritum": "Er hielt aufrecht den Plan.",
+          "perfekt": "Er hat den Plan aufrechterhalten."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию поддерживать.",
+          "modal": "Нужно уметь поддерживать.",
+          "praeteritum": "Он поддерживать план.",
+          "perfekt": "Он поддерживать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "ausdifferenzieren",
+        "translations": [
+          "детализировать"
+        ],
+        "forms": {
+          "praesens_3": "differenziert aus",
+          "praeteritum": "differenzierte aus",
+          "partizip_2": "ausdifferenziert",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man ausdifferenzieren die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte ausdifferenzieren können.",
+          "praeteritum": "Er differenzierte aus den Plan.",
+          "perfekt": "Er hat den Plan ausdifferenziert."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию детализировать.",
+          "modal": "Нужно уметь детализировать.",
+          "praeteritum": "Он детализировать план.",
+          "perfekt": "Он детализировать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "antizipieren",
+        "translations": [
+          "предвосхищать"
+        ],
+        "forms": {
+          "praesens_3": "antizipiert",
+          "praeteritum": "antizipierte",
+          "partizip_2": "antizipiert",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man antizipieren die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte antizipieren können.",
+          "praeteritum": "Er antizipierte den Plan.",
+          "perfekt": "Er hat den Plan antizipiert."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию предвосхищать.",
+          "modal": "Нужно уметь предвосхищать.",
+          "praeteritum": "Он предвосхищать план.",
+          "perfekt": "Он предвосхищать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "resümieren",
+        "translations": [
+          "подытоживать"
+        ],
+        "forms": {
+          "praesens_3": "resümiert",
+          "praeteritum": "resümierte",
+          "partizip_2": "resümiert",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man resümieren die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte resümieren können.",
+          "praeteritum": "Er resümierte den Plan.",
+          "perfekt": "Er hat den Plan resümiert."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию подытоживать.",
+          "modal": "Нужно уметь подытоживать.",
+          "praeteritum": "Он подытоживать план.",
+          "perfekt": "Он подытоживать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "delegieren",
+        "translations": [
+          "делегировать"
+        ],
+        "forms": {
+          "praesens_3": "delegiert",
+          "praeteritum": "delegierte",
+          "partizip_2": "delegiert",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man delegieren die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte delegieren können.",
+          "praeteritum": "Er delegierte den Plan.",
+          "perfekt": "Er hat den Plan delegiert."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию делегировать.",
+          "modal": "Нужно уметь делегировать.",
+          "praeteritum": "Он делегировать план.",
+          "perfekt": "Он делегировать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "koordinieren",
+        "translations": [
+          "координировать"
+        ],
+        "forms": {
+          "praesens_3": "koordiniert",
+          "praeteritum": "koordinierte",
+          "partizip_2": "koordiniert",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man koordinieren die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte koordinieren können.",
+          "praeteritum": "Er koordinierte den Plan.",
+          "perfekt": "Er hat den Plan koordiniert."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию координировать.",
+          "modal": "Нужно уметь координировать.",
+          "praeteritum": "Он координировать план.",
+          "perfekt": "Он координировать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "evaluieren",
+        "translations": [
+          "оценивать"
+        ],
+        "forms": {
+          "praesens_3": "evaluiert",
+          "praeteritum": "evaluierte",
+          "partizip_2": "evaluiert",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man evaluieren die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte evaluieren können.",
+          "praeteritum": "Er evaluierte den Plan.",
+          "perfekt": "Er hat den Plan evaluiert."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию оценивать.",
+          "modal": "Нужно уметь оценивать.",
+          "praeteritum": "Он оценивать план.",
+          "perfekt": "Он оценивать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "modifizieren",
+        "translations": [
+          "модифицировать"
+        ],
+        "forms": {
+          "praesens_3": "modifiziert",
+          "praeteritum": "modifizierte",
+          "partizip_2": "modifiziert",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man modifizieren die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte modifizieren können.",
+          "praeteritum": "Er modifizierte den Plan.",
+          "perfekt": "Er hat den Plan modifiziert."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию модифицировать.",
+          "modal": "Нужно уметь модифицировать.",
+          "praeteritum": "Он модифицировать план.",
+          "perfekt": "Он модифицировать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "revidieren",
+        "translations": [
+          "пересматривать"
+        ],
+        "forms": {
+          "praesens_3": "revidiert",
+          "praeteritum": "revidierte",
+          "partizip_2": "revidiert",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man revidieren die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte revidieren können.",
+          "praeteritum": "Er revidierte den Plan.",
+          "perfekt": "Er hat den Plan revidiert."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию пересматривать.",
+          "modal": "Нужно уметь пересматривать.",
+          "praeteritum": "Он пересматривать план.",
+          "perfekt": "Он пересматривать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "skizzieren",
+        "translations": [
+          "обрисовывать"
+        ],
+        "forms": {
+          "praesens_3": "skizziert",
+          "praeteritum": "skizzierte",
+          "partizip_2": "skizziert",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man skizzieren die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte skizzieren können.",
+          "praeteritum": "Er skizzierte den Plan.",
+          "perfekt": "Er hat den Plan skizziert."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию обрисовывать.",
+          "modal": "Нужно уметь обрисовывать.",
+          "praeteritum": "Он обрисовывать план.",
+          "perfekt": "Он обрисовывать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "untermauern",
+        "translations": [
+          "подкреплять"
+        ],
+        "forms": {
+          "praesens_3": "untermauert",
+          "praeteritum": "untermauerte",
+          "partizip_2": "untermauert",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man untermauern die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte untermauern können.",
+          "praeteritum": "Er untermauerte den Plan.",
+          "perfekt": "Er hat den Plan untermauert."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию подкреплять.",
+          "modal": "Нужно уметь подкреплять.",
+          "praeteritum": "Он подкреплять план.",
+          "perfekt": "Он подкреплять план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "vereinbaren",
+        "translations": [
+          "согласовывать"
+        ],
+        "forms": {
+          "praesens_3": "vereinbart",
+          "praeteritum": "vereinbarte",
+          "partizip_2": "vereinbart",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man vereinbaren die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte vereinbaren können.",
+          "praeteritum": "Er vereinbarte den Plan.",
+          "perfekt": "Er hat den Plan vereinbart."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию согласовывать.",
+          "modal": "Нужно уметь согласовывать.",
+          "praeteritum": "Он согласовывать план.",
+          "perfekt": "Он согласовывать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "verwerfen",
+        "translations": [
+          "отклонять"
+        ],
+        "forms": {
+          "praesens_3": "verwirft",
+          "praeteritum": "verwarf",
+          "partizip_2": "verworfen",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man verwerfen die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte verwerfen können.",
+          "praeteritum": "Er verwarf den Plan.",
+          "perfekt": "Er hat den Plan verworfen."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию отклонять.",
+          "modal": "Нужно уметь отклонять.",
+          "praeteritum": "Он отклонять план.",
+          "perfekt": "Он отклонять план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "zugrunde legen",
+        "translations": [
+          "класть в основу"
+        ],
+        "forms": {
+          "praesens_3": "legt zugrunde",
+          "praeteritum": "legte zugrunde",
+          "partizip_2": "zugrunde gelegt",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man zugrunde legen die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte zugrunde legen können.",
+          "praeteritum": "Er legte zugrunde den Plan.",
+          "perfekt": "Er hat den Plan zugrunde gelegt."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию класть в основу.",
+          "modal": "Нужно уметь класть в основу.",
+          "praeteritum": "Он класть в основу план.",
+          "perfekt": "Он класть в основу план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "einräumen",
+        "translations": [
+          "признавать"
+        ],
+        "forms": {
+          "praesens_3": "räumt ein",
+          "praeteritum": "räumte ein",
+          "partizip_2": "eingeräumt",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man einräumen die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte einräumen können.",
+          "praeteritum": "Er räumte ein den Plan.",
+          "perfekt": "Er hat den Plan eingeräumt."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию признавать.",
+          "modal": "Нужно уметь признавать.",
+          "praeteritum": "Он признавать план.",
+          "perfekt": "Он признавать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "widerlegen",
+        "translations": [
+          "опровергать"
+        ],
+        "forms": {
+          "praesens_3": "widerlegt",
+          "praeteritum": "widerlegte",
+          "partizip_2": "widerlegt",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man widerlegen die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte widerlegen können.",
+          "praeteritum": "Er widerlegte den Plan.",
+          "perfekt": "Er hat den Plan widerlegt."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию опровергать.",
+          "modal": "Нужно уметь опровергать.",
+          "praeteritum": "Он опровергать план.",
+          "perfekt": "Он опровергать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "zuspitzen",
+        "translations": [
+          "обострять"
+        ],
+        "forms": {
+          "praesens_3": "spitzt zu",
+          "praeteritum": "spitzte zu",
+          "partizip_2": "zugespitzt",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man zuspitzen die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte zuspitzen können.",
+          "praeteritum": "Er spitzte zu den Plan.",
+          "perfekt": "Er hat den Plan zugespitzt."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию обострять.",
+          "modal": "Нужно уметь обострять.",
+          "praeteritum": "Он обострять план.",
+          "perfekt": "Он обострять план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "nachbessern",
+        "translations": [
+          "дорабатывать"
+        ],
+        "forms": {
+          "praesens_3": "bessert nach",
+          "praeteritum": "besserte nach",
+          "partizip_2": "nachgebessert",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man nachbessern die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte nachbessern können.",
+          "praeteritum": "Er besserte nach den Plan.",
+          "perfekt": "Er hat den Plan nachgebessert."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию дорабатывать.",
+          "modal": "Нужно уметь дорабатывать.",
+          "praeteritum": "Он дорабатывать план.",
+          "perfekt": "Он дорабатывать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "einordnen",
+        "translations": [
+          "классифицировать"
+        ],
+        "forms": {
+          "praesens_3": "ordnet ein",
+          "praeteritum": "ordnete ein",
+          "partizip_2": "eingeordnet",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man einordnen die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte einordnen können.",
+          "praeteritum": "Er ordnete ein den Plan.",
+          "perfekt": "Er hat den Plan eingeordnet."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию классифицировать.",
+          "modal": "Нужно уметь классифицировать.",
+          "praeteritum": "Он классифицировать план.",
+          "perfekt": "Он классифицировать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "ausgleichen",
+        "translations": [
+          "компенсировать"
+        ],
+        "forms": {
+          "praesens_3": "gleicht aus",
+          "praeteritum": "glich aus",
+          "partizip_2": "ausgeglichen",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man ausgleichen die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte ausgleichen können.",
+          "praeteritum": "Er glich aus den Plan.",
+          "perfekt": "Er hat den Plan ausgeglichen."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию компенсировать.",
+          "modal": "Нужно уметь компенсировать.",
+          "praeteritum": "Он компенсировать план.",
+          "perfekt": "Он компенсировать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "vorantreiben",
+        "translations": [
+          "продвигать"
+        ],
+        "forms": {
+          "praesens_3": "treibt voran",
+          "praeteritum": "trieb voran",
+          "partizip_2": "vorangetrieben",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man vorantreiben die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte vorantreiben können.",
+          "praeteritum": "Er trieb voran den Plan.",
+          "perfekt": "Er hat den Plan vorangetrieben."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию продвигать.",
+          "modal": "Нужно уметь продвигать.",
+          "praeteritum": "Он продвигать план.",
+          "perfekt": "Он продвигать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "überbrücken",
+        "translations": [
+          "преодолевать"
+        ],
+        "forms": {
+          "praesens_3": "überbrückt",
+          "praeteritum": "überbrückte",
+          "partizip_2": "überbrückt",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man überbrücken die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte überbrücken können.",
+          "praeteritum": "Er überbrückte den Plan.",
+          "perfekt": "Er hat den Plan überbrückt."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию преодолевать.",
+          "modal": "Нужно уметь преодолевать.",
+          "praeteritum": "Он преодолевать план.",
+          "perfekt": "Он преодолевать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "nachjustieren",
+        "translations": [
+          "поднастраивать"
+        ],
+        "forms": {
+          "praesens_3": "justiert nach",
+          "praeteritum": "justierte nach",
+          "partizip_2": "nachjustiert",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man nachjustieren die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte nachjustieren können.",
+          "praeteritum": "Er justierte nach den Plan.",
+          "perfekt": "Er hat den Plan nachjustiert."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию поднастраивать.",
+          "modal": "Нужно уметь поднастраивать.",
+          "praeteritum": "Он поднастраивать план.",
+          "perfekt": "Он поднастраивать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "herausarbeiten",
+        "translations": [
+          "выявлять"
+        ],
+        "forms": {
+          "praesens_3": "arbeitet heraus",
+          "praeteritum": "arbeitete heraus",
+          "partizip_2": "herausgearbeitet",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man herausarbeiten die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte herausarbeiten können.",
+          "praeteritum": "Er arbeitete heraus den Plan.",
+          "perfekt": "Er hat den Plan herausgearbeitet."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию выявлять.",
+          "modal": "Нужно уметь выявлять.",
+          "praeteritum": "Он выявлять план.",
+          "perfekt": "Он выявлять план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "konsolidieren",
+        "translations": [
+          "укреплять"
+        ],
+        "forms": {
+          "praesens_3": "konsolidiert",
+          "praeteritum": "konsolidierte",
+          "partizip_2": "konsolidiert",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man konsolidieren die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte konsolidieren können.",
+          "praeteritum": "Er konsolidierte den Plan.",
+          "perfekt": "Er hat den Plan konsolidiert."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию укреплять.",
+          "modal": "Нужно уметь укреплять.",
+          "praeteritum": "Он укреплять план.",
+          "perfekt": "Он укреплять план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "abstrahieren",
+        "translations": [
+          "абстрагировать"
+        ],
+        "forms": {
+          "praesens_3": "abstrahiert",
+          "praeteritum": "abstrahierte",
+          "partizip_2": "abstrahiert",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man abstrahieren die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte abstrahieren können.",
+          "praeteritum": "Er abstrahierte den Plan.",
+          "perfekt": "Er hat den Plan abstrahiert."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию абстрагировать.",
+          "modal": "Нужно уметь абстрагировать.",
+          "praeteritum": "Он абстрагировать план.",
+          "perfekt": "Он абстрагировать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "rekapitulieren",
+        "translations": [
+          "резюмировать"
+        ],
+        "forms": {
+          "praesens_3": "rekapituliert",
+          "praeteritum": "rekapitulierte",
+          "partizip_2": "rekapituliert",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man rekapitulieren die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte rekapitulieren können.",
+          "praeteritum": "Er rekapitulierte den Plan.",
+          "perfekt": "Er hat den Plan rekapituliert."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию резюмировать.",
+          "modal": "Нужно уметь резюмировать.",
+          "praeteritum": "Он резюмировать план.",
+          "perfekt": "Он резюмировать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "verfeinern",
+        "translations": [
+          "усовершенствовать"
+        ],
+        "forms": {
+          "praesens_3": "verfeinert",
+          "praeteritum": "verfeinerte",
+          "partizip_2": "verfeinert",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man verfeinern die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte verfeinern können.",
+          "praeteritum": "Er verfeinerte den Plan.",
+          "perfekt": "Er hat den Plan verfeinert."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию усовершенствовать.",
+          "modal": "Нужно уметь усовершенствовать.",
+          "praeteritum": "Он усовершенствовать план.",
+          "perfekt": "Он усовершенствовать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "umsetzen",
+        "translations": [
+          "реализовывать"
+        ],
+        "forms": {
+          "praesens_3": "setzt um",
+          "praeteritum": "setzte um",
+          "partizip_2": "umgesetzt",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man umsetzen die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte umsetzen können.",
+          "praeteritum": "Er setzte um den Plan.",
+          "perfekt": "Er hat den Plan umgesetzt."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию реализовывать.",
+          "modal": "Нужно уметь реализовывать.",
+          "praeteritum": "Он реализовывать план.",
+          "perfekt": "Он реализовывать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      },
+      {
+        "inf": "zurückstellen",
+        "translations": [
+          "откладывать"
+        ],
+        "forms": {
+          "praesens_3": "stellt zurück",
+          "praeteritum": "stellte zurück",
+          "partizip_2": "zurückgestellt",
+          "auxiliary": "haben"
+        },
+        "synonyms": [],
+        "examples": {
+          "praesens": "Man zurückstellen die Strategie sorgfältig.",
+          "modal": "Man muss die Aspekte zurückstellen können.",
+          "praeteritum": "Er stellte zurück den Plan.",
+          "perfekt": "Er hat den Plan zurückgestellt."
+        },
+        "examples_ru": {
+          "praesens": "Стратегию откладывать.",
+          "modal": "Нужно уметь откладывать.",
+          "praeteritum": "Он откладывать план.",
+          "perfekt": "Он откладывать план."
+        },
+        "prefixes": [],
+        "freq": 3,
+        "_i18n": {
+          "inf": {
+            "de": "Infinitiv",
+            "ru": "Инфинитив",
+            "en": "Infinitive"
+          },
+          "translations": {
+            "de": "Übersetzungen",
+            "ru": "Переводы",
+            "en": "Translations"
+          },
+          "forms": {
+            "de": "Formen",
+            "ru": "Формы",
+            "en": "Forms"
+          },
+          "synonyms": {
+            "de": "Synonyme",
+            "ru": "Синонимы",
+            "en": "Synonyms"
+          },
+          "examples": {
+            "de": "Beispiele",
+            "ru": "Примеры",
+            "en": "Examples"
+          },
+          "prefixes": {
+            "de": "Präfixe/Partikel",
+            "ru": "Префиксы/частицы",
+            "en": "Prefixes/Particles"
+          },
+          "freq": {
+            "de": "Häufigkeit",
+            "ru": "Частотность",
+            "en": "Frequency"
+          }
+        }
+      }
+    ]
+  }
+}
