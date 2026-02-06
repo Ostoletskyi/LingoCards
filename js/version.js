@@ -5,8 +5,8 @@
 export const APP_VERSION = Object.freeze({
   app: "LingoCard Editor",
   tag: "v1.0.7-commercial",
-  build: "2026-02-04 22:33:47",
-  commit: "a2c1cf9d05a04d93dfe4dc3a748ff93bde73ac77",
+  build: "2026-02-06 21:46:00",
+  commit: "633c1b8a6403211750c2110c94942a3ca6b49457",
   note: "release: v1.0.7-commercial",
 });
 
