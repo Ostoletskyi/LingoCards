@@ -1,4 +1,20 @@
-﻿# --- LingoCards: local/dev artifacts ---
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# --- Node / tooling ---
+node_modules/
+dist/
+build/
+.cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- LingoCards: local/dev artifacts ---
 _tmp/
 _backups/
 _restore/
@@ -11,19 +27,6 @@ _tools/_out/
 *.log
 *.tmp
 *.bak
-
-# OS / editor
-.DS_Store
-Thumbs.db
-*.swp
-
-# node / tooling
-node_modules/
-dist/
-build/
-.cache/
-.vscode/
-.idea/
 
 # secrets
 .env
