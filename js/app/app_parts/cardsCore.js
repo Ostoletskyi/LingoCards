@@ -6,6 +6,7 @@
 
 import { buildBoxesFromVerbSample } from "../../data/autoLayoutFromVerb.js";
 import { DEFAULTS } from "./state.js";
+import { log } from "../../utils/log.js";
 import { deepClone, cloneBoxes } from "./clone.js";
 
 export function makeCardId(){
@@ -54,7 +55,7 @@ export function makeBlankCardFromTemplate(state, { title, templateMode } = {}){
     try { srcBoxes = buildBoxesFromVerbSample({}, "full-template"); } catch(_){ srcBoxes = null; }
   }
   if (!Array.isArray(srcBoxes) || !srcBoxes.length){
-    srcBoxes = Array.isArray(DEFAULTS.boxes) ? DEFAULTS.boxes : [];
+    srcBoxes = Array.isArray(DEFAULTS.domain?.boxes) ? DEFAULTS.domain.boxes : [];
   }
 
   // Create a blank editable copy.
@@ -183,12 +184,12 @@ function ensureLabelKeysInBoxes(boxes){
 }
 
 function ensureLabelKeysEverywhere(state){
-  try { ensureLabelKeysInBoxes(state?.boxes); } catch {}
+  try { ensureLabelKeysInBoxes(state?.boxes); } catch (e) { log.warn("ensureLabelKeysInBoxes failed", { err: String(e) }); }
   try {
     if (Array.isArray(state?.cards)){
       for (const c of state.cards) ensureLabelKeysInBoxes(c?.boxes);
     }
-  } catch {}
+  } catch (e) { log.warn("ensureLabelKeysEverywhere failed", { err: String(e) }); }
 }
 
 // MUTATES state.cards[selected].* (snapshot sync).

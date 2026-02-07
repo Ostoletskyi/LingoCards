@@ -493,13 +493,13 @@ export function renderCard(ctxApp){
 
   // если автофит что-то поменял — попросим ещё один ререндер
   if (anyAutoFit){
-    try { ctxApp.requestRender?.(); } catch {}
+    try { ctxApp.requestRender?.(); } catch (e) { ctxApp.log?.warn?.("requestRender failed", { err: String(e) }); }
     // Also autosave SOURCE geometry so it survives reloads.
     // (Debounced to avoid spam while typing.)
     if (state.viewMode === "source" && typeof ctxApp.setState === "function"){
       try {
         ctxApp.setState({ boxes: state.boxes, sourceBoxes: state.sourceBoxes }, { autosave: true, debounceMs: 120, history: false });
-      } catch {}
+      } catch (e) { ctxApp.log?.warn?.("autosave sourceBoxes failed", { err: String(e) }); }
     }
   }
 

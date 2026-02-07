@@ -19,7 +19,9 @@ export function installModeIndicator(ctxApp){
   try {
     elSource()?.classList.add("isSource");
     elCards()?.classList.add("isCards");
-  } catch {}
+  } catch (e) {
+    ctxApp.log?.warn?.("mode indicator setup failed", { err: String(e) });
+  }
 
   let lastMode = null;
 

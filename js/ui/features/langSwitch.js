@@ -40,8 +40,8 @@ export function featureLangSwitch(){
 
       function setLang(next){
         if (!i18n.setLang?.(next)) return;
-        try { localStorage.setItem("lc_lang", next); } catch {}
-        try { document.documentElement.lang = next; } catch {}
+        try { localStorage.setItem("lc_lang", next); } catch (e) { ctx.log?.warn?.("lc_lang save failed", { err: String(e) }); }
+        try { document.documentElement.lang = next; } catch (e) { ctx.log?.warn?.("document.lang set failed", { err: String(e) }); }
 
         // update texts & tooltips everywhere
         applyI18n(document, i18n);

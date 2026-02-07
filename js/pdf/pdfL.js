@@ -3,6 +3,7 @@
 
 import { renderCard } from "../render/renderCard.js";
 import { createPdfCore } from "./pdfCore.js";
+import { log } from "../utils/log.js";
 
 export function createPdfL(ctx){
   const core = createPdfCore();
@@ -15,11 +16,8 @@ export function createPdfL(ctx){
     if (typeof ctxApp.setState === "function"){
       if ("selectedVerbIndex" in ctxApp.state) ctxApp.setState({ selectedVerbIndex: i });
       else if ("selectedIndex" in ctxApp.state) ctxApp.setState({ selectedIndex: i });
-      else ctxApp.state.selectedVerbIndex = i;
     } else {
-      if ("selectedVerbIndex" in ctxApp.state) ctxApp.state.selectedVerbIndex = i;
-      else if ("selectedIndex" in ctxApp.state) ctxApp.state.selectedIndex = i;
-      else ctxApp.state.selectedVerbIndex = i;
+      log.warn("setVerbIndexSync missing ctxApp.setState", { index: i });
     }
   }
 
@@ -34,7 +32,7 @@ export function createPdfL(ctx){
       const ctxApp = core.getCtxAppOrThrow();
       const prevMode = ctxApp.state.viewMode;
       try {
-        ctxApp.state.viewMode = "source";
+        ctxApp.setState?.({ viewMode: "source" }, { autosave: false });
         core.ensurePreviewCommittedSync(ctxApp, renderSync);
 
         let page = null;
@@ -47,7 +45,7 @@ export function createPdfL(ctx){
         window.LC_DIAG.lastPdfExportMeta = { kind: "verbs-one", pages: 1, ts: Date.now() };
         core.downloadBytesSafe(pdf, opts.fileName || "lingocard_verbs_current.pdf");
       } finally {
-        ctxApp.state.viewMode = prevMode;
+        ctxApp.setState?.({ viewMode: prevMode }, { autosave: false });
         renderSync();
       }
     },
@@ -62,7 +60,7 @@ export function createPdfL(ctx){
       const pages = [];
 
       try {
-        ctxApp.state.viewMode = "source";
+        ctxApp.setState?.({ viewMode: "source" }, { autosave: false });
         core.ensurePreviewCommittedSync(ctxApp, renderSync);
 
         core.withPdfModeSync(ctxApp, () => {
@@ -86,7 +84,7 @@ export function createPdfL(ctx){
         window.LC_DIAG.lastPdfExportMeta = { kind: "verbs-all", pages: pages.length, ts: Date.now() };
         core.downloadBytesSafe(pdf, opts.fileName || "lingocard_verbs_all.pdf");
       } finally {
-        ctxApp.state.viewMode = prevMode;
+        ctxApp.setState?.({ viewMode: prevMode }, { autosave: false });
         setVerbIndexSync(ctxApp, oldIndex);
         renderSync();
       }

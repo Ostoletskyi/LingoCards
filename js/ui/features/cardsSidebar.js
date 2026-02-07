@@ -229,9 +229,9 @@ export function featureCardsSidebar(){
         // Some UI parts wrap requestRender and can be overwritten by later feature installs.
         // Force an immediate sidebar refresh so the imported list is visible even after
         // the RIGHT list was cleared a moment ago.
-        try { ctx.ui?.refreshCardsList?.(); } catch {}
-        try { ctx.ui?.setCardBadge?.(ctx.i18n.t("ui.status.card", { i: 1, n: cards.length })); } catch {}
-        try { render?.(); } catch {}
+        try { ctx.ui?.refreshCardsList?.(); } catch (e) { ctx.log?.warn?.("refreshCardsList failed", { err: String(e) }); }
+        try { ctx.ui?.setCardBadge?.(ctx.i18n.t("ui.status.card", { i: 1, n: cards.length })); } catch (e) { ctx.log?.warn?.("setCardBadge failed", { err: String(e) }); }
+        try { render?.(); } catch (e) { ctx.log?.warn?.("cardsSidebar render failed", { err: String(e) }); }
 
         ctx.ui?.setStatus?.(`Импортировано карточек: ${cards.length}`);
       }
@@ -312,10 +312,10 @@ export function featureCardsSidebar(){
         const mode = cbCanonical.checked ? "canonical" : "inherit";
         try {
           ctx.setState?.({ newCardTemplateMode: mode }, { autosave: true, debounceMs: 120, history: false });
-        } catch {
-          try { ctx.state.newCardTemplateMode = mode; } catch {}
+        } catch (e) {
+          ctx.log?.warn?.("newCardTemplateMode set failed", { err: String(e) });
         }
-        try { localStorage.setItem("LC_NEW_CARD_TEMPLATE_MODE", mode); } catch {}
+        try { localStorage.setItem("LC_NEW_CARD_TEMPLATE_MODE", mode); } catch (e) { ctx.log?.warn?.("LC_NEW_CARD_TEMPLATE_MODE save failed", { err: String(e) }); }
       });
 
       wrapNewMode.appendChild(cbCanonical);
@@ -618,8 +618,8 @@ const payload = {
           rightSelAll = false;
           cbAll.checked = false;
 
-          try { ctx.ui?.refreshCardsList?.(); } catch {}
-          try { ctx.ui?.refreshVerbsList?.(); } catch {}
+          try { ctx.ui?.refreshCardsList?.(); } catch (e) { ctx.log?.warn?.("refreshCardsList failed", { err: String(e) }); }
+          try { ctx.ui?.refreshVerbsList?.(); } catch (e) { ctx.log?.warn?.("refreshVerbsList failed", { err: String(e) }); }
 
           ctx.ui?.setStatus?.(`Перенесено в левый список: ${added}`
             + (skippedDup ? ` · Дубликаты пропущены: ${skippedDup}` : "")
@@ -703,7 +703,7 @@ const payload = {
             const nn = ctx.cards?.getCount?.() || 1;
             ctx.ui?.setCardBadge?.(ctx.i18n.t("ui.status.card", { i: ii, n: nn }));
           }
-        } catch {}
+        } catch (e) { ctx.log?.warn?.("setCardBadge failed", { err: String(e) }); }
 
         render();
       }
@@ -779,7 +779,7 @@ function render(){
               item.appendChild(inp);
               // autofocus after mount
               setTimeout(() => {
-                try { inp.focus(); inp.select(); } catch {}
+                try { inp.focus(); inp.select(); } catch (e) { ctx.log?.warn?.("input focus failed", { err: String(e) }); }
               }, 0);
             } else {
               // Row: checkbox + title (click title = select card)
@@ -835,11 +835,11 @@ function render(){
         }
 
         // Keep active card visible when navigating via arrows
-        try { activeEl?.scrollIntoView?.({ block: (ctx.ui?.__scrollAlignStartRight ? "start" : "nearest") }); } catch {}
-        try { if (ctx.ui) ctx.ui.__scrollAlignStartRight = false; } catch {}
+        try { activeEl?.scrollIntoView?.({ block: (ctx.ui?.__scrollAlignStartRight ? "start" : "nearest") }); } catch (e) { ctx.log?.warn?.("scrollIntoView failed", { err: String(e) }); }
+        try { if (ctx.ui) ctx.ui.__scrollAlignStartRight = false; } catch (e) { ctx.log?.warn?.("scrollAlignStartRight reset failed", { err: String(e) }); }
 
         // Keep "All" checkbox in sync
-        try { cbAll.checked = !!rightSelAll; } catch {}
+        try { cbAll.checked = !!rightSelAll; } catch (e) { ctx.log?.warn?.("bulk checkbox set failed", { err: String(e) }); }
 
         // disable actions when nothing to export
         const has = cards.length > 0;
@@ -856,7 +856,7 @@ function render(){
       // can update the active highlight without direct access to this closure.
       ctx.ui = ctx.ui || {};
       ctx.ui.refreshCardsList = () => {
-        try { render(); } catch {}
+        try { render(); } catch (e) { ctx.log?.warn?.("cardsSidebar render failed", { err: String(e) }); }
       };
 
       // Scroll right cards list to a card index without changing order
@@ -868,7 +868,7 @@ function render(){
         try {
           if (opts.align === 'start'){ ctx.ui.__scrollAlignStartRight = true; }
           el.scrollIntoView({ block: (opts.align === 'start') ? 'start' : 'nearest' });
-        } catch {}
+        } catch (e) { ctx.log?.warn?.("scrollCardsToIndex failed", { err: String(e) }); }
         return true;
       };
 

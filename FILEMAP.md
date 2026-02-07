@@ -1,9 +1,10 @@
-﻿# FILEMAP
+# FILEMAP
 Generated: 2026-02-06 23:10:23
 Root: C:\Users\ostol\Downloads\lingocard_canonical_full_boxes_patch0065_Stabile
 
 .\.gitignore
 .\__MANIFEST__.txt
+.\LICENSE
 .\_release\snapshot_instructions_v1.0.7-commercial.txt
 .\_utilities\ps\_lib\common.ps1
 .\_utilities\ps\1_Create_Backup.ps1
@@ -42,6 +43,7 @@ Root: C:\Users\ostol\Downloads\lingocard_canonical_full_boxes_patch0065_Stabile
 .\ai\ui\templates.js
 .\ai\ui\view.js
 .\ANCHOR_2026-02-01_modularization.md
+.\ARCHITECTURE_REVIEW.md
 .\Backup_Menu.sh
 .\data\schema\card_schema.v1.json
 .\favicon.ico
@@ -69,6 +71,7 @@ Root: C:\Users\ostol\Downloads\lingocard_canonical_full_boxes_patch0065_Stabile
 .\js\app\app_parts\initApp.js
 .\js\app\app_parts\migrations.js
 .\js\app\app_parts\state.js
+.\js\app\app_parts\stateStore.js
 .\js\app\app_parts\types.js
 .\js\app\history.js
 .\js\app\INDEX_LOADER_SNIPPET.html

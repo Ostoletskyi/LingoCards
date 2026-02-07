@@ -76,7 +76,7 @@ export function installBindScanIndicator(ctx){
   function wrappedSetState(patch, opts){
     const res = origSetState.call(ctx, patch, opts);
     if (patch && (Object.prototype.hasOwnProperty.call(patch, "bindMode") || Object.prototype.hasOwnProperty.call(patch, "bindScan"))){
-      try { update(); } catch {}
+      try { update(); } catch (e) { ctx.log?.warn?.("bindScan indicator update failed", { err: String(e) }); }
     }
     return res;
   }

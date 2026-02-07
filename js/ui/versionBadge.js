@@ -3,6 +3,7 @@
 // No fixed positioning here: layout is handled by uiShell.js (buildShell).
 
 import { APP_VERSION } from "../version.js";
+import { log } from "../utils/log.js";
 
 function el(tag, attrs = {}, children = []) {
   const n = document.createElement(tag);
@@ -148,7 +149,7 @@ export function installVersionBadge(ctxOrMounts) {
   // Single timer (avoid multiple intervals on hot reload)
   if (!window.__LC_DOCK_GLOW_TIMER) {
     window.__LC_DOCK_GLOW_TIMER = setInterval(() => {
-      try { refreshGlow(); } catch {}
+      try { refreshGlow(); } catch (e) { log.warn("dock glow refresh failed", { err: String(e) }); }
     }, 400);
   }
 }

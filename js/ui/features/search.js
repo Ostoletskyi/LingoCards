@@ -77,8 +77,8 @@ export function featureSearch(){
 
       function setQuery(q){
         ctx.setState({ searchQuery: String(q || "") }, { autosave: true, debounceMs: 0 });
-        try { ctx.ui?.refreshCardsList?.(); } catch {}
-        try { window.LC_PRESETS?.onVerbChanged?.(); } catch {}
+        try { ctx.ui?.refreshCardsList?.(); } catch (e) { ctx.log?.warn?.("refreshCardsList failed", { err: String(e) }); }
+        try { window.LC_PRESETS?.onVerbChanged?.(); } catch (e) { ctx.log?.warn?.("LC_PRESETS onVerbChanged failed", { err: String(e) }); }
       }
 
       function runSearch(q){
@@ -109,10 +109,10 @@ export function featureSearch(){
           try {
             if (ctx.cards?.switchToSource) ctx.cards.switchToSource(hitVerb);
             else ctx.setState({ selectedIndex: hitVerb, viewMode: "source" }, { debounceMs: 0 });
-          } catch {}
-          try { ctx.ui?.scrollVerbsToIndex?.(hitVerb, { align: "start" }); } catch {}
+          } catch (e) { ctx.log?.warn?.("switchToSource failed", { err: String(e) }); }
+          try { ctx.ui?.scrollVerbsToIndex?.(hitVerb, { align: "start" }); } catch (e) { ctx.log?.warn?.("scrollVerbsToIndex failed", { err: String(e) }); }
           ctx.ui?.setStatus?.(ctx.i18n.t("ui.search.hitLeft", { label: verbLabel(verbs[hitVerb]) }));
-          try { ctx.ui?.scrollVerbsToIndex?.(hitVerb, { align: 'start' }); } catch {}
+          try { ctx.ui?.scrollVerbsToIndex?.(hitVerb, { align: 'start' }); } catch (e) { ctx.log?.warn?.("scrollVerbsToIndex failed", { err: String(e) }); }
           return;
         }
 
@@ -120,10 +120,10 @@ export function featureSearch(){
           try {
             if (ctx.cards?.switchTo) ctx.cards.switchTo(hitCard);
             else ctx.setState({ selectedCardIndex: hitCard, viewMode: "cards" }, { debounceMs: 0 });
-          } catch {}
-          try { ctx.ui?.scrollCardsToIndex?.(hitCard, { align: "start" }); } catch {}
+          } catch (e) { ctx.log?.warn?.("switchTo card failed", { err: String(e) }); }
+          try { ctx.ui?.scrollCardsToIndex?.(hitCard, { align: "start" }); } catch (e) { ctx.log?.warn?.("scrollCardsToIndex failed", { err: String(e) }); }
           ctx.ui?.setStatus?.(ctx.i18n.t("ui.search.hitRight", { n: hitCard + 1 }));
-          try { ctx.ui?.scrollCardsToIndex?.(hitCard, { align: 'start' }); } catch {}
+          try { ctx.ui?.scrollCardsToIndex?.(hitCard, { align: 'start' }); } catch (e) { ctx.log?.warn?.("scrollCardsToIndex failed", { err: String(e) }); }
           return;
         }
 
@@ -187,7 +187,7 @@ export function featureSearch(){
         });
 
         // Focus after mount
-        setTimeout(() => { try { input?.focus?.(); input?.select?.(); } catch {} }, 0);
+        setTimeout(() => { try { input?.focus?.(); input?.select?.(); } catch (e) { ctx.log?.warn?.("search input focus failed", { err: String(e) }); } }, 0);
       }
 
       btn.addEventListener("click", (e) => {

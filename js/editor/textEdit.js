@@ -9,6 +9,17 @@ let ta = null; // textarea overlay
 export function isEditingText(){ return !!editing; }
 export function getEditing(){ return editing ? { ...editing } : null; }
 
+function updateBoxState(ctx, boxId, updater, { autosave = true, debounceMs = 120 } = {}){
+  const boxes = Array.isArray(ctx?.state?.boxes) ? ctx.state.boxes.map((box) => {
+    if (!box || box.id !== boxId) return box;
+    const next = { ...box };
+    updater(next);
+    return next;
+  }) : [];
+  if (autosave && typeof ctx.setState === "function") ctx.setState({ boxes }, { autosave: true, debounceMs });
+  return boxes;
+}
+
 function getCurrentVerb(ctx){
   const st = ctx?.state;
   const verbs = Array.isArray(st?.data?.verbs) ? st.data.verbs : [];
@@ -60,48 +71,56 @@ function setBoxText(ctx, b, value, { autosave = true, debounceMs = 120 } = {}){
     const viewMode = String(ctx?.state?.viewMode || "");
     if (viewMode === "source"){
       const verbKey = getCurrentVerbKey(ctx);
-      ctx.state.notesByVerb = (ctx.state.notesByVerb && typeof ctx.state.notesByVerb === "object") ? ctx.state.notesByVerb : {};
-      ctx.state.notesByVerb[verbKey] = ctx.state.notesByVerb[verbKey] || {};
-      ctx.state.notesByVerb[verbKey][b.id] = text;
-      if (text.trim()) b.label = "";
+      const nextNotes = (ctx.state.notesByVerb && typeof ctx.state.notesByVerb === "object") ? { ...ctx.state.notesByVerb } : {};
+      const verbNotes = (nextNotes[verbKey] && typeof nextNotes[verbKey] === "object") ? { ...nextNotes[verbKey] } : {};
+      verbNotes[b.id] = text;
+      nextNotes[verbKey] = verbNotes;
 
-      // Не даём старым полям "static" затенять bind-логику.
-      if (b.staticText !== undefined) delete b.staticText;
-      if (b.text !== undefined) delete b.text;
-      b.textMode = "bind";
+      updateBoxState(ctx, b.id, (next) => {
+        if (text.trim()) next.label = "";
+        // Не даём старым полям "static" затенять bind-логику.
+        if (next.staticText !== undefined) delete next.staticText;
+        if (next.text !== undefined) delete next.text;
+        next.textMode = "bind";
+      }, { autosave: false });
 
       if (autosave && typeof ctx.setState === "function"){
-        ctx.setState({ notesByVerb: ctx.state.notesByVerb }, { autosave: true, debounceMs });
+        ctx.setState({ notesByVerb: nextNotes }, { autosave: true, debounceMs });
       }
       return;
     }
 
     // CARDS: Convert bind box into a manual override (static)
-    b.textMode = "static";
-    b.staticText = text;
-    b.text = text; // совместимость
-    if (text.trim()) b.label = "";
-    if (autosave && typeof ctx.setState === "function") ctx.setState({ boxes: ctx.state.boxes }, { autosave: true, debounceMs });
+    updateBoxState(ctx, b.id, (next) => {
+      next.textMode = "static";
+      next.staticText = text;
+      next.text = text; // совместимость
+      if (text.trim()) next.label = "";
+    }, { autosave, debounceMs });
     return;
   }
 
   if (mode === "static"){
-    b.staticText = text;
-    b.text = text; // совместимость
-    if (text.trim()) b.label = "";
-    if (autosave && typeof ctx.setState === "function") ctx.setState({ boxes: ctx.state.boxes }, { autosave: true, debounceMs });
+    updateBoxState(ctx, b.id, (next) => {
+      next.staticText = text;
+      next.text = text; // совместимость
+      if (text.trim()) next.label = "";
+    }, { autosave, debounceMs });
     return;
   }
 
   // note
   const verbKey = getCurrentVerbKey(ctx);
-  ctx.state.notesByVerb = (ctx.state.notesByVerb && typeof ctx.state.notesByVerb === "object") ? ctx.state.notesByVerb : {};
-  ctx.state.notesByVerb[verbKey] = ctx.state.notesByVerb[verbKey] || {};
-  ctx.state.notesByVerb[verbKey][b.id] = text;
-  if (text.trim()) b.label = "";
+  const nextNotes = (ctx.state.notesByVerb && typeof ctx.state.notesByVerb === "object") ? { ...ctx.state.notesByVerb } : {};
+  const verbNotes = (nextNotes[verbKey] && typeof nextNotes[verbKey] === "object") ? { ...nextNotes[verbKey] } : {};
+  verbNotes[b.id] = text;
+  nextNotes[verbKey] = verbNotes;
+  updateBoxState(ctx, b.id, (next) => {
+    if (text.trim()) next.label = "";
+  }, { autosave: false });
 
   if (autosave && typeof ctx.setState === "function"){
-    ctx.setState({ notesByVerb: ctx.state.notesByVerb }, { autosave: true, debounceMs });
+    ctx.setState({ notesByVerb: nextNotes }, { autosave: true, debounceMs });
   }
 }
 

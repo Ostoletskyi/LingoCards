@@ -14,6 +14,7 @@ import { featureHistory } from "./features/history.js";
 import { installDeleteBoxHotkey } from "./features/deleteBox.js";
 import { featureHelpGuide } from "./features/helpGuide.js";
 import { featureSearch } from "./features/search.js";
+import { DEBUG } from "../app/app_parts/constants.js";
 
 export function initUI(ctx){
   const { log } = ctx;
@@ -98,12 +99,13 @@ export function initUI(ctx){
     { id: "deleteBoxHotkey", install: (ctx2) => installDeleteBoxHotkey(ctx2) },
   ];
 
-  window.LC_DIAG = window.LC_DIAG || {};
-  window.LC_DIAG.ui = () => ({ hasUI: true, features: registry.map(f => f.id) });
-  window.LC_DIAG.uiRegistry = registry.map(f => f?.id || "unknown");
-  window.LC_DIAG.smokeUI = runRegistrySmoke(registry);
-    
-  window.LC_DIAG.uiRuntime = { installed: [], failed: [] };
+  if (DEBUG){
+    window.LC_DIAG = window.LC_DIAG || {};
+    window.LC_DIAG.ui = () => ({ hasUI: true, features: registry.map(f => f.id) });
+    window.LC_DIAG.uiRegistry = registry.map(f => f?.id || "unknown");
+    window.LC_DIAG.smokeUI = runRegistrySmoke(registry);
+    window.LC_DIAG.uiRuntime = { installed: [], failed: [] };
+  }
 
   function runRegistrySmoke(registry){
     const rep = {
@@ -139,7 +141,7 @@ export function initUI(ctx){
       log.info("Feature installed", { id: f.id });
 
       // ✅ фиксируем успех
-      if (window.LC_DIAG?.smokeUI){
+      if (DEBUG && window.LC_DIAG?.smokeUI){
         window.LC_DIAG.smokeUI.installed = window.LC_DIAG.smokeUI.installed || [];
         window.LC_DIAG.smokeUI.installed.push(f.id);
 		window.LC_DIAG?.uiRuntime?.installed?.push(f.id);
@@ -149,20 +151,22 @@ export function initUI(ctx){
       log.error("Feature install failed", { id: f.id, err });
 
       // ✅ фиксируем падение
-      if (window.LC_DIAG?.smokeUI){
+      if (DEBUG && window.LC_DIAG?.smokeUI){
         window.LC_DIAG.smokeUI.failed = window.LC_DIAG.smokeUI.failed || [];
         window.LC_DIAG.smokeUI.failed.push({ id: f?.id || "unknown", stage: "install", err });
 		window.LC_DIAG?.uiRuntime?.failed?.push({ id: f?.id || "unknown", err });
       }
     }
   }
-  window.LC_DIAG.runSmokeUI = () => {
-    const rep = runRegistrySmoke(registry);
-    rep.installed = (window.LC_DIAG?.smokeUI?.installed) || [];
-    rep.failed = (window.LC_DIAG?.smokeUI?.failed) || rep.failed;
-    window.LC_DIAG.smokeUI = rep;
-    return rep;
-  };
+  if (DEBUG && window.LC_DIAG){
+    window.LC_DIAG.runSmokeUI = () => {
+      const rep = runRegistrySmoke(registry);
+      rep.installed = (window.LC_DIAG?.smokeUI?.installed) || [];
+      rep.failed = (window.LC_DIAG?.smokeUI?.failed) || rep.failed;
+      window.LC_DIAG.smokeUI = rep;
+      return rep;
+    };
+  }
 
 
   api.setEditBadge(!!ctx.state?.editing);

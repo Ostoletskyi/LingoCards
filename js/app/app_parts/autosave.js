@@ -31,7 +31,9 @@ export function saveAutosaveNow(state){
     // IMPORTANT: never sync "source" preview into created cards.
     try {
       if (state?.viewMode !== "source") syncCurrentToCards(state);
-    } catch {}
+    } catch (e) {
+      log.warn("syncCurrentToCards failed", { err: String(e) });
+    }
     const data = pickPersistedState(state);
     localStorage.setItem(AUTOSAVE_KEY, JSON.stringify(data));
   } catch (e){

@@ -1,3 +1,5 @@
+import { log } from "../utils/log.js";
+
 export function deleteBoxById(state, id){
   if (!id) return;
   state.boxes = (state.boxes || []).filter(b => b.id !== id);
@@ -46,13 +48,13 @@ function emit(){ for (const fn of _subs) fn(_state); }
 function save(){
   try{
     localStorage.setItem(LS_KEY, JSON.stringify({ data:_state.data, layout:_state.layout, selectedIndex:_state.selectedIndex }));
-  } catch {}
+  } catch (e) { log.warn("legacy state save failed", { err: String(e) }); }
 }
 function load(){
   try{
     const raw = localStorage.getItem(LS_KEY);
     return raw ? JSON.parse(raw) : null;
-  } catch { return null; }
+  } catch (e) { log.warn("legacy state load failed", { err: String(e) }); return null; }
 }
 
 export function initState(){
