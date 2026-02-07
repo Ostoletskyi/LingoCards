@@ -3,6 +3,7 @@
 
 import { renderCard } from "../render/renderCard.js";
 import { createPdfCore } from "./pdfCore.js";
+import { log } from "../utils/log.js";
 
 export function createPdfR(ctx){
   const core = createPdfCore();
@@ -20,7 +21,7 @@ export function createPdfR(ctx){
       ctxApp.setState({ selectedCardIndex: i });
       return;
     }
-    ctxApp.state.selectedCardIndex = i;
+    log.warn("switchCardSync missing ctxApp.setState", { index: i });
   }
 
   function getCardIndex(ctxApp){
@@ -53,7 +54,7 @@ export function createPdfR(ctx){
       }
 
       try {
-        ctxApp.state.viewMode = "cards";
+        ctxApp.setState?.({ viewMode: "cards" }, { autosave: false });
         core.ensurePreviewCommittedSync(ctxApp, renderSync);
 
         core.withPdfModeSync(ctxApp, () => {
@@ -66,7 +67,7 @@ export function createPdfR(ctx){
           core.downloadBytesSafe(pdf, opts.fileName || "lingocard_cards_current.pdf");
         });
       } finally {
-        ctxApp.state.viewMode = prevMode;
+        ctxApp.setState?.({ viewMode: prevMode }, { autosave: false });
         switchCardSync(ctxApp, oldIndex);
         renderSync();
       }
@@ -84,7 +85,7 @@ export function createPdfR(ctx){
       }
 
       try {
-        ctxApp.state.viewMode = "cards";
+        ctxApp.setState?.({ viewMode: "cards" }, { autosave: false });
         core.ensurePreviewCommittedSync(ctxApp, renderSync);
 
         core.withPdfModeSync(ctxApp, () => {
@@ -103,7 +104,7 @@ export function createPdfR(ctx){
           core.downloadBytesSafe(pdf, opts.fileName || "lingocard_cards_all.pdf");
         });
       } finally {
-        ctxApp.state.viewMode = prevMode;
+        ctxApp.setState?.({ viewMode: prevMode }, { autosave: false });
         switchCardSync(ctxApp, oldIndex);
         renderSync();
       }

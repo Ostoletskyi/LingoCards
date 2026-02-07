@@ -3,6 +3,8 @@
 // Lightweight i18n with runtime language switching.
 // Backward compatible: createI18n({ dict, log }) still works.
 
+import { log as appLog } from "../utils/log.js";
+
 export function createI18n({ dict, dicts, lang, log } = {}){
   let _dicts = dicts || null;
   let _lang = String(lang || (dicts ? Object.keys(dicts)[0] : "ru"));
@@ -52,7 +54,7 @@ export function bindText(el, key, params){
   if (!el) return el;
   el.dataset.i18nKey = key;
   if (params !== undefined) {
-    try { el.dataset.i18nParams = JSON.stringify(params); } catch {}
+    try { el.dataset.i18nParams = JSON.stringify(params); } catch (e) { appLog.warn("i18n params serialize failed", { err: String(e) }); }
   }
   return el;
 }
@@ -72,7 +74,7 @@ export function applyI18n(root, i18n){
     let params = null;
     const p = el.dataset.i18nParams;
     if (p) {
-      try { params = JSON.parse(p); } catch {}
+      try { params = JSON.parse(p); } catch (e) { appLog.warn("i18n params parse failed", { err: String(e) }); }
     }
     el.textContent = i18n.t(key, params || undefined);
   });

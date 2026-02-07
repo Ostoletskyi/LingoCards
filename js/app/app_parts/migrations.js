@@ -9,6 +9,7 @@ import { STATE_SCHEMA_VERSION, CANONICAL_FULL_BOXES } from './constants.js';
 import { normalizeBoxesEverywhere } from './boxesNormalize.js';
 import { cloneBoxes, deepClone } from './clone.js';
 import { getVerbKey } from './state.js';
+import { log } from '../../utils/log.js';
 
 // MUTATES state in place.
 /** @param {AppState} state @returns {{ state: AppState, changed: boolean }} */
@@ -19,15 +20,15 @@ export function migrateState(state){
   let changed = false;
 
   // Always normalize for safety (doesn't change schemaVersion)
-  try { if (normalizeBoxesEverywhere(state)) changed = true; } catch { changed = true; }
-  try { if (migrateRektionIds(state)) changed = true; } catch { changed = true; }
+  try { if (normalizeBoxesEverywhere(state)) changed = true; } catch (e) { log.warn("normalizeBoxesEverywhere failed", { err: String(e) }); changed = true; }
+  try { if (migrateRektionIds(state)) changed = true; } catch (e) { log.warn("migrateRektionIds failed", { err: String(e) }); changed = true; }
 
   if (state.schemaVersion === "0" || state.schemaVersion === "" || state.schemaVersion == null){
     // Legacy saves: ensure bind boxes, label keys, notesByVerb mapping.
-    try { ensureBoundBoxes(state); changed = true; } catch {}
-    try { ensureLabelKeysEverywhere(state); changed = true; } catch {}
-    try { if (migrateNotesAndTextModes(state)) changed = true; } catch {}
-    try { if (normalizeBoxesEverywhere(state)) changed = true; } catch {}
+    try { ensureBoundBoxes(state); changed = true; } catch (e) { log.warn("ensureBoundBoxes failed", { err: String(e) }); }
+    try { ensureLabelKeysEverywhere(state); changed = true; } catch (e) { log.warn("ensureLabelKeysEverywhere failed", { err: String(e) }); }
+    try { if (migrateNotesAndTextModes(state)) changed = true; } catch (e) { log.warn("migrateNotesAndTextModes failed", { err: String(e) }); }
+    try { if (normalizeBoxesEverywhere(state)) changed = true; } catch (e) { log.warn("normalizeBoxesEverywhere failed", { err: String(e) }); }
     state.schemaVersion = STATE_SCHEMA_VERSION;
     changed = true;
   } else if (state.schemaVersion !== STATE_SCHEMA_VERSION){
@@ -305,7 +306,7 @@ function makeBlankCardFromTemplate(state, { title, templateMode } = {}){
     try { srcBoxes = buildBoxesFromVerbSample({}, "full-template"); } catch(_){ srcBoxes = null; }
   }
   if (!Array.isArray(srcBoxes) || !srcBoxes.length){
-    srcBoxes = Array.isArray(DEFAULTS.boxes) ? DEFAULTS.boxes : [];
+    srcBoxes = Array.isArray(DEFAULTS.domain?.boxes) ? DEFAULTS.domain.boxes : [];
   }
 
   // Create a blank editable copy.
@@ -429,10 +430,10 @@ export function ensureLabelKeysInBoxes(boxes){
 }
 
 export function ensureLabelKeysEverywhere(state){
-  try { ensureLabelKeysInBoxes(state?.boxes); } catch {}
+  try { ensureLabelKeysInBoxes(state?.boxes); } catch (e) { log.warn("ensureLabelKeysInBoxes failed", { err: String(e) }); }
   try {
     if (Array.isArray(state?.cards)){
       for (const c of state.cards) ensureLabelKeysInBoxes(c?.boxes);
     }
-  } catch {}
+  } catch (e) { log.warn("ensureLabelKeysEverywhere failed", { err: String(e) }); }
 }

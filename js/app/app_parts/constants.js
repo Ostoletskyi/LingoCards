@@ -8,6 +8,12 @@ export const AUTOSAVE_OLD_KEYS = [];
 // ---- State schema / migrations ------------------------------------------
 export const STATE_SCHEMA_VERSION = "2026-02-01";
 
+export const DEBUG = (() => {
+  if (typeof window === "undefined") return false;
+  if (window.__LC_DEBUG__ !== undefined) return !!window.__LC_DEBUG__;
+  return /[?&]debug=1/.test(String(window.location?.search || ""));
+})();
+
 export const CANONICAL_FULL_BOXES = [
   {
     "id": "freqCorner",

@@ -5,6 +5,7 @@
 // IMPORTANT: This module is UI-agnostic. Adapters decide *what* to render.
 
 import { isEditingText, commitTextEdit } from "../editor/textEdit.js";
+import { log } from "../utils/log.js";
 
 function mmToPt(mm){
   return (Number(mm) / 25.4) * 72;
@@ -47,7 +48,7 @@ export function downloadBytesSafe(bytes, fileName){
   try {
     a.click();
   } catch {
-    try { window.open(url, "_blank"); } catch {}
+    try { window.open(url, "_blank"); } catch (e) { log.warn("window.open failed", { err: String(e) }); }
   }
   a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
@@ -183,12 +184,10 @@ export function withPdfModeSync(ctxApp, fn){
   const prevMode = ctxApp?.state?.exportMode;
   try {
     if (typeof ctxApp?.setState === "function") ctxApp.setState({ exportMode: "pdf" }, { autosave: false });
-    else if (ctxApp?.state) ctxApp.state.exportMode = "pdf";
 
     fn();
   } finally {
     if (typeof ctxApp?.setState === "function") ctxApp.setState({ exportMode: prevMode }, { autosave: false });
-    else if (ctxApp?.state) ctxApp.state.exportMode = prevMode;
   }
 }
 

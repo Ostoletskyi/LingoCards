@@ -4,6 +4,8 @@
 // ARCH: App-core only. No UI here.
 // UI panel/button is implemented in js/ui/features/history.js (wrapper) / undoHistoryPanel.js.
 
+import { log } from "../utils/log.js";
+
 function deepClone(obj){
   // For this app state: JSON clone is sufficient and deterministic.
   return JSON.parse(JSON.stringify(obj));
@@ -26,10 +28,8 @@ function applyState(ctx, nextState){
   if (typeof ctx?.setState === 'function'){
     // history restore should always be immediate and not create new history entries.
     ctx.setState(cloned, { clearSelection: true, autosave: true, debounceMs: 0, history: false });
-  } else if (ctx && ctx.state && typeof ctx.state === 'object'){
-    Object.assign(ctx.state, cloned);
-  } else if (ctx){
-    ctx.state = cloned; // last resort (should not happen in this project)
+  } else {
+    log.warn("applyState missing ctx.setState", { hasCtx: !!ctx });
   }
 }
 
@@ -98,7 +98,7 @@ export function createHistoryManager(ctx, { limit = 20 } = {}){
       let changed = true;
       try {
         changed = (JSON.stringify(before) !== JSON.stringify(ctx.state));
-      } catch { changed = true; }
+      } catch (e) { log.warn("history change detection failed", { err: String(e) }); changed = true; }
       if (!changed) return false;
 
       api._pushSnapshot(lbl);

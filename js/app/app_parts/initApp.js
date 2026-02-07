@@ -12,7 +12,6 @@ import { rerender } from "../../render/renderCard.js";
 import { installAdminPanel } from "../../ui/adminPanel.js";
 import { installDeleteBoxHotkey } from "../../ui/features/deleteBox.js";
 import { installVersionBadge } from "../../ui/versionBadge.js";
-import { APP_VERSION } from "../../version.js";
 import { log } from "../../utils/log.js";
 import { buildShell } from "../../ui/uiShell.js";
 import { initUI } from "../../ui/uiCore.js";
@@ -21,10 +20,10 @@ import ru from "../../i18n/ru.js";
 import de from "../../i18n/de.js";
 import en from "../../i18n/en.js";
 import { createHistoryManager, clampInt } from "../history.js";
+import { createStateStore, createLegacyStateView } from "./stateStore.js";
 
-import { AUTOSAVE_KEY } from "./constants.js";
 import { deepClone, cloneBoxes } from "./clone.js";
-import { DEFAULTS, pickPersistedState } from "./state.js";
+import { bootstrapLegacyState, createStateFromPersisted, flattenState, pickPersistedState } from "./state.js";
 import { migrateState } from "./migrations.js";
 import {
   normalizeCardsState,
@@ -39,40 +38,47 @@ export function initApp(){
   // 1) state (restore)
   const saved = loadAutosave();
   /** @type {AppState} */
-  const state = {
-    ...DEFAULTS,
-    ...(saved || {}),
-    selectedBoxId: null, // transient always reset
-    selectedIds: [],     // transient always reset
-    marqueeRect: null,   // transient always reset
-  };
+  const legacyState = bootstrapLegacyState(saved);
 
   // UI preference: New card template mode can be toggled in the right panel.
   // We keep a separate localStorage key so this preference survives even if autosave is reset.
   try {
     const m = localStorage.getItem("LC_NEW_CARD_TEMPLATE_MODE");
-    if (m === "canonical" || m === "inherit") state.newCardTemplateMode = m;
-  } catch {}
+    if (m === "canonical" || m === "inherit") legacyState.newCardTemplateMode = m;
+  } catch (e) {
+    log.warn("LC_NEW_CARD_TEMPLATE_MODE load failed", { err: String(e) });
+  }
 
   // --- Cards stack: normalize + apply selected card to current fields
-  normalizeCardsState(state);
-  applyCardFromCards(state);
+  normalizeCardsState(legacyState);
+  applyCardFromCards(legacyState);
 
   // --- State migrations + normalization (single pipeline)
-  const mig = migrateState(state);
+  const mig = migrateState(legacyState);
 
   // keep card snapshot updated after migrations (never sync SOURCE preview into created cards)
-  try { if (state?.viewMode !== "source") syncCurrentToCards(state); } catch {}
+  try {
+    if (legacyState?.viewMode !== "source") syncCurrentToCards(legacyState);
+  } catch (e) {
+    log.warn("syncCurrentToCards failed (bootstrap)", { err: String(e) });
+  }
 
   // Persist immediately if we changed the schema (prevents repeated migration work)
-  try { if (mig.changed) saveAutosaveNow(state); } catch {}
+  try {
+    if (mig.changed) saveAutosaveNow(legacyState);
+  } catch (e) {
+    log.warn("Autosave save failed (bootstrap)", { err: String(e) });
+  }
+
+  const store = createStateStore(createStateFromPersisted(legacyState), { log });
+  const state = createLegacyStateView(store, { log });
 
   // 2) i18n (RU/DE/EN)
   const dicts = { ru, de, en };
   let lang = "ru";
-  try { lang = localStorage.getItem("lc_lang") || lang; } catch {}
+  try { lang = localStorage.getItem("lc_lang") || lang; } catch (e) { log.warn("lc_lang load failed", { err: String(e) }); }
   if (!dicts[lang]) lang = "ru";
-  try { document.documentElement.lang = lang; } catch {}
+  try { document.documentElement.lang = lang; } catch (e) { log.warn("document.lang set failed", { err: String(e) }); }
   const i18n = createI18n({ dicts, lang, log });
 
   // 3) mounts
@@ -97,6 +103,7 @@ export function initApp(){
     if (mounts.rightPanel) ro.observe(mounts.rightPanel);
     window.addEventListener("resize", () => requestRender(), { passive: true });
   } catch (e){
+    log.warn("ResizeObserver setup failed", { err: String(e) });
     window.addEventListener("resize", () => requestRender(), { passive: true });
   }
 
@@ -107,34 +114,54 @@ export function initApp(){
     if (_rafRender) return;
     _rafRender = requestAnimationFrame(() => {
       _rafRender = 0;
-      try { rerender(); } catch {}
+      try { rerender(); } catch (e) { log.warn("rerender failed", { err: String(e) }); }
     });
+  }
+
+  function commitMutation(type, mutate, opts){
+    store.commit(type, { mutate });
+    if (opts?.clearSelection){
+      store.commit("patch", { patch: { selectedBoxId: null, selectedIds: [], marqueeRect: null } });
+    }
+    const autosave = (opts?.autosave !== false);
+    if (autosave){
+      const d = Number.isFinite(opts?.debounceMs) ? opts.debounceMs : 250;
+      scheduleAutosave(state, d);
+    }
+    requestRender();
   }
 
   const ctx = {
     log,
     i18n,
     state,
+    store,
     shell,
 
     requestRender,
 
     getState(){
-      // Returns a deep-cloned snapshot of the persisted part of the state.
-      try { return deepClone(pickPersistedState(state)); } catch { return {}; }
+      // Returns a deep-cloned snapshot of the persisted part of the state (legacy flat view).
+      try { return deepClone(flattenState(pickPersistedState(store.getState()))); } catch (e) {
+        log.warn("getState failed", { err: String(e) });
+        return {};
+      }
     },
 
     setState(patch, opts){
-      if (!patch || typeof patch !== "object") return;
-      Object.assign(state, patch);
+      if (!patch) return;
+      const resolved = (typeof patch === "function") ? patch(state) : patch;
+      if (!resolved || typeof resolved !== "object") return;
 
       // Keep a dedicated SOURCE layout snapshot that is never overwritten by cards.
       // In source mode, layout (geometry) is global across all verbs.
-      if (patch && patch.boxes && state.viewMode === "source"){
-        try { state.sourceBoxes = cloneBoxes(state.boxes); } catch {}
+      if (resolved && resolved.boxes && state.viewMode === "source"){
+        try { resolved.sourceBoxes = cloneBoxes(resolved.boxes); } catch (e) { log.warn("cloneBoxes failed", { err: String(e) }); }
       }
 
-      if (opts?.clearSelection) state.selectedBoxId = null;
+      if (opts?.clearSelection) resolved.selectedBoxId = null;
+
+      store.commit("patch", { patch: resolved });
 
       const autosave = (opts?.autosave !== false);
       if (autosave){
@@ -143,7 +170,10 @@ export function initApp(){
       }
 
       // Перерисуем, если патч влияет на превью
-      if (patch) requestRender();
+      if (resolved) requestRender();
+    },
+    commit(type, payload){
+      store.commit(type, payload);
     },
   };
 
@@ -156,14 +186,16 @@ export function initApp(){
       const i = Number.isFinite(state.selectedCardIndex) ? state.selectedCardIndex : 0;
       return state.cards?.[i]?.title || `Card ${i+1}`;
     },
-    sync: () => syncCurrentToCards(state),
+    sync: () => store.commit("cards.sync", { mutate: (s) => syncCurrentToCards(s) }),
     switchTo: (index) => {
-      normalizeCardsState(state);
+      store.commit("cards.normalize", { mutate: (s) => normalizeCardsState(s) });
       const i = Math.max(0, Math.min(index, state.cards.length - 1));
       // Persist current card BEFORE switching away (but never sync SOURCE preview into cards).
       try {
-        if (state.viewMode !== "source") syncCurrentToCards(state);
-      } catch {}
+        if (state.viewMode !== "source") store.commit("cards.sync", { mutate: (s) => syncCurrentToCards(s) });
+      } catch (e) {
+        log.warn("syncCurrentToCards failed", { err: String(e) });
+      }
 
       const prevIdx = Number.isFinite(state.selectedCardIndex) ? state.selectedCardIndex : 0;
       if (i === prevIdx) return;
@@ -185,152 +217,138 @@ export function initApp(){
         selectedIndex: Number.isFinite(target.selectedIndex) ? target.selectedIndex : 0,
       };
 
-      // update live state first (so other subsystems see consistent values)
-      Object.assign(state, nextPatch);
-
       // commit state (triggers render + autosave)
       ctx.setState(nextPatch, { clearSelection: true });
 
       // keep card snapshot in sync with what we just applied
-      try { syncCurrentToCards(state); } catch {}
+      try { store.commit("cards.sync", { mutate: (s) => syncCurrentToCards(s) }); } catch (e) { log.warn("syncCurrentToCards failed", { err: String(e) }); }
 
       // card switch shouldn't carry undo stack between cards
       ctx.history?.reset?.();
 
       // Debug hook (helps diagnose rare selection issues)
-      try { ctx.log?.info?.("cards.switch", { from: prevIdx, to: i, len: state.cards.length }); } catch {}
+      try { ctx.log?.info?.("cards.switch", { from: prevIdx, to: i, len: state.cards.length }); } catch (e) { log.warn("cards.switch log failed", { err: String(e) }); }
     },
     // Switch preview to SOURCE (verb-driven) without overwriting created cards
     switchToSource: (verbIndex) => {
-      normalizeCardsState(state);
-      // save current created card before leaving cards-mode
-      if (state.viewMode !== "source") {
-        try { syncCurrentToCards(state); } catch {}
-      }
-      const verbs = state?.data?.verbs || [];
-      const vIdx = clampInt(verbIndex, 0, Math.max(0, verbs.length - 1));
-      state.selectedIndex = vIdx;
-      state.viewMode = "source";
-      // IMPORTANT:
-      // - Source mode must use bind-boxes layout (so verb switching updates content).
-      // - Geometry is GLOBAL across all verbs, but it is NOT the same as "cards" layout.
-      //   We keep a dedicated snapshot: state.sourceBoxes.
-
-      // Ensure sourceBoxes exists.
-      // IMPORTANT: do NOT fallback to current boxes (those could be "cards" static boxes).
-      // If sourceBoxes is missing, we always create a bind-layout template, so verb switching
-      // updates all fields (not only frequency dots).
-      const isBindLike = (boxes) => {
-        if (!Array.isArray(boxes) || boxes.length === 0) return false;
-        // If at least one non-frequency box has a bind, we consider it OK
-        return boxes.some(b => {
-          const bt = String(b?.type || "");
-          const isFreq = bt === "frequencyDots" || b?.id === "freq" || b?.id === "freqCorner";
-          return !isFreq && !!String(b?.bind || "").trim();
-        });
-      };
-
-      // If we already have sourceBoxes but they look like a STATIC snapshot (no binds),
-      // migrate them to bind-layout while PRESERVING user's geometry.
-      const needsMigrate = Array.isArray(state.sourceBoxes) && state.sourceBoxes.length && !isBindLike(state.sourceBoxes);
-
-      if (!Array.isArray(state.sourceBoxes) || !state.sourceBoxes.length || needsMigrate){
-        const sample = verbs[vIdx] || verbs[0] || {};
-        let templ = [];
-        try { templ = cloneBoxes(buildBoxesFromVerbSample(sample)); } catch {}
-        if (!Array.isArray(templ) || !templ.length){
-          try { templ = cloneBoxes(buildBoxesFromVerbSample({})); } catch {}
+      commitMutation("cards.switchToSource", (draft) => {
+        normalizeCardsState(draft);
+        // save current created card before leaving cards-mode
+        if (draft.viewMode !== "source") {
+          try { syncCurrentToCards(draft); } catch (e) { log.warn("syncCurrentToCards failed", { err: String(e) }); }
         }
+        const verbs = draft?.data?.verbs || [];
+        const vIdx = clampInt(verbIndex, 0, Math.max(0, verbs.length - 1));
+        draft.selectedIndex = vIdx;
+        draft.viewMode = "source";
+        // IMPORTANT:
+        // - Source mode must use bind-boxes layout (so verb switching updates content).
+        // - Geometry is GLOBAL across all verbs, but it is NOT the same as "cards" layout.
+        //   We keep a dedicated snapshot: draft.sourceBoxes.
 
-        if (needsMigrate){
-          const old = Array.isArray(state.sourceBoxes) ? state.sourceBoxes : [];
-          // copy geometry/font from old boxes by id
-          for (const t of templ){
-            const o = old.find(x => x && x.id === t.id);
-            if (o){
-              if (Number.isFinite(o.xMm)) t.xMm = o.xMm;
-              if (Number.isFinite(o.yMm)) t.yMm = o.yMm;
-              if (Number.isFinite(o.wMm)) t.wMm = o.wMm;
-              if (Number.isFinite(o.hMm)) t.hMm = o.hMm;
-              if (Number.isFinite(o.fontPt)) t.fontPt = o.fontPt;
+        // Ensure sourceBoxes exists.
+        // IMPORTANT: do NOT fallback to current boxes (those could be "cards" static boxes).
+        // If sourceBoxes is missing, we always create a bind-layout template, so verb switching
+        // updates all fields (not only frequency dots).
+        const isBindLike = (boxes) => {
+          if (!Array.isArray(boxes) || boxes.length === 0) return false;
+          // If at least one non-frequency box has a bind, we consider it OK
+          return boxes.some(b => {
+            const bt = String(b?.type || "");
+            const isFreq = bt === "frequencyDots" || b?.id === "freq" || b?.id === "freqCorner";
+            return !isFreq && !!String(b?.bind || "").trim();
+          });
+        };
+
+        // If we already have sourceBoxes but they look like a STATIC snapshot (no binds),
+        // migrate them to bind-layout while PRESERVING user's geometry.
+        const needsMigrate = Array.isArray(draft.sourceBoxes) && draft.sourceBoxes.length && !isBindLike(draft.sourceBoxes);
+
+        if (!Array.isArray(draft.sourceBoxes) || !draft.sourceBoxes.length || needsMigrate){
+          const sample = verbs[vIdx] || verbs[0] || {};
+          let templ = [];
+          try { templ = cloneBoxes(buildBoxesFromVerbSample(sample)); } catch (e) { log.warn("buildBoxesFromVerbSample failed", { err: String(e) }); }
+          if (!Array.isArray(templ) || !templ.length){
+            try { templ = cloneBoxes(buildBoxesFromVerbSample({})); } catch (e) { log.warn("buildBoxesFromVerbSample fallback failed", { err: String(e) }); }
+          }
+
+          if (needsMigrate){
+            const old = Array.isArray(draft.sourceBoxes) ? draft.sourceBoxes : [];
+            // copy geometry/font from old boxes by id
+            for (const t of templ){
+              const o = old.find(x => x && x.id === t.id);
+              if (o){
+                if (Number.isFinite(o.xMm)) t.xMm = o.xMm;
+                if (Number.isFinite(o.yMm)) t.yMm = o.yMm;
+                if (Number.isFinite(o.wMm)) t.wMm = o.wMm;
+                if (Number.isFinite(o.hMm)) t.hMm = o.hMm;
+                if (Number.isFinite(o.fontPt)) t.fontPt = o.fontPt;
+              }
+            }
+          }
+
+          draft.sourceBoxes = templ;
+          if (!Array.isArray(draft.sourceBoxes) || !draft.sourceBoxes.length){
+            try { draft.sourceBoxes = cloneBoxes(buildBoxesFromVerbSample({})); } catch (e) { log.warn("buildBoxesFromVerbSample final fallback failed", { err: String(e) }); }
+          }
+
+          // ✅ Bind boxes should be auto-sized by default.
+          // Some older templates mistakenly marked them as geomMode:"manual" which disables auto-fit.
+          // We treat bind boxes as AUTO unless the user explicitly pinned geometry.
+          for (const b of (Array.isArray(draft.sourceBoxes) ? draft.sourceBoxes : [])){
+            if (!b || typeof b !== "object") continue;
+            if (!String(b.bind || "").trim()) continue;
+            if (b.geomPinned === true || b.manualGeom === true) continue;
+            if (String(b.geomMode || "") === "manual"){
+              delete b.geomMode;
             }
           }
         }
 
-        state.sourceBoxes = templ;
-        if (!Array.isArray(state.sourceBoxes) || !state.sourceBoxes.length){
-          try { state.sourceBoxes = cloneBoxes(buildBoxesFromVerbSample({})); } catch {}
-        }
+        // Apply source layout snapshot to current preview
+        draft.boxes = cloneBoxes(draft.sourceBoxes);
 
-      // ✅ Bind boxes should be auto-sized by default.
-      // Some older templates mistakenly marked them as geomMode:"manual" which disables auto-fit.
-      // We treat bind boxes as AUTO unless the user explicitly pinned geometry.
-      for (const b of (Array.isArray(state.sourceBoxes) ? state.sourceBoxes : [])){
-        if (!b || typeof b !== "object") continue;
-        if (!String(b.bind || "").trim()) continue;
-        if (b.geomPinned === true || b.manualGeom === true) continue;
-        if (String(b.geomMode || "") === "manual"){
-          delete b.geomMode;
-        }
-      }
-      }
-
-      // Apply source layout snapshot to current preview
-      state.boxes = cloneBoxes(state.sourceBoxes);
-
-      // HARD RULE (LEFT list / SOURCE): any box that has `bind` must render from JSON.
-      // If some older/mixed data mutated boxes into manual/override mode,
-      // we still keep geometry, but force textMode back to "bind".
-      for (const b of (Array.isArray(state.boxes) ? state.boxes : [])){
-        if (!b || typeof b !== "object") continue;
-        if (String(b.bind || "").trim()){
-          b.textMode = "bind";
-          // Same normalization for the active clone
-          if (b.geomPinned !== true && b.manualGeom !== true && String(b.geomMode || "") === "manual"){
-            delete b.geomMode;
+        // HARD RULE (LEFT list / SOURCE): any box that has `bind` must render from JSON.
+        // If some older/mixed data mutated boxes into manual/override mode,
+        // we still keep geometry, but force textMode back to "bind".
+        for (const b of (Array.isArray(draft.boxes) ? draft.boxes : [])){
+          if (!b || typeof b !== "object") continue;
+          if (String(b.bind || "").trim()){
+            b.textMode = "bind";
+            // Same normalization for the active clone
+            if (b.geomPinned !== true && b.manualGeom !== true && String(b.geomMode || "") === "manual"){
+              delete b.geomMode;
+            }
+            // Clear misleading manual text fields that can shadow bind text in some older states.
+            // (Renderer currently prefers bind, but keep state clean anyway.)
+            if (b.staticText !== undefined) delete b.staticText;
+            if (b.text !== undefined) delete b.text;
           }
-          // Clear misleading manual text fields that can shadow bind text in some older states.
-          // (Renderer currently prefers bind, but keep state clean anyway.)
-          if (b.staticText !== undefined) delete b.staticText;
-          if (b.text !== undefined) delete b.text;
         }
-      }
-      state.selectedBoxId = null;
-      state.selectedIds = [];
-      state.marqueeRect = null;
-      ctx.setState({
-        viewMode: state.viewMode,
-        selectedIndex: state.selectedIndex,
-        boxes: state.boxes,
-        selectedBoxId: null,
-        selectedIds: [],
-        marqueeRect: null,
+        draft.selectedBoxId = null;
+        draft.selectedIds = [];
+        draft.marqueeRect = null;
       }, { clearSelection: true });
-      ctx.requestRender();
     },
     addNew: ({ cloneCurrent = false } = {}) => {
-      normalizeCardsState(state);
-      if (state.viewMode !== "source") syncCurrentToCards(state);
-      const n = state.cards.length + 1;
-      const base = cloneCurrent
-        ? makeCardFromCurrentState(state, { title: `Card ${n}` })
-        : makeBlankCardFromTemplate(state, { title: `Card ${n}`, templateMode: state.newCardTemplateMode });
-      state.cards.push(base);
-      state.selectedCardIndex = state.cards.length - 1;
-      state.viewMode = "cards";
-      applyCardFromCards(state);
-      ctx.setState({
-        viewMode: state.viewMode,
-        selectedCardIndex: state.selectedCardIndex,
-        cardWmm: state.cardWmm,
-        cardHmm: state.cardHmm,
-        boxes: state.boxes,
-        notesByVerb: state.notesByVerb,
-        selectedIndex: state.selectedIndex,
+      commitMutation("cards.addNew", (draft) => {
+        normalizeCardsState(draft);
+        if (draft.viewMode !== "source") syncCurrentToCards(draft);
+        const n = draft.cards.length + 1;
+        const base = cloneCurrent
+          ? makeCardFromCurrentState(draft, { title: `Card ${n}` })
+          : makeBlankCardFromTemplate(draft, { title: `Card ${n}`, templateMode: draft.newCardTemplateMode });
+        draft.cards.push(base);
+        draft.selectedCardIndex = draft.cards.length - 1;
+        draft.viewMode = "cards";
+        applyCardFromCards(draft);
+        draft.selectedBoxId = null;
+        draft.selectedIds = [];
+        draft.marqueeRect = null;
       }, { clearSelection: true });
       // Keep right list in sync immediately (some UI parts don't hook requestRender reliably).
-      try { ctx.ui?.refreshCardsList?.(); } catch {}
-      try { if (state.viewMode !== "source") syncCurrentToCards(state); } catch {}
+      try { ctx.ui?.refreshCardsList?.(); } catch (e) { log.warn("refreshCardsList failed", { err: String(e) }); }
+      try { if (state.viewMode !== "source") store.commit("cards.sync", { mutate: (s) => syncCurrentToCards(s) }); } catch (e) { log.warn("syncCurrentToCards failed", { err: String(e) }); }
       ctx.history?.reset?.();
       ctx.log.info("cards.new", { index: state.selectedCardIndex, count: state.cards.length });
     },
@@ -339,81 +357,13 @@ export function initApp(){
     // UX rule: after "Очистить список" the list must be empty immediately (no "one big card" ghost),
     // and the preview should show a neutral blank template (canonical Full, manual geometry).
     clearAll: () => {
-      normalizeCardsState(state);
-      // do not sync anything back into source; this is a draft list operation
-      state.cards = [];
-      state.selectedCardIndex = 0;
-      state.viewMode = "cards";
-      state.boxes = makeRightPreviewTemplate(state);
-
-      ctx.setState({
-        cards: [],
-        viewMode: "cards",
-        selectedCardIndex: 0,
-        boxes: state.boxes,
-        selectedBoxId: null,
-        selectedIds: [],
-        marqueeRect: null,
-      }, { clearSelection: true, autosave: true, debounceMs: 120 });
-
-      try { ctx.ui?.refreshCardsList?.(); } catch {}
+      commitMutation(\"cards.clearAll\", (draft) => {\n        normalizeCardsState(draft);\n        // do not sync anything back into source; this is a draft list operation\n        draft.cards = [];\n        draft.selectedCardIndex = 0;\n        draft.viewMode = \"cards\";\n        draft.boxes = makeRightPreviewTemplate(draft);\n        draft.selectedBoxId = null;\n        draft.selectedIds = [];\n        draft.marqueeRect = null;\n      }, { clearSelection: true, autosave: true, debounceMs: 120 });\n\n      try { ctx.ui?.refreshCardsList?.(); } catch (e) { log.warn(\"refreshCardsList failed\", { err: String(e) }); }
       ctx.history?.reset?.();
       ctx.requestRender();
       ctx.log.info("cards.clearAll");
     },
     deleteCurrent: () => {
-      normalizeCardsState(state);
-      const cards = Array.isArray(state.cards) ? state.cards : [];
-      if (!cards.length) return;
-
-      // If we are leaving cards-mode, do not sync SOURCE into cards.
-      if (state.viewMode !== "source") {
-        try { syncCurrentToCards(state); } catch {}
-      }
-
-      const cur = clampInt(state.selectedCardIndex, 0, cards.length - 1);
-      cards.splice(cur, 1);
-
-      if (!cards.length){
-        // allow empty list
-        state.selectedCardIndex = 0;
-        state.viewMode = "cards";
-        state.boxes = makeRightPreviewTemplate(state);
-        ctx.setState({
-          cards: [],
-          selectedCardIndex: 0,
-          viewMode: "cards",
-          boxes: state.boxes,
-          selectedBoxId: null,
-          selectedIds: [],
-          marqueeRect: null,
-        }, { clearSelection: true, autosave: true, debounceMs: 120 });
-        ctx.history?.reset?.();
-        return;
-      }
-
-      const next = Math.max(0, Math.min(cur, cards.length - 1));
-      state.selectedCardIndex = next;
-      state.viewMode = "cards";
-      applyCardFromCards(state);
-
-      ctx.setState({
-        cards: state.cards,
-        viewMode: state.viewMode,
-        selectedCardIndex: state.selectedCardIndex,
-        cardWmm: state.cardWmm,
-        cardHmm: state.cardHmm,
-        boxes: state.boxes,
-        notesByVerb: state.notesByVerb,
-        selectedIndex: state.selectedIndex,
-        selectedBoxId: null,
-        selectedIds: [],
-        marqueeRect: null,
-      }, { clearSelection: true });
-
-      try { syncCurrentToCards(state); } catch {}
-      ctx.history?.reset?.();
-      ctx.log.info("cards.delete", { index: state.selectedCardIndex, count: state.cards.length });
+      let removedAll = false;\n      commitMutation(\"cards.deleteCurrent\", (draft) => {\n        normalizeCardsState(draft);\n        const cards = Array.isArray(draft.cards) ? draft.cards : [];\n        if (!cards.length) return;\n\n        // If we are leaving cards-mode, do not sync SOURCE into cards.\n        if (draft.viewMode !== \"source\") {\n          try { syncCurrentToCards(draft); } catch (e) { log.warn(\"syncCurrentToCards failed\", { err: String(e) }); }\n        }\n\n        const cur = clampInt(draft.selectedCardIndex, 0, cards.length - 1);\n        cards.splice(cur, 1);\n\n        if (!cards.length){\n          // allow empty list\n          removedAll = true;\n          draft.selectedCardIndex = 0;\n          draft.viewMode = \"cards\";\n          draft.boxes = makeRightPreviewTemplate(draft);\n          draft.selectedBoxId = null;\n          draft.selectedIds = [];\n          draft.marqueeRect = null;\n          return;\n        }\n\n        const next = Math.max(0, Math.min(cur, cards.length - 1));\n        draft.selectedCardIndex = next;\n        draft.viewMode = \"cards\";\n        applyCardFromCards(draft);\n        draft.selectedBoxId = null;\n        draft.selectedIds = [];\n        draft.marqueeRect = null;\n      }, { clearSelection: true });\n\n      if (removedAll){\n        ctx.history?.reset?.();\n        return;\n      }\n\n      try { store.commit(\"cards.sync\", { mutate: (s) => syncCurrentToCards(s) }); } catch (e) { log.warn(\"syncCurrentToCards failed\", { err: String(e) }); }\n      ctx.history?.reset?.();\n      ctx.log.info(\"cards.delete\", { index: state.selectedCardIndex, count: state.cards.length });
     }
   };
 
@@ -452,7 +402,9 @@ export function initApp(){
       g.LC.setState = (patch, opts) => ctx.setState(patch, opts);
       g.LC.ctx = ctx;
     }
-  }catch(e){}
+  }catch(e){
+    log.warn("LC debug handle failed", { err: String(e) });
+  }
 
-  log.info("initApp: OK", { state: pickPersistedState(state) });
+  log.info("initApp: OK", { state: pickPersistedState(store.getState()) });
 }

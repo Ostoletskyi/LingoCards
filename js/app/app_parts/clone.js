@@ -1,9 +1,13 @@
 // js/app/app_parts/clone.js
 
+import { log } from "../../utils/log.js";
+
 export function deepClone(obj){
   try {
     if (typeof structuredClone === "function") return structuredClone(obj);
-  } catch {}
+  } catch (e) {
+    log.warn("structuredClone failed", { err: String(e) });
+  }
   return JSON.parse(JSON.stringify(obj));
 }
 

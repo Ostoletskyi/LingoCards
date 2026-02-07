@@ -6,6 +6,7 @@ import { makeExportPassport } from "../../data/exportPassport.js";
 import { bindText, bindTip } from "../i18n.js";
 import { compileWildcardQuery, matchesQuery } from "../../utils/search.js";
 import { addVerbsToHistory, findHistoryMatches, getHistoryList, clearVerbHistory, normInfinitive } from "../../data/verbHistory.js";
+import { log } from "../../utils/log.js";
 
 function getVerbs(ctx){
   const v = ctx.state?.data?.verbs;
@@ -158,7 +159,10 @@ function fmtTs(ms){
   try {
     const d = new Date(ms);
     return d.toISOString().slice(0, 19).replace("T", " ");
-  } catch { return ""; }
+  } catch (e) {
+    log.warn("format timestamp failed", { err: String(e) });
+    return "";
+  }
 }
 
 function openHistoryModal(){
@@ -618,7 +622,7 @@ const histStat = addVerbsToHistory(nextVerbs);
         const next = sortModeNext(cur);
         ctx.setState({ verbsSortMode: next }, { debounceMs: 0 });
         updateSortBtn();
-        try { render(); } catch {}
+        try { render(); } catch (e) { ctx.log?.warn?.("verbsList.render failed", { err: String(e) }); }
         const base = ctx.i18n.t?.("toolbar.sortVerbs") || "Сортировать";
         ctx.ui?.setStatus?.(`${base}: ${sortModeLabel(ctx, next)}`);
       };
@@ -641,10 +645,10 @@ const histStat = addVerbsToHistory(nextVerbs);
         downloadJson(`lingocard_pack_${stamp()}.json`, payload);
         try {
           ctx.setState?.({ leftNeedsExport: false }, { debounceMs: 0 });
-        } catch {
-          try { ctx.state.leftNeedsExport = false; } catch {}
+        } catch (e) {
+          ctx.log?.warn?.("leftNeedsExport reset failed", { err: String(e) });
         }
-        try { updateUnsaved(); } catch {}
+        try { updateUnsaved(); } catch (e) { ctx.log?.warn?.("updateUnsaved failed", { err: String(e) }); }
         ctx.ui?.setStatus?.(ctx.i18n.t("ui.status.exported") || "Экспортировано");
       };
 
@@ -683,11 +687,11 @@ const histStat = addVerbsToHistory(nextVerbs);
       function requestCardRender(){
         // 1) если ты завёл мягкий хук в ctx — используем его
         if (typeof ctx.requestRender === "function"){
-          try { ctx.requestRender(); } catch {}
+          try { ctx.requestRender(); } catch (e) { ctx.log?.warn?.("requestRender failed", { err: String(e) }); }
           return;
         }
         // 2) иначе напрямую перерендерим карточку
-        try { rerender(); } catch {}
+        try { rerender(); } catch (e) { ctx.log?.warn?.("rerender failed", { err: String(e) }); }
       }
 
       function render(){
@@ -756,7 +760,7 @@ const histStat = addVerbsToHistory(nextVerbs);
               // fallback
               ctx.setState({ selectedIndex: idx }, { debounceMs: 50 });
             }
-			try { window.LC_PRESETS?.onVerbChanged?.(); } catch {}
+			try { window.LC_PRESETS?.onVerbChanged?.(); } catch (e) { ctx.log?.warn?.("LC_PRESETS onVerbChanged failed", { err: String(e) }); }
 
             ctx.ui?.setStatus?.(`Выбран глагол: ${pos + 1}/${verbs.length}`);
 
@@ -774,9 +778,9 @@ const histStat = addVerbsToHistory(nextVerbs);
 
         // Keep active item visible (arrow navigation should not "lose" the selection)
         // Keep active item visible
-        try { activeEl?.scrollIntoView?.({ block: (ctx.ui?.__scrollAlignStart ? "start" : "nearest") }); } catch {}
+        try { activeEl?.scrollIntoView?.({ block: (ctx.ui?.__scrollAlignStart ? "start" : "nearest") }); } catch (e) { ctx.log?.warn?.("scrollIntoView failed", { err: String(e) }); }
         // reset one-shot align flag
-        try { if (ctx.ui) ctx.ui.__scrollAlignStart = false; } catch {}
+        try { if (ctx.ui) ctx.ui.__scrollAlignStart = false; } catch (e) { ctx.log?.warn?.("scrollAlignStart reset failed", { err: String(e) }); }
       }
 
       // Expose a lightweight hook so other UI parts (e.g., top arrows)
@@ -784,8 +788,8 @@ const histStat = addVerbsToHistory(nextVerbs);
       // relying on brittle setState-wrapping order.
       ctx.ui = ctx.ui || {};
       ctx.ui.refreshVerbsList = () => {
-        try { render(); } catch {}
-        try { syncActionStates(); } catch {}
+        try { render(); } catch (e) { ctx.log?.warn?.("verbsList.render failed", { err: String(e) }); }
+        try { syncActionStates(); } catch (e) { ctx.log?.warn?.("syncActionStates failed", { err: String(e) }); }
       };
 
       ctx.ui.scrollVerbsToIndex = (verbIndex, opts = {}) => {
@@ -797,7 +801,7 @@ const histStat = addVerbsToHistory(nextVerbs);
           // one-shot align flag used inside render() for selected item
           if (opts.align === 'start'){ ctx.ui.__scrollAlignStart = true; }
           el.scrollIntoView({ block: (opts.align === 'start') ? 'start' : 'nearest' });
-        } catch {}
+        } catch (e) { ctx.log?.warn?.("scrollVerbsToIndex failed", { err: String(e) }); }
         return true;
       };
 
@@ -812,7 +816,7 @@ const histStat = addVerbsToHistory(nextVerbs);
         btnPdfCur.disabled = !has;
         btnPdfAll.disabled = !has;
         btnSort.disabled = n < 2;
-        try { updateSortBtn(); } catch {}
+        try { updateSortBtn(); } catch (e) { ctx.log?.warn?.("updateSortBtn failed", { err: String(e) }); }
       }
       syncActionStates();
 
@@ -829,7 +833,7 @@ const histStat = addVerbsToHistory(nextVerbs);
           if (patch && (patch.data || patch.selectedIndex !== undefined || patch.verbsSortMode !== undefined || patch.searchQuery !== undefined)){
             render();
             syncActionStates();
-            try { updateSortBtn(); } catch {}
+            try { updateSortBtn(); } catch (e) { ctx.log?.warn?.("updateSortBtn failed", { err: String(e) }); }
           }
         };
       }

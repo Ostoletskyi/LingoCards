@@ -5,6 +5,8 @@
 // Storage format (LS):
 // { version:1, verbs: { "<normInf>": { count, firstSeen, lastSeen, sampleInf } } }
 
+import { log } from "../utils/log.js";
+
 const LS_KEY = "LC_VERB_HISTORY_V1";
 
 function now(){ return Date.now(); }
@@ -18,7 +20,7 @@ export function normInfinitive(v){
 }
 
 function safeParse(raw){
-  try { return raw ? JSON.parse(raw) : null; } catch { return null; }
+  try { return raw ? JSON.parse(raw) : null; } catch (e) { log.warn("verbHistory parse failed", { err: String(e) }); return null; }
 }
 
 export function loadVerbHistory(){
@@ -32,13 +34,14 @@ export function saveVerbHistory(hist){
   try {
     localStorage.setItem(LS_KEY, JSON.stringify(hist || { version:1, verbs:{} }));
     return true;
-  } catch {
+  } catch (e) {
+    log.warn("verbHistory save failed", { err: String(e) });
     return false;
   }
 }
 
 export function clearVerbHistory(){
-  try { localStorage.removeItem(LS_KEY); } catch {}
+  try { localStorage.removeItem(LS_KEY); } catch (e) { log.warn("verbHistory clear failed", { err: String(e) }); }
 }
 
 export function addVerbsToHistory(verbs){

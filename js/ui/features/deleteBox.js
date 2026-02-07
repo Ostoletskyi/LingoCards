@@ -16,15 +16,16 @@ export function installDeleteBoxHotkey(ctx){
     const next = boxes.slice(0, idx).concat(boxes.slice(idx + 1));
 
     // чистим notesByVerb
-    if (ctx.state.notesByVerb && typeof ctx.state.notesByVerb === "object"){
-      for (const k of Object.keys(ctx.state.notesByVerb)){
-        if (ctx.state.notesByVerb[k] && ctx.state.notesByVerb[k][id] !== undefined){
-          delete ctx.state.notesByVerb[k][id];
-        }
+    let nextNotes = (ctx.state.notesByVerb && typeof ctx.state.notesByVerb === "object") ? { ...ctx.state.notesByVerb } : {};
+    for (const k of Object.keys(nextNotes)){
+      if (nextNotes[k] && nextNotes[k][id] !== undefined){
+        const copy = { ...nextNotes[k] };
+        delete copy[id];
+        nextNotes[k] = copy;
       }
     }
 
-    ctx.setState({ boxes: next, notesByVerb: ctx.state.notesByVerb, selectedBoxId: null }, { autosave: true });
+    ctx.setState({ boxes: next, notesByVerb: nextNotes, selectedBoxId: null }, { autosave: true });
     ctx.log.info("box delete", { id });
 
     e.preventDefault();

@@ -6,12 +6,14 @@ import { loadVerbsFromFile } from "../../data/verbsLoad.js";
 import { buildBoxesFromVerbSample } from "../../data/autoLayoutFromVerb.js";
 import { APP_VERSION } from "../../version.js";
 import { log } from "../../utils/log.js";
-import { AUTOSAVE_KEY } from './constants.js';
+import { AUTOSAVE_KEY, DEBUG } from './constants.js';
 import { saveAutosaveNow } from './autosave.js';
 
 /** @param {AppCtx} ctx */
 export function installDiag(ctx){
   const { state } = ctx;
+
+  if (!DEBUG) return;
 
   window.LC_DIAG = window.LC_DIAG || {};
   window.LC = window.LC_DIAG;

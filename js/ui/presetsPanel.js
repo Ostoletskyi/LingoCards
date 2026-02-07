@@ -10,6 +10,7 @@
 // Custom presets (saved by user) remain supported.
 
 import { buildBoxesFromVerbSample } from "../data/autoLayoutFromVerb.js";
+import { log } from "../utils/log.js";
 
 const PRESETS_KEY = "LC_NEXT_PRESETS_V1";
 // Backward compatibility: older builds used different keys.
@@ -37,7 +38,7 @@ function el(tag, attrs = {}, children = []) {
 }
 
 function safeJson(x) {
-  try { return JSON.stringify(x, null, 2); } catch { return "{}"; }
+  try { return JSON.stringify(x, null, 2); } catch (e) { log.warn("presets stringify failed", { err: String(e) }); return "{}"; }
 }
 
 function downloadText(filename, text, mime = "application/json;charset=utf-8") {
@@ -72,14 +73,17 @@ function loadPresets() {
     // If it came from a legacy key, migrate to the current one (non-destructive).
     try {
       if (!localStorage.getItem(PRESETS_KEY)) localStorage.setItem(PRESETS_KEY, JSON.stringify(obj));
-    } catch {}
+    } catch (e) { log.warn("presets migrate failed", { err: String(e) }); }
 
     return (obj && typeof obj === "object") ? obj : {};
-  } catch { return {}; }
+  } catch (e) {
+    log.warn("presets load failed", { err: String(e) });
+    return {};
+  }
 }
 
 function savePresets(presets) {
-  try { localStorage.setItem(PRESETS_KEY, JSON.stringify(presets)); } catch {}
+  try { localStorage.setItem(PRESETS_KEY, JSON.stringify(presets)); } catch (e) { log.warn("presets save failed", { err: String(e) }); }
 }
 
 // ---------------------------------------------------------------------------
@@ -177,7 +181,7 @@ function loadProfile() {
 }
 
 function saveProfile(p) {
-  try { localStorage.setItem(PROFILE_KEY, p); } catch {}
+  try { localStorage.setItem(PROFILE_KEY, p); } catch (e) { log.warn("profile save failed", { err: String(e) }); }
 }
 
 function pillBtnStyle(active = false) {
@@ -320,7 +324,7 @@ export function installPresetsPanel(ctxApp) {
       if (currentProfile && currentProfile !== "default") {
         applyProfileNow(currentProfile);
       }
-    } catch {}
+    } catch (e) { log.warn("applyProfileNow failed", { err: String(e) }); }
   }, 0);
 
   // --- Custom presets UI (save/import/export/list) ---
@@ -363,7 +367,7 @@ export function installPresetsPanel(ctxApp) {
         const key = window.LC_DIAG?.meta?.autosaveKey || "LC_NEXT_STATE_V1";
         localStorage.removeItem(key);
         ctxApp.ui?.setStatus?.("Autosave cleared. Reload page to reset.");
-      } catch {}
+      } catch (e) { log.warn("autosave clear failed", { err: String(e) }); }
     }
   }, ["Clear autosave"]);
 
@@ -599,7 +603,8 @@ export function installPresetsPanel(ctxApp) {
     try {
       const text = await file.text();
       parsed = JSON.parse(text);
-    } catch {
+    } catch (e) {
+      log.warn("presets import failed", { err: String(e) });
       ctxApp.ui?.setStatus?.("Import failed: invalid JSON");
       return;
     }
