@@ -23,7 +23,7 @@
     const v = qs.get('v') || String(Date.now());
     window.__LC_BUILD__ = v;
 
-    const PRIMARY = `./js/app/app.js?v=${encodeURIComponent(v)}`;
+    const PRIMARY = `./js/main.js?v=${encodeURIComponent(v)}`;
     const FALLBACK = `./js/app/app.legacy.js?v=${encodeURIComponent(v)}`;
 
     import(PRIMARY).catch(err => {

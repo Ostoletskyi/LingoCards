@@ -1,5 +1,5 @@
 ﻿# FILEMAP
-Generated: 2026-02-06 21:24:25
+Generated: 2026-02-06 23:10:23
 Root: C:\Users\ostol\Downloads\lingocard_canonical_full_boxes_patch0065_Stabile
 
 .\.gitignore
