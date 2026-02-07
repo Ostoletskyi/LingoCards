@@ -1,15 +1,32 @@
-﻿# LingoCard РІР‚вЂњ ignores
-_utilities/_backups/
-_utilities/_restore/
-_utilities/_runtime/
-_restore/
+﻿# --- LingoCards: local/dev artifacts ---
+_tmp/
 _backups/
-._tools/server.pid
+_restore/
+_tools/_tmp/
+_tools/_out/
+*.zip
+
+# exports / generated
+*.pdf
+*.log
+*.tmp
+*.bak
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+
+# node / tooling
 node_modules/
 dist/
 build/
-coverage/
+.cache/
 .vscode/
 .idea/
-.DS_Store
-Thumbs.db
+
+# secrets
+.env
+.env.*
+*.key
+*.pem
